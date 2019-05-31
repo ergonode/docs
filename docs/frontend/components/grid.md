@@ -22,16 +22,6 @@ it will be related to placeholder which appears below mouse on drag actions.
     * type: **``Array``**,
     * required: **``true``**,
     
-* #### **currentPage**
-    _Current displaying grid page - pagination._
-    * type: **``Number``**,
-    * required: **``true``**,
-    
-* #### **numberOfDisplayingRows**
-    _The number of how many rows we will display at each page._
-    * type: **``Number``**,
-    * required: **``true``**,
-    
 ### Data:
 
 * #### **ghostColumnIndex**
@@ -130,15 +120,70 @@ Drag & drop is using native browser behavior described in [Dosc](https://develop
         * cursor is at the first half of **`gridColumn``
         
 * #### **onDragLeave**
-    _._
-    * Arguments: 
-        * event
+    _Method is describing behavior of the moment when dragging element is leaving element bellow._
+    
+    * Parameters: 
+        * **`event`** - Described in Drag & drop docs linked above.
+    
+    ##### Actions hierarchy:
+    * We need to check if the dragging element (mouse position) is about to leave [`Grid`](#grid) bounds.
+    * In case condition is met, ghost element is removed from grid layout.
         
 * #### **onDragEnter**
-    _._
-    * Arguments: 
-        * event
+    _Method is describing behavior of the moment when dragging element is entering element bellow._
+    
+    * Parameters: 
+        * **`event`** - Described in Drag & drop docs linked above.
+        
+    ##### Actions hierarchy:
+    * Check the existence of ghost element:
+        * Getting index and the column bellow mouse position
+        * We would not like to add a ghost column bellow pinned column to left or right side
+        * Setting up the ghost column index at the index of grid column bellow mouse position
+        * Inserting ghost column between columns bellow mouse position
         
 * #### **getColumnBellowMouse**
-    _._
+    _Method is calculating grid column based on mouse position._
+    
+    * Parameters: 
+        * **`clientX`** - x position of mouse.
+        * **`gridColumns`** - grid columns / DOM elements.
+        * **`completion`** - completion block / function will be called when we find matched column to mouse position.
 
+* #### **createColumnCopy**
+    _Method is adding copy of dragged column to document body._ 
+
+    * Parameters: 
+        * **`event`** - Described in Drag & drop docs linked above.
+        * **`gridColumn`** - grid column / DOM element.
+
+* #### **insertIDToColumnsIDCookie**
+    _Method is updating cookies with newly inserted column id._ 
+
+    * Parameters: 
+        * **`index`** - Index of newly inserted column to grid columns.
+
+* #### **removeIDFromColumnsIDCookie**
+    _Method is removing column ID from cookies._
+    
+* #### **removeColumnCopy**
+    _Method is removing copy of dragged column from document body._
+        
+* #### **determinateDraggedColumnPositionState**
+    _Method is checking if the dragged column (mouse position) is in first half of the column bellow or in second half._
+    
+    * Parameters: 
+        * **`clientX`** - x position of mouse.
+        * **`gridColumn`** - grid column / DOM element.
+
+* #### **addBorderToRightNeighbour**
+    _Method is adding right border to column next to._
+        
+    * Parameters: 
+        * **`neighbour`** - grid column next to column.
+        
+* #### **getGhostColumn**
+    _Method is adding right border to column next to._
+        
+    * Returns: 
+        * **`ghostColumn`** - ghost column data model.
