@@ -22,16 +22,6 @@ it will be related to placeholder which appears below mouse on drag actions.
     * type: **``Array``**,
     * required: **``true``**,
     
-* #### **currentPage**
-    _Current displaying grid page - pagination._
-    * type: **``Number``**,
-    * required: **``true``**,
-    
-* #### **numberOfDisplayingRows**
-    _The number of how many rows we will display at each page._
-    * type: **``Number``**,
-    * required: **``true``**,
-    
 ### Data:
 
 * #### **ghostColumnIndex**
