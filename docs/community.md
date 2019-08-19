@@ -1,4 +1,6 @@
-# Contribution
+# Community
+
+* [Contribution](community/contribution.md)
 
 
 ## Contributing to Ergonode code

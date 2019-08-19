@@ -1,4 +1,4 @@
-# Architecture and technologies
+# Architecture
 
 ## Technology stack
 
