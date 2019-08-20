@@ -1,4 +1,8 @@
-# Quality and code standards 
+# Quality
 
-( to be completed)
+## Coding standards
+---
+
+## Tests
+---
 
