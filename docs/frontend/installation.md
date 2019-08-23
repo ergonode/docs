@@ -4,7 +4,7 @@ Run **backend** part to make the application work properly.
 
 <div class="Alert Alert--warning">
 
-1. First visit [backend installation](backend/installation_and_configuration)<br>
+1. First visit [backend installation](backend/installation)<br>
 2. Use backend URL in your `.env` file or use [cli commend](frontend/installation?id=configuration).
    
 </div>

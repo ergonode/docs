@@ -1,17 +1,5 @@
 # Architecture and technologies
 
-## Technology stack
-
-|         |                                                                       |
-|------------------|------------------------------------------------------------------------------------------------------------------------------|
-| Language         | PHP 7.2                                                                                                                      |
-| Framework        | Symfony 4.1                                                                                                                  |
-| Database         | Postgres 10  + uuid-ossp, ltree                                                                                              |
-| Message Broker   | RabbitMQ 3.6.10                                                                                                              |
-| Testing          | PHPunit 7.2 + ctype, iconv, json, pdo,curl, libxml, xml, xmlrpc, pdo_pgsql, mbstring, intl, fileinfo, bcmath, amqp Behat 3.4 |
-| Additional tools | Phing 2.16                                                                                                                   |
-
-
 ## Hexagonal Architecture
 
 In Ergonode is used Hexanogal architecture.
