@@ -59,7 +59,7 @@ Example:
 
 /**
  * Copyright © Bold Brand Commerce Sp. z o.o. All rights reserved.
- * See license.txt for license details.
+ * See LICENSE.txt for license details.
  */
 
 namespace Ergonode;
@@ -70,4 +70,4 @@ namespace Ergonode;
 To make life easier we use a [Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer) which provides validation 
 of code stylistics as you type.
  
-Symfony Coding Standard compliance ensures `escapestudios/symfony2-coding-standard` vendor.
+Symfony Coding Standards compliance ensures `escapestudios/symfony2-coding-standard` vendor.
