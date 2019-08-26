@@ -16,35 +16,27 @@ Ergonode uses [Symfony](https://symfony.com/) so it is natural that we apply to
 
 ### Multiline inheritance and implementations
 
-``
-Declare the class inheritance and all the implemented interfaces on the same line as the class name
-``
+> Declare the class inheritance and all the implemented interfaces on the same line as the class name
 
 PSR-12 change it, now we can use multilines.
 
 ### Multiline arguments
 
-``
-Declare all the arguments on the same line as the method/function name, no matter how many arguments there are
-``
+> Declare all the arguments on the same line as the method/function name, no matter how many arguments there are
 
 In our opinion this is not the best way. PSR-12 change it.
 
 ### Aliases
 
-``
-Add class aliases for public services (e.g. alias Symfony\Component\Something\ClassName to something.service_name).
-``
+> Add class aliases for public services (e.g. alias Symfony\Component\Something\ClassName to something.service_name).
 
 From Symfony 4 we can use interfaces. Aliasing it's not neccesery.
 
 ### Author
 
-``
-When adding a new class or when making significant changes to an existing class, an @author tag with personal contact 
+> When adding a new class or when making significant changes to an existing class, an @author tag with personal contact 
 information may be added, or expanded. Please note it is possible to have the personal contact information updated or 
 removed per request to the core team
-``
 
 Do not use `@author` tag. Git can show the author of the changes.
 
