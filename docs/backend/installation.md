@@ -7,7 +7,6 @@ This manual is prepared for the developer installation
 </div>
 
 ## Requirements
----
 
 | Name                  | Version                           |
 |-----------------------|-----------------------------------|
@@ -18,7 +17,6 @@ This manual is prepared for the developer installation
 *Use for running application in asynchronous mode.
 
 ## Quick Start
----
 
 Clone [backend project repository][repository] to your local directory:
 ```
@@ -27,7 +25,7 @@ git clone git@github.com:ergonode/backend.git
 
 <div class="Alert Alert--info">
 
-Application on default starts on **development** branch
+Application on default starts on **develop** branch
 
 </div>
 
@@ -37,7 +35,6 @@ git checkout master
 ``` 
 In .env file you need to configure database connection
 
-
 Open your terminal in local project, and execute:
 ```
 composer install
@@ -46,14 +43,15 @@ In .env file you need to configure database connection
 ```
 DATABASE_URL=pgsql://db_user:db_password@127.0.0.1:5432/db_name
 ```
-Generate keys
+Generate keys for Json Web Token
 ```
 openssl genrsa -out config/jwt/private.pem -aes256 4096
 openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
 ```
-While executing above commends you would be asked about password. This password needs to be saved then in .env file in line `JWT_PASSPHRASE=yourpassword`
+While executing above commands you would be asked about password. This password needs to be saved then in .env file 
+in line `JWT_PASSPHRASE=yourpassword`
 
-In terminal execute command which configure application (Available phing commands):
+In terminal execute command which configure application (available phing commands):
 ```
 bin/phing build
 ```
@@ -74,16 +72,26 @@ bin/console s:r
 
 <div class="Alert Alert--warning">
 
-to run frontend application see [Frontend installation](frontend/installation)
+To run frontend application see [frontend installation](frontend/installation)
 
 </div>
 
+## Default user
 
+If you fill database with basic data:
 
-Default user: login: test@ergonode.com password: 123
+| Role       | Login             | Password |
+|------------|-------------------|----------|
+| Superadmin | test@ergonode.com |123       |
 
+If you fill database with development data:
 
-      
+| Role             | Login                         | Password |
+|------------------|-------------------------------|----------|
+| Superadmin       | superadmin@ergonode.com       |123       |
+| Admin            | admin@ergonode.com            |123       |
+| Data Inputer     | data_inputer@ergonode.com     |123       |
+| Category Manager | category_manager@ergonode.com |123       |
 
 # .ENV Configuration
 
@@ -103,7 +111,7 @@ Configuration is available in .env file in main directory.
 | CORS_ALLOW_ORIGIN     | Cors access address                      | ^http?://localhost:3000\|$                   |    |
 
 
-# Phing - commands
+# Phing commands
 
 Those command are available only in development mode
 
