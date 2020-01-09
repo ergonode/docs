@@ -14,7 +14,7 @@ Once you are doing request for grid you are using following parameters to config
 
 | Parameter | Description                         | Required | Data type | Allowed input                                                                             | Default value |
 |-----------|-------------------------------------|----------|-----------|-------------------------------------------------------------------------------------------|---------------|
-| Limit     | Max number of return records        | No       | int       |  \>= 0 , < 300                                                                            | 50            |
+| limit     | Max number of return records        | No       | int       |  \>= 0 , < 300                                                                            | 50            |
 | Offset    | First record number                 | No       | int       |  \>= 0                                                                                    | 0             |
 | field     | Name of the column used for sorting | No       | string    | Column name                                                                               |               |
 | order     | Sorting order                       | No       | string    | DESC, ASC                                                                                 | DESC          |

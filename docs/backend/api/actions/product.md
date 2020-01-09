@@ -1,11 +1,6 @@
 # Product
+
 ----
-## GET /api/v1/{language}/templates
-
-Action which retrieves grid of products based on parameters.
-
-
-More info you can find here: [Grid](backend/api/objects/grid.md)
 
 ## POST /api/v1/{language}/products
 
@@ -44,7 +39,7 @@ Action adds product based on parameters.
 ```
 
 
-## GET /api/v1/{language}/product/{product}
+## GET /api/v1/{language}/products/{product}
 
 Action retrieves product object based on product Id given. 
 
@@ -53,7 +48,7 @@ Action retrieves product object based on product Id given.
 | Parameter |  Type  | Required | Format |   Additional  | Example |
 |:---------:|:------:|:--------:|:------:|:-------------:|:-------:|
 |  language | string |    yes   |        | Language code |    PL   |
-|  attribute| string |    yes   | uuid   | Product Id  | 683d8fc8-0d2e-5626-b973-6935c02044eb|
+|  product | string |    yes   | uuid   | Product Id  | 683d8fc8-0d2e-5626-b973-6935c02044eb|
 
 
 **Response**
@@ -91,41 +86,6 @@ Action retrieves product object based on product Id given.
 }
 ```
 
-
-
-## POST /api/v1/{language}/product/
-
-Action adds product based on parameters.
-
-**URL parameters**
-
-| Parameter |  Type  | Required |   Additional  | Example |
-|:---------:|:------:|:--------:|:-------------:|:-------:|
-|  language | string |    yes   | Language code |    PL   |
-
-
-**formData parameters**
-
-| Parameter | Type   | Required |Format| Additional information | Example |
-|-----------|--------|----------|------|------------------------|---------|
-| sku       | string | yes      |      | Product Sku            | TNE/O90014/SZ1 |
-| templateId| string | yes      |uuid  | Temlate Id            | 1f67c19f-f897-5f66-a2a6-bb338ab2dad5|
-
-**Response**
-
-| Code | Description       | Response                                    |
-|------|-------------------|---------------------------------------------|
-| 201  | Create product    | Product Id |
-| 400  | Form validation error | [Error](backend/api/objects/error.md)        |
-
-**Response example**
-
-```
-{
-  "id": "b0509b2f-7037-4786-a9a6-b675eac0493a"
-}
-```
-
 ______________________________________________________________________________________
 
 ## PUT /api/v1/{language}/products/{product}
@@ -138,7 +98,7 @@ Action which updates product object.
 | Parameter |  Type  | Required | Format |   Additional  | Example |
 |:---------:|:------:|:--------:|:------:|:-------------:|:-------:|
 |  language | string |    yes   |        | Language code |    PL   |
-|  attribute| string |    yes   | uuid   | Product Id  | 683d8fc8-0d2e-5626-b973-6935c02044eb|
+|  product | string |    yes   | uuid   | Product Id  | 683d8fc8-0d2e-5626-b973-6935c02044eb|
 
 
 
@@ -156,14 +116,56 @@ Action which updates product object.
 
 | Code | Description       | Response                                    |
 |------|-------------------|---------------------------------------------|
-| 201  | Product updated   | Product Id                 |
+| 204  | No content - Successful product update      | Empty                                   |
 | 400  | form validation error         | [Error](backend/api/objects/error.md)        |
 
 
-**Response example**
+_______________________________________________________________________________________
 
-```
-{
-"id": "b0509b2f-7037-4786-a9a6-b675eac0493a"
-}
-```
+## DELETE /api/v1/{language}/products/{product}
+
+Action deletes product for given Id.
+
+**URL parameters**
+
+| Parameter |  Type  | Required | Format |   Additional  | Response example |
+|:---------:|:------:|:--------:|:------:|:-------------:|:-------:|
+|  product | uuid |    yes   |        | Product Id  |    683d8fc8-0d2e-5626-b973-6935c02044eb   |
+|  language | string |    yes   | uuid   |Language code  |    PL   |
+
+**Response**
+
+| Code | Description                                     | Response                             |
+|------|-------------------------------------------------|--------------------------------------|
+| 204  | No content - Successful removing product      | Empty                                   |
+| 400  | Bad Request - Invalid product id              | [Error](backend/api/objects/error.md) |
+| 404  | Not found - Product not exists                | [Error](backend/api/objects/error.md) |
+| 405  | Method Not Allowed - Product can’t be deleted | [Error](backend/api/objects/error.md) |
+
+_______________________________________________________________________________________
+
+
+## GET /api/v1/{language}/products
+
+Action which retrieves grid of product objects based on parameters.
+
+
+More info you can find here: [Grid](backend/api/objects/grid.md)
+
+_______________________________________________________________________________________
+
+
+## GET /api/v1/{language}/products/{product}/history
+
+Action which retrieves grid of product history objects based on parameters.
+
+**URL parameters**
+
+| Parameter |  Type  | Required | Format |   Additional  | Response example |
+|:---------:|:------:|:--------:|:------:|:-------------:|:-------:|
+|  product | uuid |    yes   |        | Product Id  |    683d8fc8-0d2e-5626-b973-6935c02044eb   |
+|  language | string |    yes   | uuid   |Language code  |    PL   |
+
+
+
+More info you can find here: [Grid](backend/api/objects/grid.md)

@@ -1,15 +1,13 @@
 # Template_element
 
-**Response**
 
 | Key           | Type |Description  | Required |
 |---------------|------|--------------|----------|
-| id       | string      |  Attribute Id            | Yes      |
-| x     |  int   |   X position of attribute on template      | Yes      |
-| y     |  int   |   Y position of attribute on template      | Yes      |
-| width    |  int |    Width of attribute on template       | Yes      |
-| height    | int   | Height of attribute on template       | Yes      |
-| required   |  int    |  Is element required           | No      |
+| position       | [Element_position](backend/api/objects/element_position.md)|      |  Position            | Yes      |
+| size       | [Element_size](backend/api/objects/element_size.md)|      |  Attribute Id            | Yes      |
+| variant   |  string    | element variant           | Yes      |
+| type   |  string    |  element type           | Yes      |
+| properties   |  [Element_properties](backend/api/objects/element_properties.md)    |  element properties           | Yes      |
 
 
 **Example**

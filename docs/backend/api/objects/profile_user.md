@@ -1,4 +1,4 @@
-# Navigation_user
+# Navigation user
 
 **Response**
 
@@ -10,16 +10,25 @@
 | email |  string  |    User Email       | Yes      |
 | language    | string    | User Language            | Yes      |
 | avatar_id     | string    | User Avatar Id             | Yes      |
+| role     | string    | User Role             | Yes      |
+| privileges     | array    | List of user privileges             | Yes      |
 
 
 **Example**
 ```
 {
-  "id": "2404385c-e7c8-40f9-a393-084d16847d7f",
-  "first_name": "Jon",
-  "last_name": "Dove",
-  "email": "test@bold.net.pl",
-  "language": "EN",
-  "avatar_id": null
+    "id": "1d0d73c8-b5c2-5083-bbb1-f6740fa59a6d",
+    "first_name": "Johnny",
+    "last_name": "Bravo",
+    "email": "test@ergonode.com",
+    "language": "EN",
+    "avatar_id": null,
+    "role": "Superadmin",
+    "privileges": [
+        "READER_CREATE",
+        "READER_READ",
+        "READER_UPDATE",
+        "READER_DELETE",
+    ]
 }
 ```
