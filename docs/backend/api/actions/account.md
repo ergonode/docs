@@ -69,7 +69,7 @@ Actions which updates role object.
 
 | Code | Description       | Response                                    |
 |------|-------------------|---------------------------------------------|
-| 204  | Role updated   | Empty                |
+| 204  | No content - Successful role updated   | Empty                |
 | 404  | Not found         | [Error](backend/api/objects/error.md)        |
 
 

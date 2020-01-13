@@ -59,7 +59,7 @@ Action updates default workflow
 |:------------:|:--------------:|:--------:|:---------------------------:|:--------------------------------------------------------:|
 |     code      |    string      |    yes   |          status code        |                         in progress                          |
 | statuses   |    array  |    no   |          workflow statuses       |   "statuses": ["new", "draft", "to approve", "ready to publish", "to correct", "published" ] |
-| transitions  |   array    |    no    |          workflow transitions  |      [Transition](backend/api/objects/transiton.md) |
+| transitions  |   array    |    no    |          workflow transitions  |      [Transition](backend/api/objects/transition.md) |
 
  
  
@@ -92,7 +92,7 @@ Action adds workflow based on parameters.
 |:------------:|:--------------:|:--------:|:---------------------------:|:--------------------------------------------------------:|
 |     code      |    string      |    yes   |          status code        |                         in progress                          |
 | statuses   |    array  |    no   |          workflow statuses       |   "statuses": ["new", "draft", "to approve", "ready to publish", "to correct", "published" ] |
-| transitions  |   array    |    no    |          workflow transitions  |      [Transition](backend/api/objects/transiton.md) |
+| transitions  |   array    |    no    |          workflow transitions  |      [Transition](backend/api/objects/transition.md) |
 
 
 
@@ -138,7 +138,7 @@ Action which updates default status
 ______________________________________________________________________________________
 
 
-## GET  /api/v1/{language}/workflow/default/transitions/{source}/{destination}
+## GET /api/v1/{language}/workflow/default/transitions/{source}/{destination}
 
 Action which retrieves transition based on given source and destination status
 
@@ -147,8 +147,8 @@ Action which retrieves transition based on given source and destination status
 | Parameter |  Type  | Required |   Additional  | Example |
 |:---------:|:------:|:--------:|:-------------:|:-------:|
 |  language | string |    yes   | Language code |    PL   |
-|  source | string |    yes   | Source status code  | new |
-|  destination | string |    yes | Destination status code  | draft |
+|  source | string |    yes   | Source status id  | 1143a5e9-11ec-5b47-b881-4099d5d066a2 |
+|  destination | string |    yes | Destination status id  | 1253f558-e921-440e-8ae5-15104b886859 |
 
  **Response**
  
@@ -177,22 +177,49 @@ Action which retrieves transition based on given source and destination status
 
 ______________________________________________________________________________________
 
-## DELETE /api/v1/{language}/status/{status}
+## PUT  /api/v1/{language}/workflow/default/transitions/{source}/{destination}
 
-Action deletes status for given Id.
+Action which updates transitions
+
+*URL parameters**
+
+| Parameter |  Type  | Required |   Additional  | Example |
+|:---------:|:------:|:--------:|:-------------:|:-------:|
+|  language | string |    yes   | Language code |    PL   |
+|  source | string |    yes   | Source status id  | 1143a5e9-11ec-5b47-b881-4099d5d066a2 |
+|  destination | string |    yes | Destination status id  | 1253f558-e921-440e-8ae5-15104b886859 |
+
+
+**Request body parameters**
+
+|   Parameter  |    Type        | Required |    Additional information   |                          Example                         |
+|:------------:|:--------------:|:--------:|:---------------------------:|:--------------------------------------------------------:|
+| condition_set  |   uuid    |    no    |          condition set  |     ["1143a5e9-11ec-5b47-b881-4099d5d066a2" |
+| roles  |   array    |    no    |          list of role ids  |     "roles": ["1143a5e9-11ec-5b47-b881-4099d5d066a2","1253f558-e921-440e-8ae5-15104b886859"] |
+
+
+
+______________________________________________________________________________________
+
+
+
+## DELETE /api/v1/{language}/workflow/default/transitions/{source}/{destination}
+
+Action deletes transition for given statuses.
 
 **URL parameters**
 
 | Parameter |  Type  | Required | Format |   Additional  | Response example |
 |:---------:|:------:|:--------:|:------:|:-------------:|:-------:|
-|  status | uuid |    yes   |        | status Id  |    683d8fc8-0d2e-5626-b973-6935c02044eb   |
 |  language | string |    yes   | uuid   |Language code  |    PL   |
+|  source | string |    yes   | uuid |Source status id  | 1143a5e9-11ec-5b47-b881-4099d5d066a2 |
+|  destination | string |    yes | uuid | Destination status id  | 1253f558-e921-440e-8ae5-15104b886859 |
 
 **Response**
 
 | Code | Description                                     | Response                             |
 |------|-------------------------------------------------|--------------------------------------|
-| 204  | No content - Successful removing status      | Empty                                   |
+| 204  | No content - Successful removing transition      | Empty                                   |
 | 400  | Bad Request - Invalid status id              | [Error](backend/api/objects/error.md) |
 | 404  | Not found - status not exists                | [Error](backend/api/objects/error.md) |
 | 405  | Method Not Allowed - status can’t be deleted | [Error](backend/api/objects/error.md) |
@@ -200,6 +227,55 @@ Action deletes status for given Id.
 
 
 ______________________________________________________________________________________
+
+## GET /api/v1/{language}/workflow/default/transitions
+
+Action which retrieves grid of transitions objects based on parameters.
+
+
+More info you can find here: [Grid](backend/api/objects/grid.md)
+
+_______________________________________________________________________________________
+
+## POST /api/v1/{language}/workflow/default/transitions
+
+Action adds transition based on parameters.
+
+**URL parameters**
+
+| Parameter |  Type  | Required |   Additional  | Example |
+|:---------:|:------:|:--------:|:-------------:|:-------:|
+|  language | string |    yes   | Language code |    PL   |
+
+
+**Request body parameters**
+
+|   Parameter  |    Type        | Required |    Additional information   |                          Example                         |
+|:------------:|:--------------:|:--------:|:---------------------------:|:--------------------------------------------------------:|
+|  source | string |    yes   | Source status id  | 1143a5e9-11ec-5b47-b881-4099d5d066a2 |
+|  destination | string |    yes | Destination status id  | 1253f558-e921-440e-8ae5-15104b886859 |
+| condition_set  |   uuid    |    no    |          condition set  |     ["1143a5e9-11ec-5b47-b881-4099d5d066a2"] |
+| roles  |   array    |    no    |          list of role ids  |     "roles": ["1143a5e9-11ec-5b47-b881-4099d5d066a2","1253f558-e921-440e-8ae5-15104b886859"] |
+
+
+**Response**
+
+| Code | Description       | Response                                    |
+|------|-------------------|---------------------------------------------|
+| 201  | Returns status Id| "9b0ceb29-26ac-4852-a602-6e5680a3a029"      |
+| 400  | Not found         | [Error](backend/api/objects/error.md)        |
+
+
+**Response example**
+
+```
+{
+"id": "b0509b2f-7037-4786-a9a6-b675eac0493a"
+}
+```
+
+_______________________________________________________________________________________
+
    
 ## POST /api/v1/{language}/status
 
@@ -238,6 +314,7 @@ Action adds status based on parameters.
 }
 ```
 
+_______________________________________________________________________________________
 
 ## GET /api/v1/{language}/status/{status}
 

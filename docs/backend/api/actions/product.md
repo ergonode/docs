@@ -63,26 +63,48 @@ Action retrieves product object based on product Id given.
 
 ```
 {
-   "sequence": 1,
-   "events": [],
-   "id": "f935325b-5492-4ff4-8646-3d1cdef3e042",
-   "sku": "TRU/015M/CG",
-   "design_template_id": "1f67c19f-f897-5f66-a2a6-bb338ab2dad5",
-   "status": {
-     "value": "DRAFT"
-   },
-   "version": 1,
-   "attributes": {
-     "2f4ed4ef-8e53-5db8-9161-560147dc459a": {
-       "value": "RU_015M_CG.jpg",
-       "type": "string"
-     },
-     "504c203c-0ce7-5b49-b560-41e2acbeed37": {
-       "value": "RU_015M_MAIN.jpg",
-       "type": "string"
-     }
-   },
-   "categories": []
+    "id": "363b3f66-4468-5840-bdd2-07aa3a21c11c",
+    "sku": "SKU_1000",
+    "attributes": {
+        "esa_status": {
+            "type": "string",
+            "value": "new"
+        },
+        "esa_template": {
+            "type": "string",
+            "value": "d346465c-a4fe-4564-a149-a0e8311013a3"
+        },
+        "esa_created_at": {
+            "type": "string",
+            "value": "2020-01-09 15:42:20"
+        }
+    },
+    "categories": [],
+    "_links": {
+        "edit": {
+            "href": "/api/v1/EN/products/363b3f66-4468-5840-bdd2-07aa3a21c11c",
+            "method": "PUT"
+        },
+        "delete": {
+            "href": "/api/v1/EN/products/363b3f66-4468-5840-bdd2-07aa3a21c11c",
+            "method": "DELETE"
+        }
+    },
+    "status": {
+        "attribute_id": "21aa907d-35de-5425-8980-dfb6f7db6606",
+        "name": "New",
+        "code": "new",
+        "color": "#33373E"
+    },
+    "workflow": [
+        {
+            "name": null,
+            "transition": "",
+            "code": "done",
+            "color": "#AA00FF"
+        }
+    ],
+    "design_template_id": "d346465c-a4fe-4564-a149-a0e8311013a3"
 }
 ```
 

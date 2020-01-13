@@ -3,7 +3,7 @@
 
 ## POST /api/v1/multimedia/upload
 
-Action for uplading multimedia.
+Action for uploading multimedia.
 
 **formData parameters**
 
@@ -28,7 +28,7 @@ Action for uplading multimedia.
 
 ## GET /api/v1/multimedia/{multimedia}
 
-Actions tereives mulimedia object based on multimedia ID given.
+Actions retrieves multimedia object based on multimedia ID given.
 
 
 **URL parameters**

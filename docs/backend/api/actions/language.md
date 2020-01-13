@@ -76,7 +76,7 @@ Action which updates languages
 
 | Code | Description       | Response                                    |
 |------|-------------------|---------------------------------------------|
-| 202  | No content - Successful updated languages   | Empty                        |
+| 204  | No content - Successful updated languages   | Empty                        |
 | 400  | Form Validation Error | [Error](backend/api/objects/error.md)                    |
 
 

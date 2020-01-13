@@ -103,7 +103,7 @@ Action updates category based on category Id given.
 
 | Code | Description       | Response                                    |
 |------|-------------------|---------------------------------------------|
-| 204  |Returns category Id| Empty |
+| 204  |No content - Successful update category | Empty |
 | 400  | Form validation error| [Error](/api/objects/error.md)      |
 
 _______________________________________________________________________________________

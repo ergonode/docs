@@ -70,7 +70,7 @@ Action adds attribute.
 |     type     |                        string                        |    yes   |            |        | attribute type (more types) |                          SELECT                          |
 |    groups    |                         array                        |    yes   |            |        |       attribute group       |        [ "9b0ceb29-26ac-4852-a602-6e5680a3a029" ]        |
 | multilingual |                         bool                         |    yes   |            |        |  is attribute multilingual  |                           true                           |
-|  parameters  |         [Translation](backend/api/objects/translation.md)        |    no    |            |        |     attribute parameters    |               { "format": "YYYY-MM-DDDD" }               |
+|  parameters  |         object        |    no    |            |        |     attribute parameters    |               { "format": "YYYY-MM-DDDD" }               |
 |     label    |         [Translation](backend/api/objects/translation.md)        |    yes   |            |        |       attribute label       |       {"PL" :"Polish label", "EN":"English label"}       |
 |     hint     |         [Translation](backend/api/objects/translation.md)    |    no    |            |        |        attribute hint       |        {"PL" :"Polish hint", "EN":"English hint"}        |
 |  placeholder |         [Translation](backend/api/objects/translation.md)        |    yes   |            |        |    attribute placeholder    | {"PL" :"Polish placeholder", "EN":"English placeholder"} |
@@ -111,7 +111,7 @@ Action updates attribute for given Id.
 |     type     |                        string                        |    yes   |            |        | attribute type (more types) |                          SELECT                          |
 |    groups    |                         array                        |    yes   |            |        |       attribute group       |        [ "9b0ceb29-26ac-4852-a602-6e5680a3a029" ]        |
 | multilingual |                         bool                         |    yes   |            |        |  is attribute multilingual  |                           true                           |
-|  parameters  |         [Translation](backend/api/objects/translation.md)        |    no    |            |        |     attribute parameters    |               { "format": "YYYY-MM-DDDD" }               |
+|  parameters  |       object       |    no    |            |        |     attribute parameters    |               { "format": "YYYY-MM-DDDD" }               |
 |     label    |         [Translation](backend/api/objects/translation.md)        |    yes   |            |        |       attribute label       |       {"PL" :"Polish label", "EN":"English label"}       |
 |     hint     |         [Translation](backend/api/objects/translation.md)    |    no    |            |        |        attribute hint       |        {"PL" :"Polish hint", "EN":"English hint"}        |
 |  placeholder |         [Translation](backend/api/objects/translation.md)        |    yes   |            |        |    attribute placeholder    | {"PL" :"Polish placeholder", "EN":"English placeholder"} |
@@ -179,7 +179,7 @@ Action retrieves attribute group object based on attribute group Id given.
 
 | Code | Description       | Response                                    |
 |------|-------------------|---------------------------------------------|
-| 200  | Returns attribute group | [Error](backend/api/objects/error.md)  |
+| 200  | Returns attribute group | [Attribute group](backend/api/objects/attribute_group.md)  |
 | 404  | Not found         | [Error](backend/api/objects/error.md)        |
 
 
@@ -257,6 +257,7 @@ Action updates attribute group for given Id.
 **URL parameters**
 
 | Parameter |  Type  | Required | Format |   Additional  | Response example |
+|:---------:|:------:|:--------:|:------:|:-------------:|:-------:|
 |  group | string |    yes   |        | Attribute Group Id  |    683d8fc8-0d2e-5626-b973-6935c02044eb   |
 |  language| string |    yes   | uuid   |Language code  |    PL   |
 
