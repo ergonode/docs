@@ -10,7 +10,7 @@ This manual is prepared for the developer installation
 
 | Name                  | Version                           |
 |-----------------------|-----------------------------------|
-| Language              | Php >= 7.2                        |
+| Language              | Php >= 7.4                        |
 | Database              | Posgress >= 10                    |
 | Message Broker*       | RabbitMQ >= 3.6.10                |  
 
