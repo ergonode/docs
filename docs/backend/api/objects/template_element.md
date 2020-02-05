@@ -1,26 +1,32 @@
 # Template_element
 
-**Response**
 
 | Key           | Type |Description  | Required |
 |---------------|------|--------------|----------|
-| id       | string      |  Attribute Id            | Yes      |
-| x     |  int   |   X position of attribute on template      | Yes      |
-| y     |  int   |   Y position of attribute on template      | Yes      |
-| width    |  int |    Width of attribute on template       | Yes      |
-| height    | int   | Height of attribute on template       | Yes      |
-| required   |  int    |  Is element required           | No      |
+| position       | [Element_position](backend/api/objects/element_position.md)|       Position            | Yes      |
+| size       | [Element_size](backend/api/objects/element_size.md)|       Size          | Yes      |
+| variant   |  string    | element variant           | Yes      |
+| type   |  string    |  element type           | Yes      |
+| properties   |  [Element_properties](backend/api/objects/element_properties.md)    |  element properties           | Yes      |
 
 
 **Example**
 
 ```
  {
-      "id": "67696e17-586b-4ade-b9c1-a4b57ce564a0",
-      "x": 0,
-      "y": 0,
-      "width": 2,
-      "height": 1,
-      "required": 1
-    }
+            "position": {
+                "x": 0,
+                "y": 0
+            },
+            "size": {
+                "width": 2,
+                "height": 1
+            },
+            "properties": {
+                "variant": "attribute",
+                "attribute_id": "e3f236d1-0e52-5804-be5b-096bbe225fda",
+                "required": true
+            },
+            "type": "text"
+        }
 ```

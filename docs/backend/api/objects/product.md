@@ -6,38 +6,59 @@
 |---------------|------|--------------|----------|
 | id       | string      |  Product Id            | Yes      |
 | sku     |  string   |   Product sku           | Yes      |
-| design_template_id     |  string   |   Template Id           | Yes      |
-| status    |  array  |    Product Status          | Yes      |
-| version | int    | Product Version          | Yes      |
 | attributes     | array    | Product attributes      | Yes      |
 | categories| array   | Product categories          | Yes      |
+| _links| link objects   | List of available links        | Yes      |
+| status    |  [Status](backend/api/objects/status.md)  |    Product Status          | Yes      |
+| workflow    |  list of workflows  |    workflows          | Yes      |
+| design_template_id     |  string   |   Template Id           | Yes      |
 
 
 
 **Example**
 ```
 {
-  "id": "b1a53322-3054-4ef0-9855-a01127549fe1",
-  "sku": "SKU_470290254_94",
-  "design_template_id": "4d07dad6-cde3-4d4d-aac8-1e510bc4bdf4",
-  "status": {
-    "value": "DRAFT"
-  },
-  "version": 1,
- "attributes": {
-    "color": {
-      "value": {
-        "EN": "Green"
-      },
-      "type": "translation"
+    "id": "363b3f66-4468-5840-bdd2-07aa3a21c11c",
+    "sku": "SKU_1000",
+    "attributes": {
+        "esa_status": {
+            "type": "string",
+            "value": "new"
+        },
+        "esa_template": {
+            "type": "string",
+            "value": "d346465c-a4fe-4564-a149-a0e8311013a3"
+        },
+        "esa_created_at": {
+            "type": "string",
+            "value": "2020-01-09 15:42:20"
+        }
     },
-    "pattern": {
-      "value": {
-        "EN": "plane"
-      },
-      "type": "translation"
+    "categories": [],
+    "_links": {
+        "edit": {
+            "href": "/api/v1/EN/products/363b3f66-4468-5840-bdd2-07aa3a21c11c",
+            "method": "PUT"
+        },
+        "delete": {
+            "href": "/api/v1/EN/products/363b3f66-4468-5840-bdd2-07aa3a21c11c",
+            "method": "DELETE"
+        }
     },
-  "categories": []
-  }
+    "status": {
+        "attribute_id": "21aa907d-35de-5425-8980-dfb6f7db6606",
+        "name": "New",
+        "code": "new",
+        "color": "#33373E"
+    },
+    "workflow": [
+        {
+            "name": null,
+            "transition": "",
+            "code": "done",
+            "color": "#AA00FF"
+        }
+    ],
+    "design_template_id": "d346465c-a4fe-4564-a149-a0e8311013a3"
 }
 ```
