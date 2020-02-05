@@ -2,6 +2,7 @@
 
 
 * [Basic information](basic_info.md)
+* [Docker installation](docker-installation.md)
 * [Backend](backend.md)
 * [Frontend](frontend.md)
 * [Community](community.md)
