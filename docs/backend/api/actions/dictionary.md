@@ -1,4 +1,5 @@
 # Dictionary
+
 ----
 
 ## GET /api/v1/{language}/dictionary/languages
@@ -30,6 +31,92 @@ Action retrieves dictionary collection for languages.
 ```
 
 _______________________________________________________________________________________
+
+## GET /api/v1/{language}/dictionary/privileges
+
+Action retrieves dictionary collection for privileges.
+
+**URL parameters**
+
+| Parameter |  Type  | Required |   Additional  | Example |
+|:---------:|:------:|:--------:|:-------------:|:-------:|
+|  language | string |    yes   | Language code |    PL   |
+
+**Response**
+
+| Code | Description       | Response                                    |
+|------|-------------------|---------------------------------------------|
+| 200  | Returns collection of privileges | [Privileges](backend/api/objects/privileges.md)                              |
+| 404  | Not found         | [Error](backend/api/objects/error.md)        |
+
+**Response example**
+
+```
+ {
+        "name": "Role",
+        "description": "",
+        "privileges": {
+            "create": "USER_ROLE_CREATE",
+            "read": "USER_ROLE_READ",
+            "update": "USER_ROLE_UPDATE",
+            "delete": "USER_ROLE_DELETE"
+        }
+    },
+    {
+        "name": "User",
+        "description": "",
+        "privileges": {
+            "create": "USER_CREATE",
+            "read": "USER_READ",
+            "update": "USER_UPDATE",
+            "delete": "USER_DELETE"
+        }
+    }
+```
+
+_______________________________________________________________________________________
+
+## GET /api/v1/{language}/dictionary/conditions
+
+Action retrieves dictionary collection for conditions.
+
+**URL parameters**
+
+| Parameter |  Type  | Required |   Additional  | Example |
+|:---------:|:------:|:--------:|:-------------:|:-------:|
+|  language | string |    yes   | Language code |    PL   |
+
+**Query Parameters**
+
+| Parameter | Description                         | Required | Data type | Allowed input                                                                             | Default value |
+|-----------|-------------------------------------|----------|-----------|-------------------------------------------------------------------------------------------|---------------|
+| group     | Condition group                     | No       | string    | segment, workflow                                                                            | segment          |
+
+
+**Response**
+
+| Code | Description       | Response                                    |
+|------|-------------------|---------------------------------------------|
+| 200  | Returns collection of conditions | Condition List                            |
+| 404  | Not found         | [Error](backend/api/objects/error.md)        |
+
+**Response example**
+
+```
+{
+    "ATTRIBUTE_EXISTS_CONDITION": "Attribute exists",
+    "NUMERIC_ATTRIBUTE_VALUE_CONDITION": "Numeric attribute has value",
+    "OPTION_ATTRIBUTE_VALUE_CONDITION": "Option attribute has value",
+    "TEXT_ATTRIBUTE_VALUE_CONDITION": "Text attribute has value",
+    "LANGUAGE_COMPLETENESS_CONDITION": "Product translation completeness",
+    "PRODUCT_COMPLETENESS_CONDITION": "Product completeness",
+    "ROLE_EXACTLY_CONDITION": "User role is exactly",
+    "USER_EXACTLY_CONDITION": "User is exactly"
+}
+```
+
+_______________________________________________________________________________________
+
 
 ## GET /api/v1/{language}/dictionary/currencies
 
@@ -190,7 +277,7 @@ ________________________________________________________________________________
 
 ## GET /api/v1/{language}/dictionary/attribute/types
 
-Action retrieves dictionary collection attribute groups.
+Action retrieves dictionary collection attribute types.
 
 **URL parameters**
 

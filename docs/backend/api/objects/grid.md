@@ -14,7 +14,7 @@ Once you are doing request for grid you are using following parameters to config
 
 | Parameter | Description                         | Required | Data type | Allowed input                                                                             | Default value |
 |-----------|-------------------------------------|----------|-----------|-------------------------------------------------------------------------------------------|---------------|
-| Limit     | Max number of return records        | No       | int       |  \>= 0 , < 300                                                                            | 50            |
+| limit     | Max number of return records        | No       | int       |  \>= 0 , < 300                                                                            | 50            |
 | Offset    | First record number                 | No       | int       |  \>= 0                                                                                    | 0             |
 | field     | Name of the column used for sorting | No       | string    | Column name                                                                               |               |
 | order     | Sorting order                       | No       | string    | DESC, ASC                                                                                 | DESC          |
@@ -71,97 +71,102 @@ Configuration object contains configuration parameters and it is always key-valu
 
 ```
 {
-  "configuration": {
-    "allow_column_resize": false,
-    "allow_column_edit": false,
-    "allow_column_move": false
-  },
-  "columns": [
-    {
-      "id": "id",
-      "type": "TEXT",
-      "label": "Id",
-      "visible": true,
-      "editable": false
+    "configuration": {
+        "allow_column_resize": false,
+        "allow_column_edit": false,
+        "allow_column_move": false
     },
-    {
-      "id": "name",
-      "type": "TEXT",
-      "label": "Name",
-      "visible": true,
-      "editable": false,
-      "filter": {
-        "type": "TEXT"
-      }
-    },
-    {
-      "id": "image",
-      "type": "TEXT",
-      "label": "Icon",
-      "visible": true,
-      "editable": false,
-      "filter": {
-        "type": "TEXT"
-      }
-    },
-    {
-      "id": "group_id",
-      "type": "TEXT",
-      "label": "Group",
-      "visible": true,
-      "editable": false,
-      "filter": {
-        "type": "SELECT",
-        "options": [
-          {
-            "id": "418c48d3-d2c3-4c30-b627-93850c38d59c",
-            "name": "Suggested",
-            "custom": false
-          },
-          {
-            "id": "641c614f-0732-461f-892f-b6df97939599",
-            "name": "My templates",
-            "custom": true
-          }
-        ]
-      }
+    "columns": [
+        {
+            "id": "id",
+            "type": "TEXT",
+            "label": "Id",
+            "visible": true,
+            "editable": false,
+            "deletable": false
+        },
+        {
+            "id": "name",
+            "type": "TEXT",
+            "label": "Name",
+            "visible": true,
+            "editable": false,
+            "deletable": false,
+            "filter": {
+                "type": "TEXT"
+            }
+        },
+        {
+            "id": "image_id",
+            "type": "TEXT",
+            "label": "Icon",
+            "visible": true,
+            "editable": false,
+            "deletable": false,
+            "filter": {
+                "type": "TEXT"
+            }
+        },
+        {
+            "id": "group_id",
+            "type": "TEXT",
+            "label": "Group",
+            "visible": true,
+            "editable": false,
+            "deletable": false,
+            "filter": {
+                "type": "SELECT",
+                "options": [
+                    {
+                        "id": "418c48d3-d2c3-4c30-b627-93850c38d59c",
+                        "name": "Suggested",
+                        "custom": false
+                    },
+                    {
+                        "id": "641c614f-0732-461f-892f-b6df97939599",
+                        "name": "My templates",
+                        "custom": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": "_links",
+            "type": "LINK",
+            "label": null,
+            "visible": false,
+            "editable": false,
+            "deletable": false
+        }
+    ],
+    "collection": [
+        {
+            "id": "d346465c-a4fe-4564-a149-a0e8311013a3",
+            "name": "Template",
+            "image_id": null,
+            "group_id": "418c48d3-d2c3-4c30-b627-93850c38d59c",
+            "_links": {
+                "get": {
+                    "href": "http://127.0.0.1:8000/api/v1/EN/conditionsets/d346465c-a4fe-4564-a149-a0e8311013a3",
+                    "method": "GET"
+                },
+                "edit": {
+                    "href": "http://127.0.0.1:8000/api/v1/EN/conditionsets/d346465c-a4fe-4564-a149-a0e8311013a3",
+                    "method": "PUT"
+                },
+                "delete": {
+                    "href": "http://127.0.0.1:8000/api/v1/EN/conditionsets/d346465c-a4fe-4564-a149-a0e8311013a3",
+                    "method": "DELETE"
+                }
+            }
+        }
+    ],
+    "info": {
+        "offset": 0,
+        "limit": 50,
+        "count": 1,
+        "filtered": 1,
+        "actions": []
     }
-  ],
-  "collection": [
-    {
-      "id": "d865f90d-035c-4b06-8053-b69c8ff3b7cb",
-      "name": "Template_1",
-      "image": "ICON",
-      "group_id": "418c48d3-d2c3-4c30-b627-93850c38d59c"
-    },
-    {
-      "id": "ddef01fc-7d1a-47c1-a67d-1a9b4ea54508",
-      "name": "Template_2",
-      "image": "ICON",
-      "group_id": "418c48d3-d2c3-4c30-b627-93850c38d59c"
-    },
-    {
-      "id": "4814cd5f-c1b5-4096-a4cb-3019ba577ca3",
-      "name": "Template_3",
-      "image": "ICON",
-      "group_id": "418c48d3-d2c3-4c30-b627-93850c38d59c"
-    },
-    {
-      "id": "e33dce66-1ebe-40ff-a462-de8b83faa2c3",
-      "name": "Template_4",
-      "image": "ICON",
-      "group_id": "418c48d3-d2c3-4c30-b627-93850c38d59c"
-    },
-    {
-      "id": "60e68683-9dca-474d-bfae-c8cfa47133eb",
-      "name": "Template_5",
-      "image": "ICON",
-      "group_id": "418c48d3-d2c3-4c30-b627-93850c38d59c"
-    },
-  ],
-  "offset": 0,
-  "limit": 50,
-  "count": 16,
-  "filtered": 16,
 }
 ```
