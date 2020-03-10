@@ -1,4 +1,4 @@
-# How add domain event to aggregate root
+# How to add domain event to aggregate root
 ## Creating event
 If we want to enhance the aggregate with, a new business logic you have to handle it by adding a new domain event.
 Each domain event must implement ```Ergonode\EventSourcing\Infrastructure\DomainEventInterface``` interface.
@@ -77,7 +77,7 @@ The event classes represent business events that have already happened, so it is
 </div>
  
 ## Adding event to aggregate root
-First, we need to add a method that represents business logic that will be linked to our event.
+First, we need to add a method that represents business logic witch will be linked to our event.
 ```php
 /**
  * @var string content

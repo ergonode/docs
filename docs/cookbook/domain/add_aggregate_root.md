@@ -1,4 +1,4 @@
-# How Create own aggregate root
+# How create custom aggregate root
 
 ## Creating aggregate root identifier class
 
@@ -65,7 +65,7 @@ Aggregate root object should always be in correct state, so all necessary parame
     {
     }
 ```
-On next step we need to add Domain event that represent of creating Note object
+On next step we need to add Domain event that represent creating Note object
 ```php
 namespace YourNamespace\YourModule\Domain\Event;
 
@@ -126,7 +126,7 @@ And aggregate root constructor should look like this
         $this->apply(new NoteCreatedEvent($id, $content));
     }
 ```
-And on the end we need to add method that handle our construction event
+In the end we need to add method that handle our construction event
 ```php
 /**
  * @var NoteCreatedEvent $event
