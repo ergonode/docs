@@ -7,15 +7,10 @@
 
 ## Quick start
 
-1. Fork [reporistory](https://github.com/ergonode/docs)
-2. In case that you do not have [node.js](https://nodejs.org/en/download/) installed - install latest stable version
-3. Choose your package manager:
-    1. [npm](https://www.npmjs.com/get-npm)
-    2. [yarn](https://yarnpkg.com/en/docs/install#mac-stable)
-4. Install the **docsify** library globally:
-   `npm i docsify-cli -g`
-5. Start **docsify** server:
-   `docsify serve docs`
+1. Fork [repository](https://github.com/ergonode/docs)
+2. In case that you do not have [node.js](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm) installed - install latest stable version
+3. Start **docsify** server:
+   `npx docsify-cli serve docs`
 
 
 ## About Us

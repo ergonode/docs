@@ -1,7 +1,7 @@
 
-# The Ergonode Module System 
+# How to create a new module
 
-The new module must be compatible with the [architecture] described in [architecture] chapter.
+The new module must be comply with the application [architecture](backend/architecture.md).
 
 ## Folder structure
     
@@ -18,8 +18,8 @@ src/
 ```
 ## Create 
 
-To Create new module you need create a `composer.json` in your main module dir.
-With your requirements for your module.
+To Create new module you need to create a `composer.json` in your module directory `modules/you-module-name/composer.json`.
+Please keep in mind that you have to add all dependencies of your module (e.g. other Ergonode modules, php version)
 
 ```json
 {
@@ -47,7 +47,7 @@ With your requirements for your module.
 
 ```
 
-Next  you need create a new module class which extends `Ergonode\Core\Application\AbstractModule` in `src` folder.
+Next you need create a new module class which extends `Ergonode\Core\Application\AbstractModule` in `your-module-name/src` folder.
 
 ```php
     use Ergonode\Core\Application\AbstractModule;
@@ -60,13 +60,10 @@ Next  you need create a new module class which extends `Ergonode\Core\Applicatio
 
 ``` 
 
-In your application you must add a new class to the array in `config/bundles.php` file
+Last step is adding following line to the array in `erognode/config/bundles.php` file:
 
 ```php
 YourNamespace\YourModule::class => ['all' => true]
 ```
 
-
-[//]: # 
-
-[architecture]: <../backend/architecture.md>
+To make sure that all changes are in place clear cache `bin/console cache:clear`
