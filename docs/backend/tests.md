@@ -33,8 +33,8 @@ For behat you also create tests  according to behat documentation and recommenda
 If You create some module for creating new kind model/entity then you should create `Behat/Context` for possibility 
 creating this model/entity in behat tests.
 
-And we using `Behatch/contexts` extension for behat and you should use this extension for testing your modules.
-You should look  for  `Behatch/contexts` you can find in https://github.com/Behatch/contexts/tree/master/tests/features
+And we using `Behatch/contexts` extension for behat and you should use this extension for testing your modules. 
+You should look examples for `Behatch/contexts`  in https://github.com/Behatch/contexts/tree/master/tests/features.
 And in backend code `module/account/features/account-behatch.feature` and in `module/attribute/features`.
 
 And this example 
