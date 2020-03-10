@@ -1,8 +1,8 @@
-# How create custom aggregate root
+# How to create custom aggregate root
 
 ## Creating aggregate root identifier class
 
-Each aggregate root uses it's own identifier, is simple value object that extends ```Ergonode\SharedKernel\Domain\AggregateId``` class. 
+Each aggregate root uses it's own identifier, it is simple value object that extend ```Ergonode\SharedKernel\Domain\AggregateId``` class. 
 
 ```php
 namespace YourNamespace\YourModule\Domain\Entity;
@@ -131,7 +131,7 @@ In the end we need to add method that handle our construction event
 /**
  * @var NoteCreatedEvent $event
  */
-protected function applyAddProductNoteEvent(NoteCreatedEvent $event): void
+protected function applyNoteCreatedEvent(NoteCreatedEvent $event): void
 {
     $this->content = $event->getContent();
 }

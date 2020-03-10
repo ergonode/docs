@@ -2,8 +2,8 @@
 
 ## Creating domain command
 
-Domain command should represent single transactional business logic.  
-Class that represents is, should implement ```Ergonode\EventSourcing\Infrastructure\DomainCommandInterface```
+Domain command should represents single transactional business logic.  
+This class should implement ```Ergonode\EventSourcing\Infrastructure\DomainCommandInterface```
 
 A domain command should always have a valid state that cannot be changed, that is why the class representing it should be immutable  
 

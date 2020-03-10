@@ -45,7 +45,7 @@ class NoteContentChangedEvent implements DomainEventInterface {
     }
 
     /**
-     * @return AbstractId|ProductId
+     * @return AbstractId|NoteId
      */
     public function getAggregateId(): AbstractId
     {
