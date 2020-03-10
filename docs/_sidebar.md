@@ -4,6 +4,7 @@
         * [New module](cookbook/new_module.md)
         * [Adding aggregate root](cookbook/domain/add_aggregate_root.md)
         * [Adding domain event](cookbook/domain/add_domain_event.md)
+        * [Adding domain command](cookbook/domain/add_command.md)
     * [Architecture](backend/architecture.md)
     * [Installation](backend/installation.md)
     * [Code standards](backend/code_standards.md)
