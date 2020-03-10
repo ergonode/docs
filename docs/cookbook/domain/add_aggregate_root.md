@@ -97,9 +97,9 @@ class NoteCreatedEvent implements DomainEventInterface {
     }
 
     /**
-     * @return AggregateId|ProductId
+     * @return AbstractId|ProductId
      */
-    public function getAggregateId(): AggregateId
+    public function getAggregateId(): AbstractId
     {
         return $this->id;
     }
