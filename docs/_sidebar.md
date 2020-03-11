@@ -1,5 +1,10 @@
 [**Ergonode** ](index.md)
 * [**Backend**](backend.md)
+    * Cookbook
+        * [New module](cookbook/new_module.md)
+        * [Adding aggregate root](cookbook/domain/add_aggregate_root.md)
+        * [Adding domain event](cookbook/domain/add_domain_event.md)
+        * [Adding domain command](cookbook/domain/add_command.md)
     * [Architecture](backend/architecture.md)
     * [Installation](backend/installation.md)
     * [Coding standards](backend/coding_standards.md)
