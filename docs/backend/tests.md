@@ -1,6 +1,3 @@
 # Tests
 
-### PhpUnit
-We must test many topic of functionality.
- 
-### Behat
+( to be completed)
