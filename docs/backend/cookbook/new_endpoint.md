@@ -10,7 +10,7 @@ This file should live in following namespace `Your-module\Application\Controller
 
 If you create a new module and this is your first action you need to add `routes.yml` file to `your-module/src/Resources/config/` directory.
 
-This file should contain something like this:
+This file should look like this:
 
 ```yaml
 ergonode_module-name_api:
@@ -38,7 +38,7 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class CustomNameAction
 ```
-* `name` - just a name of our endpoint 
+* `name` - endpoint name
 * `path` - endpoint address
 * `methods` - what methods are allowed
 * `requirements` - route requirements can be used to make a specific route only match under specific conditions
