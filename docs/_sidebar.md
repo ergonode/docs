@@ -7,7 +7,7 @@
         * [Adding domain command](cookbook/domain/add_command.md)
     * [Architecture](backend/architecture.md)
     * [Installation](backend/installation.md)
-    * [Code standards](backend/code_standards.md)
+    * [Coding standards](backend/coding_standards.md)
     * [Api](backend/api.md)
        * [Actions](backend/api/actions.md)
          * [Account](backend/api/actions/account.md)
