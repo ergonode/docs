@@ -6,6 +6,9 @@
 * [Attribute group](backend/api/objects/attribute_group.md)
 * [Category](backend/api/objects/category.md)
 * [Category body](backend/api/objects/category_body.md)
+* [Collection](backend/api/objects/collection.md)
+* [Collection Element](backend/api/objects/collection_element.md)
+* [Collection Element Type](backend/api/objects/collection_type.md)
 <!--- * [Channel](backend/api/objects/channel.md) --->
 * [Comment](backend/api/objects/comment.md)
 * [Element_position](backend/api/objects/element_position.md)

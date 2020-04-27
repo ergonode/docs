@@ -12,7 +12,7 @@ Ergonode coding standards are based on PSR rules:
 ## Symfony Coding Standards
 
 Ergonode uses [Symfony](https://symfony.com/) so it is natural that we apply to 
-[Symfony Coding Standards](https://symfony.com/doc/4.3/contributing/code/standards.html) but with a few exceptions.
+[Symfony Coding Standards](https://symfony.com/doc/4.4/contributing/code/standards.html) but with a few exceptions.
 
 ### Multiline inheritance and implementations
 
