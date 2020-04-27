@@ -1,6 +1,8 @@
 # Ergonode development docker
 
+<div class="Alert Alert--warning">
 This is only a development solution! Do not use it on production environments!
+</div>
 
 ## the docker uses the following services
 
@@ -15,7 +17,7 @@ This is only a development solution! Do not use it on production environments!
 
 At first you must install Docker and Docker Compose (https://docs.docker.com/compose).
 
-Next, you must clone frontend and backend and docs repositories to ergonode directory:
+Next, you must clone frontend, backend and docs repositories to ergonode directory:
 
 ```bash
 git clone git@github.com:ergonode/docker.git ergonode
