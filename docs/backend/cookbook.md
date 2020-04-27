@@ -6,7 +6,7 @@
 * [New Command](backend/cookbook/new_command.md)
 * [New Endpoint](backend/cookbook/new_endpoint.md)
 * [New Grid Column](backend/cookbook/new_grid_column.md)
-* [New Grid Column_Type](backend/cookbook/new_grid_column_type.md)
+* [New Grid Column Type](backend/cookbook/new_grid_column_type.md)
 * [New Condition](backend/cookbook/new_condition.md)
 
 
