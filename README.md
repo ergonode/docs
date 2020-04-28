@@ -2,7 +2,7 @@
 
 ## Community
 
-* Get Ergonode support on [**Slack**](https://ergonode.slack.com) and [**email**](team@ergonode.com).
+* Get Ergonode support on [**Slack**](https://ergonode.slack.com) or send us email **team@ergonode.com**.
 * Follow us on [**GitHub**](https://github.com/ergonode), [**Twitter**](https://twitter.com/ergonode) and [**Facebook**](https://www.facebook.com/ergonode),  
 
 ## Quick start
