@@ -1,9 +1,12 @@
 # Backend
 
-* [Architecture and technologies](backend/architecture_and_technologies.md)
-* [Installation and configuration](backend/installation_and_configuration.md)
-* [Quality and code standards](backend/quality_and_code_standards.md)
 * [Api](backend/api.md)
+* [Architecture](backend/architecture.md)
+* [Changelog](backend/changelog.md)
+* [Coding standards](backend/coding_standards.md)
+* [Cookbook](backend/cookbook.md)
+* [Docker installation](backend/docker-installation.md)
+* [Installation](backend/installation.md)
 * [Modules](backend/modules.md)
 * [Tests](backend/tests.md)
 * [Changelog](backend/changelog.md)

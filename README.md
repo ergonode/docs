@@ -2,12 +2,16 @@
 
 ## Community
 
-* Get Ergonode support on **Stack Overflow**, [**Slack**](https://ergonode.slack.com) and [**email**](team@ergonode.com).
+* Get Ergonode support on [**Slack**](https://ergonode.slack.com) and [**email**](team@ergonode.com).
 * Follow us on [**GitHub**](https://github.com/ergonode), [**Twitter**](https://twitter.com/ergonode) and [**Facebook**](https://www.facebook.com/ergonode),  
 
-## Contributing
+## Quick start
 
-Ergonode is a Open Source. Join us as a [**contributor**](https://ergonode.com/contribution). 
+1. Fork [repository](https://github.com/ergonode/docs)
+2. In case that you do not have [node.js](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm) installed - install latest stable version
+3. Start **docsify** server:
+   `npx docsify-cli serve docs`
+
 
 ## About Us
 

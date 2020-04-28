@@ -1,0 +1,58 @@
+.markdown-section hr {
+    margin: 0 0 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.markdown-section pre {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.Alert {
+    display: inline-block;
+    width: 100%;
+    padding: 1px 15px;
+    margin: 2px;
+    line-height: 20px;
+    background-color: #35495e;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+    text-align: justify;
+    border-radius: 4px;
+}
+
+.Alert b {
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.Alert code {
+    padding: 2px 7px;
+    line-height: inherit;
+    background-color: hsla(0, 0%, 78.4%, 0.2);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.Alert--success {
+    background-color: #3b8070;
+}
+
+.Alert--warning {
+    background-color: #f58231;
+}
+
+.Alert--warning a {
+    color: #0e5e3a;
+}
+
+.Alert--info {
+    background-color: #3498db;
+}
+
+.Alert--alert {
+    background-color: #f44336;
+}

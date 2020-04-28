@@ -1,0 +1,16 @@
+{
+  "name": "your-vendor-name/your-module-name",
+  "type": "ergonode-module",
+  "description": "Your description",
+  "license" : "Your Free License",
+  "require": {
+    "php": "^7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "YourVendor\\ProductSkuConditionModule\\": "src/"
+    }
+  },
+  "autoload-dev": {
+  }
+}
