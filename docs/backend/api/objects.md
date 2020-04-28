@@ -11,6 +11,7 @@
 * [Collection Element Type](backend/api/objects/collection_type.md)
 <!--- * [Channel](backend/api/objects/channel.md) --->
 * [Comment](backend/api/objects/comment.md)
+* [Condition set](backend/api/objects/condition_set.md)
 * [Element_position](backend/api/objects/element_position.md)
 * [Element_properties](backend/api/objects/element_properties.md)
 * [Element_size](backend/api/objects/element_size.md)
@@ -26,7 +27,7 @@
 * [Role](backend/api/objects/role.md)
 * [Segment](backend/api/objects/segment.md)
 * [Status](backend/api/objects/status.md)
-* [Template_elements](backend/api/objects/Template_elements.md)
+* [Template_element](backend/api/objects/template_element.md)
 * [Transformer](backend/api/objects/transformer.md)
 * [Transition](backend/api/objects/transition.md)
 * [Translation](backend/api/objects/translation.md)
