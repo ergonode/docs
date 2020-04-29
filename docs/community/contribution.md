@@ -22,7 +22,7 @@ The Ergonode development team will review all issues and contributions submitted
 ### Contribution requirements
 ---
 
-1. Contributions must adhere to the [Coding standards](frontend/quality?id=coding-standards).
+1. Contributions must adhere to the [Coding standards](backend/coding_standards.md).
 
 2. Pull requests (PRs) must be accompanied by a meaningful description of their purpose. Comprehensive descriptions increase the chances of a pull request being merged quickly and without additional clarification requests. Description can be delivered as an issue linked to PR.
 
@@ -30,7 +30,7 @@ The Ergonode development team will review all issues and contributions submitted
 
 4. PRs which include new logic or new features must be submitted along with:
     
-    a. Unit/integration [test](frontend/quality?id=tests) coverage.
+    a. Unit/integration [test](backend/tests.md) coverage.
 
     b. PRD - Product Requirement Document that contains all necessary background of purpose and proposed implementations.
 
