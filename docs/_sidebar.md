@@ -1,4 +1,4 @@
-[**Ergonode** ](index.md)
+**Ergonode**
 * [**Basic information**](basic_info.md)
 * [**Backend**](backend.md)
     * [Architecture](backend/architecture.md)

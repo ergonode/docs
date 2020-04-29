@@ -371,4 +371,4 @@ and in the api ```/api/v1/EN/dictionary/conditions``` endpoint you should have
 }
  ``` 
 
-full code example you can find in the   [product-sku-condition-module](https://github.com/wiewiurdp/docs/tree/master/docs/backend/cookbok/examples/product-sku-condition-module)
+You can find code examples under namespace `Ergonode\Condition`
