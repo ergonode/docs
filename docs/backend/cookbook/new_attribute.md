@@ -7,8 +7,11 @@ In Ergonode there are many predefined attribute types, however new custom attrib
 
 Name of every attribute class needs to end with `Attribute.php`
 
-This file should live in `Your-module\Application\Form\Attribute\` namespace extends `Ergonode\Attribute\Domain\Entity\AbstractAttribute` and implements `Ergonode\Attribute\Domain\Entity\AttributeInterface`.
+This file should live in `Your-module\Application\Form\Attribute\` namespace extends one of Abstract Attributes and implements `Ergonode\Attribute\Domain\Entity\AttributeInterface`.
 
+In Ergonode system we have several Abstract Attribute classes (you can find them in `Ergonode\Attribute\Domain\Entity\Attribute` namespace), it depends on what kind of attribute you want to create, you can either use one of already created or create a custom one. 
+
+Keep in mind that Abstract Attribute class should extend `\Ergonode\Attribute\Domain\Entity\AbstractAttribute`.
 ```php
 namespace Ergonode\Attribute\Domain\Entity\Attribute;
 
@@ -86,7 +89,7 @@ class CreateYourAttributeCommandHandler
             $command->getLabel(),
             $command->getHint(),
             $command->getPlaceholder(),
-            $command->isMultilingual()
+            $command->getScope()
         );
 
         foreach ($command->getGroups() as $group) {
@@ -188,7 +191,7 @@ class CreateYourAttributeCommandFactory implements CreateAttributeCommandFactory
             new TranslatableString($data->label),
             new TranslatableString($data->hint),
             new TranslatableString($data->placeholder),
-            $data->multilingual,
+            new AttributeScope($data->scope),
             $data->groups,
         );
     }
@@ -231,7 +234,7 @@ class UpdateYourAttributeCommandFactory implements UpdateAttributeCommandFactory
             new TranslatableString($data->label),
             new TranslatableString($data->hint),
             new TranslatableString($data->placeholder),
-            $data->multilingual,
+            new AttributeScope($data->scope),
             $data->groups,
         );
     }
@@ -324,18 +327,9 @@ class YourAttributeForm extends AbstractType implements AttributeFormInterface
                 AttributeGroupType::class
             )
             ->add(
-                'multilingual',
-                CheckboxType::class,
-                [
-                    'false_values' => [
-                        '0',
-                        'false',
-                        '',
-                        false,
-                    ],
-                    'empty_data' => 'true',
-                ]
-            );
+                'scope',
+                TextType::class,
+                        );
     }
 
     /**
