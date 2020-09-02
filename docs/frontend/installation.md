@@ -22,38 +22,53 @@ Run **backend** part to make the application work properly.
 ## First steps
 ---
 
-1. Clone project repository to your local directory:
+**1) Startup**
+
+Clone project repository to your local directory:
+
 ```bash
 git clone git@github.com:ergonode/frontend.git
 ```
 
-2. Open your terminal in your local project and install all node modules:
+Install project dependencies:
+
 ```bash
 npm install
 ```
 
-3. Execute CLI command and set you API URL ([env](frontend/installation?id=environment-variables)):
+Set your local `.env` file:
+
 ```bash
-npm run cli:run
+npm run env
+```
+> *You may want to override created .env file by other settings*
+
+**2) Module configuration**
+
+Follow **CLI** steps to configure project:
+
+```bash
+npm run modules
 ```
 
-    <div class="Alert Alert--info">
+You might want automatically setup all modules by executing command:
+```bash
+npm run modules:all
+```
+**3) Build**
 
-    <b>Info: </b> You can also copy <code>.env.dist</code> file as <code>.env</code> and set your API URL configuration.
+Run development mode
 
-    </div>
+```bash
+npm run dev
+```
 
-2. Run server
-   
-    ```bash
-    #development mode
-    npm run dev
+Run production mode
 
-    #production mode
-    npm run build
-    npm run start
-    ```
-
+```bash
+npm run build
+npm run start
+```
 
 ## Configuration
 ---
@@ -62,10 +77,7 @@ npm run cli:run
 
 | Variable    | Description                            |
 |-------------|----------------------------------------|
-| ```API_PROTOCOL``` | protocol variable (e.g. ```http``` / ```https```) |
-| ```API_HOST``` | host variable (e.g. ```localhost```) |
-| ```API_PREFIX``` | prefix (e.g. ```/api/{version}```) |
-| ```API_PORT``` | port if exists (e.g. ```8000```) |
+| ```API_BASE_URL``` | base api url e.g. `http://localhost:8000/api/v1/` |
 
 
 

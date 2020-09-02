@@ -82,7 +82,7 @@ If you fill database with basic data:
 
 | Role       | Login             | Password |
 |------------|-------------------|----------|
-| Superadmin | test@ergonode.com |123       |
+| Superadmin | test@ergonode.com | 1234abcd |
 
 If you fill database with development data:
 
