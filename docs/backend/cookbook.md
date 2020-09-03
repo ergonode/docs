@@ -9,5 +9,6 @@
 * [New Grid Column](backend/cookbook/new_grid_column.md)
 * [New Grid Column Type](backend/cookbook/new_grid_column_type.md)
 * [New Condition](backend/cookbook/new_condition.md)
+* [New Channel](backend/cookbook/new_channel.md)
 
 
