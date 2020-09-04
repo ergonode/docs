@@ -2,7 +2,7 @@
 # How to create a new channel
 
 Channel 
-* Entity Claas to menegment
+* Entity Claas to management
 * external service connector(if required)
 * specific configuration of a specific target system
 
@@ -54,7 +54,7 @@ class CreateYourChannelCommand implements DomainCommandInterface
 }
 ``` 
 
-And the builder to it. Who should extend Implements `Ergonode\Channel\Application\Provider\CreateChannelCommandBuilderInterface` 
+And the builder to it. Which should implements `Ergonode\Channel\Application\Provider\CreateChannelCommandBuilderInterface` 
 ```php
 use Ergonode\Channel\Application\Provider\CreateChannelCommandBuilderInterface;
 
@@ -77,8 +77,7 @@ class YourCreateChannelCommandBuilder implements CreateChannelCommandBuilderInte
     }
 }
 ```
-Similarly updated where builder implements 
-Who should extend Implements `Ergonode\Channel\Application\Provider\UpdateChannelCommandBuilderInterface` 
+Similarly update builder which should implements `Ergonode\Channel\Application\Provider\UpdateChannelCommandBuilderInterface` 
 ```php
 use Ergonode\Channel\Application\Provider\UpdateChannelCommandBuilderInterface;
 
@@ -176,7 +175,7 @@ class Shopware6ChannelForm extends AbstractType
     }
 }
 ````
-In this time we have new Channel. 
+Now we have new Channel. 
 
 Next step is configure export process.
 
@@ -191,7 +190,7 @@ class ProcessExportCommandHandler
 {
     public function __invoke(ProcessExportCommand $command)
     {
-        //the place on your export code
+        //place for your export code
     }
 }
 ```
