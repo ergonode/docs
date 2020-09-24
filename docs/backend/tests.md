@@ -13,8 +13,7 @@ tests/   Unit tests
 src/
 ├── Application
 ├── Domain
-├── Infrastructure       
-├── Persistence
+├── Infrastructure
 ├── Resources
 ```
 
