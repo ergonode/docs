@@ -56,3 +56,36 @@
 .Alert--alert {
     background-color: #f44336;
 }
+
+.sidebar {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+}
+.sidebar .app-name {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    box-ordinal-group: 1;
+    margin-bottom:0;
+    padding: 0;
+}
+.sidebar .app-name a {
+    margin:0;
+    padding: 0;
+    display: block;
+}
+.sidebar .search {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    box-ordinal-group: 2;
+    border-top: 1px solid #eee;
+}
+.sidebar .sidebar-nav {
+    -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    box-ordinal-group: 3;
+}

@@ -113,7 +113,7 @@ class NoteCreatedEvent implements DomainEventInterface {
     }
 }
 ``` 
-And aggregate root constructor should look like this
+Aggregate root constructor should look like this
 ```php
     /**
      * @param NoteId $id
@@ -126,7 +126,7 @@ And aggregate root constructor should look like this
         $this->apply(new NoteCreatedEvent($id, $content));
     }
 ```
-In the end we need to add method that handle our construction event
+At the end we add method that handle our construction event
 ```php
 /**
  * @var NoteCreatedEvent $event
