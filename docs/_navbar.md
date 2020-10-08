@@ -1,3 +1,2 @@
 * [**Home**](https://ergonode.com)
-* [**Documentation**](https://docs.ergonode.com)
-* [**Github**](https://github.com/ergonode)
+* [**User Guide**](https://userguide.ergonode.com/)

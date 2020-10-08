@@ -1,18 +1,18 @@
-# Ergonode development docker
+# Docker installation
 
 <div class="Alert Alert--warning">
 This is only a development solution! Do not use it on production environments!
 </div>
 
-## the docker uses the following services
+## The docker uses the following services
 
  - PostgreSQL 10
  - PHP 7.4
  - NGINX 1.17
  - Docsify 4
- - Nodejs 12.6 
+ - Nodejs 12.6
  - RabbitMQ 3.8
- 
+
 ## How the hell should I install it all ?!
 
 At first you must install Docker and Docker Compose (https://docs.docker.com/compose).
@@ -31,7 +31,7 @@ git clone git@github.com:ergonode/docs.git
 If you want to test ergonode in multiple directories you need to create the  `.env` file and set
 COMPOSE_PROJECT_NAME env var to some unique value
 
-If you want't change any environment variable you can optionally  change this in the `.env` file. 
+If you want't change any environment variable you can optionally  change this in the `.env` file.
 And all environment variables used by our docker you can find in the `docker-compose.yml` files.
 
 Now you can start start docker by simple command
@@ -41,12 +41,12 @@ docker-compose up
 ```
 
 Now you can fill  app database with basic data by using command
-```
+```bash
 docker-compose exec php bin/phing database:fixture
 ```
 
 Or fill database with development data with command
-```
+```bash
 docker-compose exec php bin/phing database:fixture:dev
 ```
 
@@ -77,18 +77,18 @@ http://localhost:15672
 
 ## What can i do with this creature?
 
-To run all tests execute 
-```
+To run all tests execute
+```bash
 docker-compose exec php bin/phing test
 ```
 
-To run symfony console 
-```
+To run symfony console
+```bash
 docker-compose exec php bin/console
 ```
 
-To add new users you can use command 
-```
+To add new users you can use command
+```bash
 docker-compose exec php bin/console ergonode:user:create  <email> <first_name> <last_name> <password> <language> [<role>]
 ```
 
@@ -100,7 +100,7 @@ docker-compose exec postgres bash
 docker-compose exec nuxtjs bash
 ```
 
-<div class="Alert Alert--warning"> 
+<div class="Alert Alert--warning">
 
 You have some problems check our [FAQ](faq.md)
 

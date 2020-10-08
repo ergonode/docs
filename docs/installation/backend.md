@@ -1,4 +1,4 @@
-# Instalation
+# Backend installation
 
 <div class="Alert Alert--warning">
 
@@ -12,14 +12,14 @@ This manual is prepared for the developer installation
 |-----------------------|-----------------------------------|
 | Language              | Php >= 7.4                        |
 | Database              | Posgress >= 10                    |
-| Message Broker*       | RabbitMQ >= 3.6.10                |  
+| Message Broker*       | RabbitMQ >= 3.6.10                |
 
 *Use for running application in asynchronous mode.
 
 ## Quick Start
 
 Clone [backend project repository][repository] to your local directory:
-```
+```bash
 git clone git@github.com:ergonode/backend.git
 ```
 
@@ -30,43 +30,43 @@ Application on default starts on **develop** branch
 </div>
 
 If want run last stable application version execute:
-```
+```bash
 git checkout master
-``` 
+```
 In .env file you need to configure database connection
 
 Open your terminal in local project, and execute:
-```
+```bash
 composer install
-``` 
-In .env file you need to configure database connection
 ```
+In .env file you need to configure database connection
+```bash
 DATABASE_URL=pgsql://db_user:db_password@127.0.0.1:5432/db_name
 ```
 Generate keys for Json Web Token
-```
+```bash
 openssl genrsa -out config/jwt/private.pem -aes256 4096
 openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
 ```
-While executing above commands you would be asked about password. This password needs to be saved then in .env file 
+While executing above commands you would be asked about password. This password needs to be saved then in .env file
 in line `JWT_PASSPHRASE=yourpassword`
 
 In terminal execute command which configure application (available phing commands):
-```
+```bash
 bin/phing build
 ```
 
 To fill database witch basic data execute command:
-```
+```bash
 bin/phing database:fixture
 ```
 or for development data use:
-```
+```bash
 bin/phing database:fixture:dev
 ```
 
 Run build in server
-```
+```bash
 bin/console server:run
 ```
 
@@ -128,11 +128,11 @@ Those command are available only in development mode
 |-----------------------|------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
 | `test`                | Full application  testing (clean database, migrations, fixtures, PHPUnit, Behat)                     | database:migrate, database:fixture, test:unit, test:behat                    |
 | `test:unit`           | Unit test - phpunit                                                                                  |                                                                              |
-| `test:unit:coverage`  | Unit test - phpunit  with coverage                                                                   |                                                                              | 
+| `test:unit:coverage`  | Unit test - phpunit  with coverage                                                                   |                                                                              |
 | `test:behat`          | Behat - api integration tests                                                                        |                                                                              |
 | `database:migrate`    | Run migration to database                                                                            |                                                                              |
 | `database:create`     | Create database                                                                                      |                                                                              |
-| `database:drop`       | Drop database                                                                                        |                                                                              |         
+| `database:drop`       | Drop database                                                                                        |                                                                              |
 | `database:fixture`    | Adding basic fixtures to database                                                                    |                                                                              |
 | `database:fixture:dev`| Adding development fixtures to database                                                              |                                                                              |
 | `check:style`         | Code inspection (CS, MD, CPD)                                                                        | check:php, check:cs, check:cpd, check:md                                     |
