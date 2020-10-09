@@ -13,7 +13,7 @@ This is only a development solution! Do not use it on production environments!
  - Nodejs 12.6
  - RabbitMQ 3.8
 
-## How the hell should I install it all ?!
+## How should I install it?
 
 At first you must install Docker and Docker Compose (https://docs.docker.com/compose).
 
@@ -31,7 +31,7 @@ git clone git@github.com:ergonode/docs.git
 If you want to test ergonode in multiple directories you need to create the  `.env` file and set
 COMPOSE_PROJECT_NAME env var to some unique value
 
-If you want't change any environment variable you can optionally  change this in the `.env` file.
+If you want to change any environment variable you can optionally  change this in the `.env` file.
 And all environment variables used by our docker you can find in the `docker-compose.yml` files.
 
 Now you can start start docker by simple command

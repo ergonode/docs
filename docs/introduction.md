@@ -32,11 +32,11 @@ If you have any questions or ideas feel free to join our [slack][slack].
 
 ## Contributing
 
-Before you start making any pull requests checkout our [contribution guide][contribut]. If you have any questions or ideas feel free to join our [slack][slack] or send us an email: contributors@ergonode.com
+Before you start making any pull requests checkout our [contribution guide][contribute]. If you have any questions or ideas feel free to join our [slack][slack] or send us an email: contributors@ergonode.com
 
 ## Partners
 
-Ergonode is open-source, and it can be brought to you only by great community and partners supported by our core team. If you want to be on that list please send us an email: contributors@ergonode.com
+Ergonode is an open-source project, and it can be brought to you only by great community and partners supported by our core team. If you want to be on that list please send us an email: contributors@ergonode.com
 
 ## The license
 
@@ -44,7 +44,7 @@ Ergonode source code is released under the [OSL 3.0 License][license].
 
 [discord]: https://discord.gg/NntXFa4
 [slack]: https://ergonode.slack.com/join/shared_invite/enQtOTA2ODY0ODMxNTI0LThlZGE2YWE0YzY4NzU1ODk3NWRmNTJiMGI2NmM5ZTgxYTk0MWRhMjM1Y2M4MjdjZjAxY2FkOWE1M2FhZmJkMDY
-[contribut]: http://docs.ergonode.com/#/contribution
+[contribute]: http://docs.ergonode.com/#/contribution
 [license]: https://github.com/ergonode/frontend/blob/develop/LICENSE.txt
 [roadmap]: https://ergonode.com/features/#roadmap
 [docs]: https://docs.ergonode.com

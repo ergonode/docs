@@ -22,7 +22,7 @@ The commit message should be structured as follows:
 <BLANK LINE>
 <optional body>
 ```
-1. Commits *MUST* be prefixed with a **type**, which consists of a noun, `feature`, `bugfix`, etc., followed by the *OPTIONAL* **scope**.
+1. Commits *MUST* be prefixed with the **type**, which consists of a noun, `feature`, `bugfix`, etc., followed by the *OPTIONAL* **scope**.
 2. Any line of the commit message cannot be longer than 100 characters! This allows the message to be easier to read on GitHub as well as in various git tools.
 
 
@@ -50,9 +50,9 @@ If the commit reverts a previous commit, it should begin with `revert: `, follow
 ## Scope
 ---
 
-A **scope** *MUST* consist of a noun describing a section of the codebase surrounded by parenthesis, e.g., `bugfix(core):`
+A **scope** *MUST* consist of a noun describing the section of the codebase surrounded by parenthesis, e.g., `bugfix(core):`
 
-The following is the list of examples scopes:
+The following is the list of example scopes:
 
 * **core**
 * **microservices**

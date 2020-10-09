@@ -10,18 +10,18 @@
 ## Server requirements
 ---
 
-1. In case that you don't have [node.js][node] installed - install latest stable version.
+1. In case you don't have [node.js][node] installed - install the latest stable version.
 2. Choose your package manager:
    1. [npm][npm]
    2. [yarn][yarn]
-3. Install [git][git] if you need.
+3. Install [git][git] if needed.
 
 ## Contribution installation
 ---
-You are a developer wanting help with creating **Ergonode** - this installation is for you:
+If you are a developer that needs help with building **Ergonode** - this installation is for you:
 
 
-**1) Startup**
+**1) Getting started**
 
 Clone project repository to your local directory:
 
@@ -59,7 +59,7 @@ Follow **CLI** steps to choose your modules:
 npm run modules
 ```
 
-You might want automatically setup all modules by executing command:
+You might want automatically setup all modules by executing the command:
 ```bash
 npm run modules:all
 ```
@@ -83,10 +83,10 @@ npm run start
 
 ## Partner installation
 ---
-You are a partner implementing **Ergonode** to your clients - this installation is for you:
+If you are an Ergonode Partner implementing **Ergonode** for your clients - this installation is for you::
 
 
-**1) Startup**
+**1) Getting started**
 
 Clone project repository to your local directory:
 
