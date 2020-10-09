@@ -36,7 +36,7 @@ Before you start making any pull requests checkout our [contribution guide][cont
 
 ## Partners
 
-Ergonode is an open-source project, and it can be brought to you only by great community and partners supported by our core team. If you want to be on that list please send us an email: contributors@ergonode.com
+Ergonode is an open-source project, and is brought to you by our community and partners supported by Ergonode's core team. If you want to help & support this project please send us an email: contributors@ergonode.com
 
 ## The license
 
