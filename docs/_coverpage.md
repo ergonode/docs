@@ -7,4 +7,4 @@
 # Welcome to Ergonode Documentation
 by [**Strix**](https:strix.net)
 
-<br>[OPEN](Introduction)
+<br>[OPEN](introduction.md)

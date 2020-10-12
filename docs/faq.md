@@ -1,4 +1,4 @@
-## FAQ
+# FAQ
 
 ```
 Q: I have error 413 – Request Entity Too Large
