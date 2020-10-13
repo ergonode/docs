@@ -3,7 +3,7 @@
  * [Account](backend/modules/account.md)
  * [Attribute](backend/modules/attribute.md)
  * [Core](backend/modules/core.md) 
- <!--- [Channel](backend/modules/channel.md) --->
+ * [Category](backend/modules/category.md)
   <!--- * [Connector](backend/modules/connector.md) --->
   <!--- * [Connector magento](backend/modules/connector-magento.md) --->
  * [Importer](backend/modules/importer.md)
