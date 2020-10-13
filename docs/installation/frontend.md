@@ -192,7 +192,7 @@ npm run start
 | npm run modules | CLI with modules configuration |
 | npm run modules:all | CLI to set all modules |
 
-[be]: installation/backend
+[be]: installation/backend-contribution
 [node]: https://nodejs.org/en/download/
 [npm]: https://www.npmjs.com/get-npm
 [yarn]: https://yarnpkg.com/en/
