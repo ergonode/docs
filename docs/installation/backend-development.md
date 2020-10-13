@@ -30,7 +30,7 @@ Generate keys for Json Web Token
 openssl genrsa -out config/jwt/private.pem -aes256 4096
 openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
 ```
-While executing above commands you would be asked about password. This password needs to be saved then in .env file 
+While executing above commands you will be asked for your password. This password needs to be saved then in .env file 
 in line `JWT_PASSPHRASE=yourpassword`
 
 Execute the following commands to initialise the database
