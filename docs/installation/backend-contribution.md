@@ -2,7 +2,7 @@
 
 <div class="Alert Alert--warning">
 
-This document is for people who want to develop ergonode applications, if you want to use it [check here](installation/backend-development.md)
+This document is for everyone who wants to develop Ergonode application. If you want to use it [check here](installation/backend-development.md)
 
 </div>
 
