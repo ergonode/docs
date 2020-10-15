@@ -16,12 +16,11 @@ Create new project:
 ```
 composer create-project ergonode/skeleton my_project_name
 ```
-
-Go to my_project_name directory and type
+For beta version type:
 ```
-composer install
-``` 
-Create ```.env.prod``` file and add lines with database access configuration
+composer create-project ergonode/skeleton my_project_name --stability beta
+```
+Go to my_project_name directory and create ```.env.local``` file and add lines with database access configuration
 ```
 DATABASE_URL=pgsql://db_user:db_password@127.0.0.1:5432/db_name
 ```
@@ -41,18 +40,13 @@ bin/console ergonode:migrations:migrate
 
 Fill database with initial data execute command:
 ```
-bin/phing database:fixture
+bin/console ergonode:fixture:load
 ```
 
 Now you can add user using [console command](backend/commands) ```ergonode:user:create```
 
 ```
-ergonode:user:create test@ergonode.com Johny Bravo abcd1234 en_GB
-```
-
-Run build in symfony server
-```
-bin/console server:run
+ergonode:user:create email@ergonode.com name surname password en_GB
 ```
 
 See more:
