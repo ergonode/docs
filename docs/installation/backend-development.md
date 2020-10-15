@@ -20,7 +20,7 @@ For beta version type:
 ```
 composer create-project ergonode/skeleton my_project_name --stability beta
 ```
-Go to my_project_name directory and type create ```.env.local``` file and add lines with database access configuration
+Go to my_project_name directory and create ```.env.local``` file and add lines with database access configuration
 ```
 DATABASE_URL=pgsql://db_user:db_password@127.0.0.1:5432/db_name
 ```
