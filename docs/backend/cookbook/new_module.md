@@ -12,8 +12,7 @@ tests/
 src/
 ├── Application
 ├── Domain
-├── Infrastructure       
-├── Persistence
+├── Infrastructure
 ├── Resources
 ```
 ## Create 
@@ -63,7 +62,7 @@ Next you need create a new module class which extends `Ergonode\Core\Application
 Last step is adding following line to the array in `erognode/config/bundles.php` file:
 
 ```php
-YourNamespace\YourModule::class => ['all' => true]
+YourNamespace\YourModule::class => ['all' => true];
 ```
 
 To make sure that all changes are in place clear cache `bin/console cache:clear`

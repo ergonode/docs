@@ -1,18 +1,19 @@
-# Instalation
+# Installation
 
 <div class="Alert Alert--warning">
 
-This manual is prepared for the developer installation
+This document is for everyone who wants to develop Ergonode application. If you want to use it [check here](installation/backend-development.md)
 
 </div>
 
 ## Requirements
 
-| Name                  | Version                           |
-|-----------------------|-----------------------------------|
-| Language              | Php >= 7.4                        |
-| Database              | Posgress >= 10                    |
-| Message Broker*       | RabbitMQ >= 3.6.10                |  
+| Name          | Version    | Extension |
+|---------------|------------| ---- |
+| PHP           | 7.4        | ctype, exif, gd, iconv, imagick, json, pdo, zip |
+| Postgress     | 10         ||
+| RabbitMQ      | 3.6        ||
+| Composer      | 1.6        ||
 
 *Use for running application in asynchronous mode.
 
@@ -29,7 +30,7 @@ Application on default starts on **develop** branch
 
 </div>
 
-If want run last stable application version execute:
+If you want to run last stable application version execute:
 ```
 git checkout master
 ``` 
@@ -48,10 +49,10 @@ Generate keys for Json Web Token
 openssl genrsa -out config/jwt/private.pem -aes256 4096
 openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
 ```
-While executing above commands you would be asked about password. This password needs to be saved then in .env file 
+While executing above commands you will be asked for your password. This password needs to be saved then in .env file 
 in line `JWT_PASSPHRASE=yourpassword`
 
-In terminal execute command which configure application (available phing commands):
+In terminal execute command which configures application (available phing commands):
 ```
 bin/phing build
 ```
@@ -67,14 +68,8 @@ bin/phing database:fixture:dev
 
 Run build in server
 ```
-bin/console s:r
+bin/console server:run
 ```
-
-<div class="Alert Alert--warning">
-
-To run frontend application see [frontend installation](frontend/installation)
-
-</div>
 
 ## Default user
 
@@ -82,34 +77,16 @@ If you fill database with basic data:
 
 | Role       | Login             | Password |
 |------------|-------------------|----------|
-| Superadmin | test@ergonode.com |123       |
+| Superadmin | test@ergonode.com | abcd1234 |
 
 If you fill database with development data:
 
 | Role             | Login                         | Password |
 |------------------|-------------------------------|----------|
-| Superadmin       | superadmin@ergonode.com       |123       |
-| Admin            | admin@ergonode.com            |123       |
-| Data Inputer     | data_inputer@ergonode.com     |123       |
-| Category Manager | category_manager@ergonode.com |123       |
-
-# .ENV Configuration
-
-Configuration is available in .env file in main directory.
-
-| Variable              | Description                              | Default           | Options                       |
-|-----------------------|------------------------------------------|-------------------|-------------------------------|
-| APP_ENV               | Type Environment                         | dev               | prod, dev, test               |
-| APP_HOST              | Application host                         | ergonode.local    |                               |
-| APP_SCHEMA            | Application schema                       | http              | http, https                   |
-| APP_URL               | Type Environment                         | http://ergonaut.local |                           |
-| DATABASE_URL          | Database connection                      | pgsql://postgres:123@127.0.0.1:5432/ergonode |    |
-| JWT_PRIVATE_KEY_PATH  | path to private JWT key file             | config/jwt/private.pem                       |    |
-| JWT_PUBLIC_KEY_PATH   | path to public JWT key file              | config/jwt/public.pem                        |    |
-| JWT_PASSPHRASE        | JWT Key password                         | 1234                                         |    |
-| JWT_TOKEN_TTL         | JWT Token lifetiem in seconds            | 86400                                        |    |
-| CORS_ALLOW_ORIGIN     | Cors access address                      | ^http?://localhost:3000\|$                   |    |
-
+| Superadmin       | superadmin@ergonode.com       | abcd1234 |
+| Admin            | admin@ergonode.com            | abcd1234 |
+| Data Inputer     | data_inputer@ergonode.com     | abcd1234 |
+| Category Manager | category_manager@ergonode.com | abcd1234 |
 
 # Phing commands
 
@@ -128,9 +105,13 @@ Those command are available only in development mode
 | `database:fixture:dev`| Adding development fixtures to database                                                              |                                                                              |
 | `check:style`         | Code inspection (CS, MD, CPD)                                                                        | check:php, check:cs, check:cpd, check:md                                     |
 | `check:md`            | Mass detector                                                                                        |                                                                              |
-| `check:cs`            | Checking coding standards - code sniffer ([coding standards](backend/quality_and_code_standards.md)) |                                                                              |
+| `check:cs`            | Checking coding standards - code sniffer ([coding standards](backend/coding_standards.md)) |                                                                              |
 | `check:cpd`           | Copy/paste detector                                                                                  |                                                                              |
 | `check:phpstan`       | PHP stan -level 1 inspection                                                                         |                                                                              |
 | `cache:clear`         | Clear cache                                                                                          | cache:clear, create:directory, database:migrate                              |
+| `check:dependencies`  | Check module dependencies                                                                            |         |
 
 [repository]: https://github.com/ergonode/backend
+
+See more:
+[.ENV Configuration](backend\configuration.md), [console commands](backend\console.md)

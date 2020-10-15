@@ -1,19 +1,19 @@
-# Ergonode development docker
+# Docker installation
 
 <div class="Alert Alert--warning">
 This is only a development solution! Do not use it on production environments!
 </div>
 
-## the docker uses the following services
+## The docker uses the following services
 
  - PostgreSQL 10
  - PHP 7.4
  - NGINX 1.17
  - Docsify 4
- - Nodejs 12.6 
+ - Nodejs 12.6
  - RabbitMQ 3.8
- 
-## How the hell should I install it all ?!
+
+## How should I install it?
 
 At first you must install Docker and Docker Compose (https://docs.docker.com/compose).
 
@@ -31,7 +31,7 @@ git clone git@github.com:ergonode/docs.git
 If you want to test ergonode in multiple directories you need to create the  `.env` file and set
 COMPOSE_PROJECT_NAME env var to some unique value
 
-If you want't change any environment variable you can optionally  change this in the `.env` file. 
+If you want to change any environment variable you can optionally  change this in the `.env` file.
 And all environment variables used by our docker you can find in the `docker-compose.yml` files.
 
 Now you can start start docker by simple command
@@ -41,12 +41,12 @@ docker-compose up
 ```
 
 Now you can fill  app database with basic data by using command
-```
+```bash
 docker-compose exec php bin/phing database:fixture
 ```
 
 Or fill database with development data with command
-```
+```bash
 docker-compose exec php bin/phing database:fixture:dev
 ```
 
@@ -77,18 +77,18 @@ http://localhost:15672
 
 ## What can i do with this creature?
 
-To run all tests execute 
-```
+To run all tests execute
+```bash
 docker-compose exec php bin/phing test
 ```
 
-To run symfony console 
-```
+To run symfony console
+```bash
 docker-compose exec php bin/console
 ```
 
-To add new users you can use command 
-```
+To add new users you can use command
+```bash
 docker-compose exec php bin/console ergonode:user:create  <email> <first_name> <last_name> <password> <language> [<role>]
 ```
 
@@ -100,59 +100,8 @@ docker-compose exec postgres bash
 docker-compose exec nuxtjs bash
 ```
 
-## FAQ
+<div class="Alert Alert--warning">
 
-```
-Q: I have error 413 – Request Entity Too Large
-A: You need increase in the nginx client_max_body_size and in php upload max size. 
-```
+You have some problems check our [FAQ](faq.md)
 
-```
-Q: How to increase the nginx client_max_body_size and in php upload max size?
-```
-
-In the .env file please set `NGINX_HTTP_DIRECTIVES` to `client_max_body_size 250m;` or higher value
-```
-NGINX_HTTP_DIRECTIVES="client_max_body_size 250m;" 
-```
-Also you can set `PHP_INI_DIRECTIVES` to `upload_max_filesize=250M;\npost_max_size = 250M;`
-
-```
-Q: How to increase php memory limit?
-```
-In the .env file please set `PHP_INI_DIRECTIVES` to `memory_limit=1024M;` or higher value
-
-```
-PHP_INI_DIRECTIVES="memory_limit=1024M;" 
-```
-
-```
-Q: What data are stored?
-A: For now only database in data folder
-```
-
-```
-Q: Where can i change PHP settings?
-A: In the environment variable PHP_INI_DIRECTIVES each setting must be delimited by ;
-```
-
-```
-Q: Where can i change nginx http settings?
-A: In the environment variable NGINX_HTTP_DIRECTIVES each setting must be delimited by ;
-```
-
-```
-Q: What if I have better idea?
-A: No problem ! Just tell us about your idea and we will discuse it. Bring lot of beers!
-```
-
-```
-Q: This is awesome, how can i thank you?
-A: No problem. Just send me an email to team@ergonode.com and attach a beer
-```
-
-```
-Q: This is bullshit, how can i thank you for this crap?
-A: No problem. Just send me an email to team@ergonode.com and attach a beer
-```
-
+</div>

@@ -2,7 +2,7 @@
 
 ## Hexagonal Architecture
 
-In Ergonode is used Hexanogal architecture.
+Ergonode is based on Hexagonal architecture.
 
 Hexagonal Architecture is an architectural style that moves a programmer’s focus from conceptual layers to a distinction between the software’s inside and outside parts.
 
@@ -30,6 +30,6 @@ You can find out more about this concept [click here](https://en.wikipedia.org/w
 
 Ergonode is using Event Sourcing pattern.
 
-Event Sourcing is focusing on current state, on changes that have occured over time. It is the practice of modeling your system as a sequence of events.
+Event Sourcing is focusing on current state, on changes that have occurred over time. It is the practice of modeling your system as a sequence of events.
 
 You can find out more about this concept [click here](https://dev.to/barryosull/event-sourcing-what-it-is-and-why-its-awesome)

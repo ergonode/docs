@@ -2,7 +2,6 @@
 
 ## Technology stack
 
-|   |        |
 |------------------|-----------------------------------|
 | Language         | ECMAScript 6                      |
 | Framework        | Vue.js, Nuxt, Vuex                |

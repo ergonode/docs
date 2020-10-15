@@ -13,15 +13,13 @@ tests/   Unit tests
 src/
 ├── Application
 ├── Domain
-├── Infrastructure       
-├── Persistence
+├── Infrastructure
 ├── Resources
 ```
 
 ## Unit tests
 
 You should do unit tests according to phpunit documentation and recommendations.
-We currently use phpunit 9.0. 
 
 https://phpunit.de/documentation.html
 
@@ -46,6 +44,11 @@ bin/phing test
 Only unit tests:
 ```
 bin/phing test:unit
+```
+
+Only unit tests with coverage report:
+```
+bin/phing test:unit:coverage
 ```
 
 Only behat tests:
