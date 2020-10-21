@@ -1,57 +1,54 @@
-# Architecture
+### Overview
 
-## Technology stack
+**Ergonode** is a project that has been directed towards **micro service** from the very beginning. <br>
+The application is divided into backend part, which provides API and headless front-end part. <br>
+Although backend division into microservices is quite a popular approach, it’s not exactly a front-end microservice. <br>
+This approach is called micro frontend — not so popular, and not so easy to use.
+<br>
+<br>
+While designing front-end applications we wanted to use Vue and Nuxt as our leading technologies <br>
+and we didn’t really want to frame it into some overly complicated tools. <br>We wanted to stay in one framework and keep the technologies in use to a minimum.
 
-|------------------|-----------------------------------|
-| Language         | ECMAScript 6                      |
-| Framework        | Vue.js, Nuxt, Vuex                |
-| CSS preprocessor | SASS                              |
-| Unit testing     | jest                              |
-| Style linter     | ESLint, Stylelint                 |
-| Additional tools | Npm                               |
+<p align="center">
+     <img src="images/full_ergo_architecture.png"
+          alt="Ergonode architecture"
+          />
+</p>
 
-## Vue.js
+### Assumptions
 
-Vue.js is an open-source JavaScript framework for building user interfaces and single-page applications.
+* **Fully modular application** — apart from functionalities created by the core team, <br>
+we want to allow other developers to create their own modules extending the mechanisms of our application. <br>
+ It’s not easy, because you need to properly prepare the architecture for such extensions, not only from the backend, but also from the frontend.
 
-If you want to find out more about this concept visit : [Vue - documentation](https://vuejs.org/v2/guide/)
+* **Core of the application remains unchanged** — extensions and modules do not affect the code written by the core team.<br>
+Modules can use solutions already implemented, but they cannot modify them.
 
-## Nuxt.js
+* **Module versioning** — each module should be delivered in releasable versions. <br>
+Customers should have a choice whether or not to upgrade a module, and the package update process itself should be very simple.
 
-Its main scope is UI rendering while abstracting away the client/server distribution.
+* **Simple module management** — modules can be localised and hosted in external npm services. <br>
+Installation and uninstallation should be a smooth process.
 
-If you want to find out more about this concept visit : [Nuxt - documentation](https://nuxtjs.org/guide/)
+* **Stay with Vue** — as the application was developed on the Vue and Nuxt frameworks, <br>
+we want to continue using these technologies and not add any more unnecessary libraries if possible.
 
+* **Simple addition of modules** — a very easy process of creating a new module and smooth communication between the modules.
 
-## Vuex
+### Solution
 
-Vuex is a state management pattern + library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion. It also integrates with Vue's official devtools extension to provide advanced features such as zero-config time-travel debugging and state snapshot export / import.
+All the problems and needs led us to a situation where we decided that the best solution would <br>
+be to write our own library to help create “Microservices” architecture using Vue and Nuxt technology. <br>
+This allowed us to stay with the technologies we used and not add new unnecessary frameworks.<br>
+We decided to transform the written solution into a library npm, so that it could serve other companies facing similar problems.
+<br>
+<br>
+That’s how the [VueMS](https://www.npmjs.com/package/@ergonode/vuems) library was created. <br>
 
-If you want to find out more about this concept visit : [Vuex - documentation](https://vuex.vuejs.org/)
+> *[More information here](frontend/architecture/app-structure.md)*
+<br>
 
+### Details
 
-## SCSS
-
-SCSS is a style sheet language. It allows to use variables, nested rules, mixing, inline imports and more with a fully CSS-compatible syntax.
-
-If you want to find out more about this concept visit : [SCSS- documentation](https://sass-lang.com/documentation/)
-
-
-## Jest
-
-It’s an open source project maintained by Facebook, and it’s especially well suited for React code testing, although not limited to that: it can test any JavaScript code.
-
-If you want to find out more about this concept visit : [Jest - documentation](https://jestjs.io/docs/en/getting-started)
-
-## ESlint
-
-ESLint is an open source JavaScript linting utility. It is finding problematic patterns or code that doesn't adhere to certain style guidelines.
-
-If you want to find out more about this concept visit : [ESLint - documentation](https://eslint.org/docs/user-guide/getting-started)
-
-## Stylelint
-
-Light-way Open Source library used for linting style sheets.
-
-If you want to find out more about this concept visit : [Stylelint - documentation](https://stylelint.io/developer-guide/)
-
+* [**Application structure**](frontend/architecture/app-structure.md)
+* [**Module structure**](frontend/architecture/module-structure.md)

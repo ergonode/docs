@@ -1,8 +1,0 @@
-# Quality
-
-## Coding standards
----
-
-## Tests
----
-

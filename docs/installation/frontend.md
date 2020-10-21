@@ -81,9 +81,9 @@ npm run start
 ```
 
 
-## Partner installation
+## Installation for development
 ---
-If you are an Ergonode Partner implementing **Ergonode** for your clients - this installation is for you::
+If you are an Ergonode Partner implementing **Ergonode** for your clients - this installation is for you:
 
 
 **1) Getting started**
