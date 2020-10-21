@@ -6,7 +6,7 @@ in `tests` (unit tests) and `features` (behat tests) directory.
 ## Module Folder structure
     
 ```        
-features/  Beaht tests
+features/  Behat tests
 migrations/
 tests/   Unit tests
 ├── Behat/Context  Some behat Context related to your module.
@@ -15,6 +15,7 @@ src/
 ├── Domain
 ├── Infrastructure
 ├── Resources
+├── Test/Behat/Context Contexts to be shared with other modules.
 ```
 
 ## Unit tests
