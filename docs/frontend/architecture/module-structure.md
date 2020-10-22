@@ -17,8 +17,8 @@ We have created an architecture that makes it **easy to develop and scale** our 
 The module architecture allows you to **add new solutions**, but also to **replace existing ones**.<br>
 We can replace the whole module with a completely different one, or just some parts of it.<br>
 
-We know that the work of **Ergonode** developers is completely different than the work of developers implementing our solution for a client.<br>
-This solution was created mainly for them.<br>
+We know that the work of **Ergonode** developers is completely different from the work of developers implementing our solution for a client.<br>
+This solution was created mainly for the latter ones.<br>
 
 
 ### Structure
@@ -64,7 +64,7 @@ You can also add a `README.md` and `LICENSE` files.
 * **./src/index.js**<br>
     In the project directory we create an entry file called index.js, needed to run the module.
 
-    > We can run an additional logic to be started when the module is loaded.<br>
+    > We can run an additional logic that starts when the module is loaded.<br>
     The default exported function must be asynchronous. All listed methods have access to configuration data from the [VueMS][vuems] library.<br>
     We can add two additional functions:<br>
     `beforeModule()` - asynchronous function run before the module is loaded,<br>
