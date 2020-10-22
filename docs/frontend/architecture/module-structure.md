@@ -6,11 +6,11 @@ A single module in its construction corresponds to a typical Nuxt-based project 
 By using the [VueMS][vuems] library we can build modules like small projects based on [NuxtJS][nuxt].<br>
 Modules are based on mechanisms [Nuxt Modules][nuxt-modules], but they have no restrictions on the structure. <br>
 The module can have any structure, which means it can be a single functionality or a large and complex business logic.<br>
-We divide modules at our discretion and it is also our decision what structure they will have.<br>
+We create the modules according to our own needs and it depends on us what their structure will be.<br>
 
 
-When creating a new business context we usually try to create a new module that works with others.<br>
-Often modules have a relationship with each other because they use some mechanisms from other modules.<br>
+When creating a new business context we usually try to create a new module that works with the remaining ones.<br>
+Often modules are related to each other because they use some mechanisms from other modules.<br>
 
 
 We have created an architecture that makes it **easy to develop and scale** our application.<br>

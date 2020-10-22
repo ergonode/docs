@@ -8,7 +8,7 @@ The structure of the **Ergonode** project is completely different from the typic
 
 Combination of Vue and NuxtJS frameworks gives us the opportunity to build any web application we want. <br>
 Unfortunately, application built on this approach is monolithic and we cannot extend its behavior.<br>
-Of course we can extend project with some elements, but these are small fragments that do not add much. <br>
+Of course we can extend a project with some elements, but these are small fragments that do not add much. <br>
 In addition, NuxtJS forces developers to have a specific directory structure (page, middleware, store, etc.).<br>
 This gives us a rigid application built on specific principles.<br><br>
 That's why we created the [VueMS][vuems] library.
@@ -23,7 +23,7 @@ That's why we created the [VueMS][vuems] library.
 </p>
 
 [**VueMS**][vuems] gives the possibility to divide the application into micro parts that use all [**Vue.js**][vue] + [**NuxtJS**][nuxt] mechanisms, <br>
-but do not have their limitations. Structure of these parts is identical to the monolithic application, <br>
+but do not inherit their limitations. Structure of these parts is identical to the monolithic application, <br>
 however each module can operate separately, communicate and interact with one another. <br>
 Modules can be both small elements (single component, plugin) and complex structures <br>
 (components, plugins, middleware, store, pages, etc.).
@@ -31,9 +31,9 @@ Modules can be both small elements (single component, plugin) and complex struct
 **Advantages of VueMS:**
 
 * Each module can have its **own business context** communicating separately with the backend application.
-* Modules can be **turned active or inactivate** anytime which allows to customize the application for each client individually.
+* Modules can be **turned active or inactivate** anytime which allows customizing the application for each client individually.
 * Modules can be **loaded locally** within the application and downloaded from external servers (npm, Verdaccio).
-* Thanks to having modules on external servers, we can **version them**, therefore the modules are independent and easy to expand.
+* Thanks to storing modules on external servers, we can **version them**, therefore the modules are independent and easy to expand.
 * The customer can **upgrade any package** or **replace it** with another one.
 * Our solution is based on the built-in mechanism of [**NuxtJS modules**][nuxt-modules] in order **not to modify the basic operation of the framework**.
 * The mechanism is **closely related** to [**Vue.js**][vue] and was created only for this framework.
@@ -65,7 +65,7 @@ Ergonode in the **developer version** contains in its structure the most importa
         `_availableModules` - all available modules, local and from the npm server,
     * **nuxt.config.js** <br>
         Main [nuxt configuration][nuxt-conf] file.
-        > In here, in addition to the typical configuration, we will set up the [VueMS library configurations][vuems-conf].
+        > In here, in addition to the typical configuration, we set up the [VueMS library configurations][vuems-conf].
     * **modules.config.js**<br>
         File created from the CLI level, set configuration for VueMS library - more [here][doc-mod-structure].
         > CLI command `npm run modules` and  `npm run modules:all` created this file.<br>
@@ -77,7 +77,7 @@ Ergonode in the **developer version** contains in its structure the most importa
         > The default file is extended with additional configurations from the [VueMS library][vuems]
     * **router.local.js** <br>
         Local routing file if needed.
-        > Better idea is use modules and there set routing or extend existing routing.
+        > A better idea would be to use modules and set routing there or extend the existing routing.
     * **.env.dist** <br>
         Example file with environmental variables - need to copy and create your own `.env` file.
     * **babel.config.js** <br>
@@ -103,7 +103,7 @@ Ergonode in the **developer version** contains in its structure the most importa
 ### Directories:
 
 * **./config** <br>
-    Directory with developer configurations. There is information about the file header for linters.
+    Directory with developer configurations. There is an information about the file header for linters.
 * **./cypress** <br>
     Directory where we keep all e2e tests.
 * **./layout** <br>
@@ -209,7 +209,7 @@ export default {
 ### Required modules
 
 **Ergonode** gives full control over the loading of modules. <br>
-Each can only install the modules that it needs, but this can cause problems<br>
+Everyone can choose which modules they want to install and which ones to remove, and this can be problematic.<br>
 
 Between the modules there are those without which the application will not work properly.<br>
 To avoid problems, it is possible to determine which modules are **required** for the application to work properly.
