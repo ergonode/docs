@@ -1,4 +1,4 @@
-### Overview
+## Architecture
 
 **Ergonode** is a project that has been developed towards **micro service** from the very beginning. <br>
 The application is divided into backend part, which provides API and headless front-end part. <br>
