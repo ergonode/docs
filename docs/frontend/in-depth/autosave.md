@@ -87,9 +87,8 @@ There are 3 levels of giving displaying user feedback at tabs:
     }
     ```
 
-    *Visual result*
-
-    <img src="images/tab_changes.png" alt="User made change at the tab indicator">
+        *Visual result*
+        <img src="images/tab_changes.png" alt="User made change at the tab indicator">
 
 - Presenting validation errors will be acquired by passing **`errors`** props to **`HorizontalRoutingTabBar`** component. The passed object should have structure of:
 
@@ -102,7 +101,7 @@ There are 3 levels of giving displaying user feedback at tabs:
     ```
 
     *Visual result*
-
+    
     <img src="images/tab_errors.png" alt="User got errors after validating data at tab indicator">
 
 - Changes have been saved are achieved by invoking **`markChangeValuesAsSaved`** with **`scope`** of component (from the example above it will be `createProductModalForm`) from **`feedback`** store after successful request to BE.
@@ -122,13 +121,12 @@ Additionally, we do support editing at Grid:
     ```
   
     Where:
-        - `5ec31270-e518-4fdf-8e01-e20bfd48ca64` is a row id
-        - `test123:en_GB` is a column id
-        - `0beb4ddb-2164-4b6e-aff8-0083c4ab4ecc` changed value of cell at given row and column
-
-    *Visual result*
-
-    <img src="images/cell_success.png" alt="User made changes at grid">
+    - `5ec31270-e518-4fdf-8e01-e20bfd48ca64` is a row id
+    - `test123:en_GB` is a column id
+    - `0beb4ddb-2164-4b6e-aff8-0083c4ab4ecc` changed value of cell at given row and column
+    
+        *Visual result*
+        <img src="images/cell_success.png" alt="User made changes at grid">
 
 - Presenting validation errors will be acquired by passing **`errors`** props to **`Grid`** component. The passed object should have structure of:
 
@@ -141,13 +139,12 @@ Additionally, we do support editing at Grid:
     ```
   
     Where:
-        - `f2c0f020-9d43-4315-86dc-3911e93502b8` is a row id
-        - `abcd123:en_GB` is a column id
-        - `This value is too long. It should have 255 characters or less.` is a validation message about what went wrong
-
-    *Visual result*
-
-    <img src="images/cell_error.png" alt="User got errors after validating data at grid cell indicator">
+    - `f2c0f020-9d43-4315-86dc-3911e93502b8` is a row id
+    - `abcd123:en_GB` is a column id
+    - `This value is too long. It should have 255 characters or less.` is a validation message about what went wrong
+    
+        *Visual result*
+        <img src="images/cell_error.png" alt="User got errors after validating data at grid cell indicator">
 
 ### Reminding about errors and not saved data
 ---
