@@ -23,7 +23,7 @@ Whole validation process is made at backend application. Frontend is only parsin
 
 - To activate errors handling process it has to be used **`onErrors`** method from **`feedback`** store. It will execute parsing of validation errors.
 - Validating via **`onErrors`** method as an argument taking errors, fieldKeys and scope.
-    - **`errors`** - object returned from BE API
+    - **`errors`** - object returned from backend API
 ```json
     {
         "type": [
@@ -65,7 +65,7 @@ Whole validation process is made at backend application. Frontend is only parsin
 The whole idea is to save data per current visible context. Each tab / form has his own save button which will save only data at given context. 
 
 <div class="Alert Alert--warning">
-    Currently it’s mixed and will be changed when BE application will adapt required changes.
+    Currently it’s mixed and will be changed when backend application will adapt required changes.
 </div>
 
 ### Giving feedback
