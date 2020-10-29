@@ -60,6 +60,8 @@
     <!-- * [**Cookbook**](frontend/cookbook.md) -->
         <!-- * [**Create New Module**](frontend/cookbook/new_module.md) -->
         <!-- * [**Extend**](frontend/cookbook/extend.md) -->
+    * [**In depth**](frontend/in-depth/in-depth.md)
+        * [**Autosave**](frontend/in-depth/autosave.md)
 * [**Community**](community.md)
     * [Contribution](community/contribution.md)
     * [Code of Conduct](community/code_of_conduct.md)
