@@ -14,7 +14,7 @@ Usually a new menu item we want to add when we have a new mechanism or page
 
 <br>
 
-1. We add a new page or functionality in a separate module (the create module process is described [here][doc-new-module]).
+1. We add a new page or functionality in a separate module (The module create process is described [here][doc-new-module]).
 2. If we have a new item that we want to put in the **Toolbar Menu**, we can do it through the expansion mechanism - more [here][doc-extend].
 3. In the new module in the `config` directory we create a new `extends.js` file (if it does not exist, of course).
 4. In the `extends.js` file we add the `extendMethods` property.

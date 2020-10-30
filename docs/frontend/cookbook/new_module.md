@@ -8,12 +8,12 @@ The process of adding new modules can take place in the development version and 
 - The **development** process is related to the contribution to the [frontend repository][git-dev].
 - The **implementation** process is related to the installation of [skeleton-frontend repository][git-skelet].
 
-Adding a new module in these two approaches is very similar and the differences will be described.<br>
+Adding a new module in these two approaches is very similar and the differences will be described bellow.<br>
 
 > The example will be built based on the **implementation process**. <br>
 For example, in the module we will create a new **basic page** with **routing** and a side **menu entry**.
 
-1. In the project we create a directory of `modules`, of course if it no longer exists.
+1. In the project we create a directory of `modules` - consider as it would not exist.
 2. We create the following directory structure `@cookbook/example`- more information about module naming [here][doc-scope]. <br>
 The `@cookbook` directory is our workspace and the `example` directory is our module where we will add its content.
 3. The next step is to create a file `package.json`, in which we specify the name and version of the module. <br>
@@ -33,8 +33,8 @@ You can add more information to the file to publish the package on npm server.
   ]
 }
 ```
-4. If you want you can add support files: `README.ms`, `LICENSE`, `CHANGELOG.md`.
-5. Now we are creating a directory `src`, which will be our workspace for the module.<br>
+4. If you want you may add files: `README.ms`, `LICENSE`, `CHANGELOG.md`.
+5. Create workspace directory `src`, which will be our workspace for the module.<br>
 All subsequent steps will take place in the `src` catalog.
 6. Creates a boot file `index.js`, which has a boot function - more [here][doc-structure].
 ```javascript
