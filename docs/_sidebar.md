@@ -61,6 +61,8 @@
         * [**Create New Project**](frontend/cookbook/new_project.md)
         * [**Create New Module**](frontend/cookbook/new_module.md)
         * [**Extend Toolbar Menu**](frontend/cookbook/extend_toolbar_menu.md)
+    * [**In depth**](frontend/in-depth/in-depth.md)
+        * [**Autosave**](frontend/in-depth/autosave.md)
 * [**Community**](community.md)
     * [Contribution](community/contribution.md)
     * [Code of Conduct](community/code_of_conduct.md)
