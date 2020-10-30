@@ -57,9 +57,10 @@
         * [**Import**](frontend/modules/import.md)
         * [**Channels**](frontend/modules/channels.md)
         * [**Dashboard**](frontend/modules/dashboard.md)
-    <!-- * [**Cookbook**](frontend/cookbook.md) -->
-        <!-- * [**Create New Module**](frontend/cookbook/new_module.md) -->
-        <!-- * [**Extend**](frontend/cookbook/extend.md) -->
+    * [**Cookbook**](frontend/cookbook.md)
+        * [**Create New Project**](frontend/cookbook/new_project.md)
+        * [**Create New Module**](frontend/cookbook/new_module.md)
+        * [**Extend Toolbar Menu**](frontend/cookbook/extend_toolbar_menu.md)
 * [**Community**](community.md)
     * [Contribution](community/contribution.md)
     * [Code of Conduct](community/code_of_conduct.md)
