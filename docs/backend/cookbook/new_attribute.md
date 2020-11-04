@@ -14,7 +14,7 @@ In Ergonode system we have several Abstract Attribute classes (you can find them
 Keep in mind that Abstract Attribute class should extend `\Ergonode\Attribute\Domain\Entity\AbstractAttribute`.
 
 ```php
-namespace Ergonode\Attribute\Domain\Entity\Attribute;
+namespace YourNameSpace\Domain\Entity\Attribute;
 
 /**
  */
@@ -43,7 +43,7 @@ Create a command for creation `CreateYourAttributeCommand`.
 This file should live in `Your-module\Domain\Command\Attribute\Create` namespace and extends `Ergonode\Attribute\Domain\Command\Attribute\AbstractCreateAttributeCommand`.
 
 ```php
-namespace Ergonode\Attribute\Domain\Command\Attribute\Create;
+namespace YourNameSpace\Domain\Command\Attribute\Create;
 
 /**
  */
@@ -59,7 +59,7 @@ This file should live in `Your-module\Infrastructure\Handler\Attribute\Create` n
 Remember to tag the handler with `messenger.message_handler`
 
 ```php
-namespace Ergonode\Attribute\Infrastructure\Handler\Attribute\Create;
+namespace YourNameSpace\Infrastructure\Handler\Attribute\Create;
 
 /**
  */
@@ -106,7 +106,7 @@ class CreateYourAttributeCommandHandler
 Create a command for update `UpdateYourAttributeCommand`.This file should live in `Your-module\Domain\Command\Attribute\Update` namespace and extends `Ergonode\Attribute\Domain\Command\Attribute\AbstractUpdateAttributeCommand`.
 
 ```php
-namespace Ergonode\Attribute\Domain\Command\Attribute\Update;
+namespace YourNameSpace\Domain\Command\Attribute\Update;
 
 /**
  */
@@ -119,7 +119,7 @@ Create a handler `UpdateYourAttributeCommandHandler`.This file should live in `Y
 Remember to tag the handler with `messenger.message_handler`
 
 ```php
-namespace Ergonode\Attribute\Infrastructure\Handler\Attribute\Update;
+namespace YourNameSpace\Infrastructure\Handler\Attribute\Update;
 
 /**
  */
@@ -161,7 +161,7 @@ Create a handler for creation command `CreateYourAttributeCommandFactory`.This f
 If autoconfiguration is not used remember to tag your service with `component.attribute.create_attribute_command_factory_interface` 
 
 ```php
-namespace Ergonode\Attribute\Infrastructure\Factory\Command\Create;
+namespace YourNameSpace\Infrastructure\Factory\Command\Create;
 
 /**
  */
@@ -205,7 +205,7 @@ Create a handler for updating command `UpdateYourAttributeCommandFactory`.This f
 If autoconfiguration is not used remember to tag your service with `component.attribute.update_attribute_command_factory_interface`
 
 ```php
-namespace Ergonode\Attribute\Infrastructure\Factory\Command\Update;
+namespace YourNameSpace\Infrastructure\Factory\Command\Update;
 
 /**
  */
@@ -251,7 +251,7 @@ To be able to validate values which are used in our new attribute `YourAttribute
 If autoconfiguration is not used remember to tag your service with `component.attribute.attribute_validation_interface`
 
 ```php
-namespace Ergonode\Attribute\Infrastructure\Provider\Strategy;
+namespace YourNameSpace\Infrastructure\Provider\Strategy;
 
 class YourAttributeValueConstraintStrategy implements AttributeValueConstraintStrategyInterface
 {
@@ -289,7 +289,7 @@ This file should live in `Your-module\Application\Form\Attribute` namespace and 
 If autoconfiguration is not used remember to tag your service with `attribute.form.attribute_form_interface`
 
 ```php
-namespace Ergonode\Attribute\Application\Form\Attribute;
+namespace YourNameSpace\Application\Form\Attribute;
 
 class YourAttributeForm extends AbstractType implements AttributeFormInterface
 {
@@ -368,7 +368,7 @@ Create column class `YourAttributeColumn`
 This file should live in `Your-module\Grid\Column` namespace and extends `\Ergonode\Grid\Column\AbstractColumn`
 
 ```php
-namespace Ergonode\Grid\Column;
+namespace YourNameSpace\Grid\Column;
 
 /**
  */
@@ -391,7 +391,7 @@ Create strategy class `YourAttributeColumnStrategy`
 This file should live in `Your-module\Infrastructure\Grid\Column\Provider\Strategy` namespace and implements `Ergonode\Product\Infrastructure\Grid\Column\Provider\Strategy\AttributeColumnStrategyInterface`
 
 ```php
-namespace Ergonode\Product\Infrastructure\Grid\Column\Provider\Strategy;
+namespace YourNameSpace\Infrastructure\Grid\Column\Provider\Strategy;
 
 /**
  */
@@ -423,7 +423,7 @@ Create DataSet Builder class `YourAttributeDataSetQueryBuilder`
 This file should live in `Your-module\Infrastructure\Grid\Builder\Query` namespace and extends `Ergonode\Product\Infrastructure\Grid\Builder\Query\AbstractAttributeDataSetBuilder`
 
 ```php
-namespace Ergonode\Product\Infrastructure\Grid\Builder\Query;
+namespace YourNameSpace\Infrastructure\Grid\Builder\Query;
 
 /**
  */
@@ -442,7 +442,7 @@ class YourAttributeDataSetQueryBuilder extends AbstractAttributeDataSetBuilder
 Create renderer class `YourAttributeColumnRenderer`
 
 ```php
-namespace Ergonode\Product\Infrastructure\Grid\Column\Renderer;
+namespace YourNameSpace\Infrastructure\Grid\Column\Renderer;
 
 /**
  */
