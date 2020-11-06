@@ -5,7 +5,7 @@
 Any custom mass action process must implement ```BatchActionProcessorInterface``` 
 
 ```php
-namespace YourNameSpace\Infrastructure\processor;
+namespace YourNameSpace\Infrastructure\Processor;
 
 use Ergonode\BatchAction\Domain\Entity\BatchActionId;
 use Ergonode\BatchAction\Domain\ValueObject\BatchActionMessage;
