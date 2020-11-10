@@ -12,8 +12,9 @@ This file should live in `Your-module\Application\Form\Attribute\` namespace ext
 In Ergonode system we have several Abstract Attribute classes (you can find them in `Ergonode\Attribute\Domain\Entity\Attribute` namespace), it depends on what kind of attribute you want to create, you can either use one of already created or create a custom one. 
 
 Keep in mind that Abstract Attribute class should extend `\Ergonode\Attribute\Domain\Entity\AbstractAttribute`.
+
 ```php
-namespace Ergonode\Attribute\Domain\Entity\Attribute;
+namespace YourNameSpace\Domain\Entity\Attribute;
 
 /**
  */
@@ -22,7 +23,7 @@ class YourAttribute extends AbstractCollectionAttribute implements AttributeInte
     public const TYPE = 'YOUR_ATTRIBUTE';
 
     /**
-     * @JMS\virtualProperty();
+     * @JMS\VirtualProperty();
      * @JMS\SerializedName("type")
      *
      * @return string
@@ -42,7 +43,7 @@ Create a command for creation `CreateYourAttributeCommand`.
 This file should live in `Your-module\Domain\Command\Attribute\Create` namespace and extends `Ergonode\Attribute\Domain\Command\Attribute\AbstractCreateAttributeCommand`.
 
 ```php
-namespace Ergonode\Attribute\Domain\Command\Attribute\Create;
+namespace YourNameSpace\Domain\Command\Attribute\Create;
 
 /**
  */
@@ -55,9 +56,10 @@ Each command needs to have handler, class that handles the logic represented by 
 
 Create a handler `CreateYourAttributeCommandHandler`.
 This file should live in `Your-module\Infrastructure\Handler\Attribute\Create` namespace.
+Remember to tag the handler with `messenger.message_handler`
 
 ```php
-namespace Ergonode\Attribute\Infrastructure\Handler\Attribute\Create;
+namespace YourNameSpace\Infrastructure\Handler\Attribute\Create;
 
 /**
  */
@@ -93,7 +95,7 @@ class CreateYourAttributeCommandHandler
         );
 
         foreach ($command->getGroups() as $group) {
-            $attribute->addGroup(new AttributeGroupId($group));
+            $attribute->addGroup($group);
         }
 
         $this->attributeRepository->save($attribute);
@@ -104,7 +106,7 @@ class CreateYourAttributeCommandHandler
 Create a command for update `UpdateYourAttributeCommand`.This file should live in `Your-module\Domain\Command\Attribute\Update` namespace and extends `Ergonode\Attribute\Domain\Command\Attribute\AbstractUpdateAttributeCommand`.
 
 ```php
-namespace Ergonode\Attribute\Domain\Command\Attribute\Update;
+namespace YourNameSpace\Domain\Command\Attribute\Update;
 
 /**
  */
@@ -114,9 +116,10 @@ class UpdateYourAttributeCommand extends AbstractUpdateAttributeCommand
 ```
 
 Create a handler `UpdateYourAttributeCommandHandler`.This file should live in `Your-module\Infrastructure\Handler\Attribute\Upadate` namespace.
+Remember to tag the handler with `messenger.message_handler`
 
 ```php
-namespace Ergonode\Attribute\Infrastructure\Handler\Attribute\Update;
+namespace YourNameSpace\Infrastructure\Handler\Attribute\Update;
 
 /**
  */
@@ -154,11 +157,11 @@ class UpdateYourAttributeCommandHandler extends AbstractUpdateAttributeCommandHa
 
 ## Command factories
 
-Create a handler  for creation command `CreateYourAttributeCommandFactory`.This file should live in `Your-module\Infrastructure\Factory\Command\Create` namespace and implements `Ergonode\Attribute\Infrastructure\Factory\Command\CreateAttributeCommandFactoryInterface`
-
+Create a handler for creation command `CreateYourAttributeCommandFactory`.This file should live in `Your-module\Infrastructure\Factory\Command\Create` namespace and implements `Ergonode\Attribute\Infrastructure\Factory\Command\CreateAttributeCommandFactoryInterface`
+If autoconfiguration is not used remember to tag your service with `component.attribute.create_attribute_command_factory_interface` 
 
 ```php
-namespace Ergonode\Attribute\Infrastructure\Factory\Command\Create;
+namespace YourNameSpace\Infrastructure\Factory\Command\Create;
 
 /**
  */
@@ -199,9 +202,10 @@ class CreateYourAttributeCommandFactory implements CreateAttributeCommandFactory
 ```
 
 Create a handler for updating command `UpdateYourAttributeCommandFactory`.This file should live in `Your-module\Infrastructure\Factory\Command\Update` namespace and implements `Ergonode\Attribute\Infrastructure\Factory\Command\UpdateAttributeCommandFactoryInterface`
+If autoconfiguration is not used remember to tag your service with `component.attribute.update_attribute_command_factory_interface`
 
 ```php
-namespace Ergonode\Attribute\Infrastructure\Factory\Command\Update;
+namespace YourNameSpace\Infrastructure\Factory\Command\Update;
 
 /**
  */
@@ -235,7 +239,7 @@ class UpdateYourAttributeCommandFactory implements UpdateAttributeCommandFactory
             new TranslatableString($data->hint),
             new TranslatableString($data->placeholder),
             new AttributeScope($data->scope),
-            $data->groups,
+            array_map(fn($group) => new AttributeGroupId($group), $data->groups),
         );
     }
 }
@@ -244,12 +248,11 @@ class UpdateYourAttributeCommandFactory implements UpdateAttributeCommandFactory
 ## Value Constrain Strategy
 
 To be able to validate values which are used in our new attribute `YourAttributeValueConstraintStrategy` needs to be created. This file should live in `Your-module\Infrastructure\Provider\Strategy` namespace and implements `Ergonode\Attribute\Infrastructure\Provider\AttributeValueConstraintStrategyInterface`
+If autoconfiguration is not used remember to tag your service with `component.attribute.attribute_validation_interface`
 
 ```php
-namespace Ergonode\Attribute\Infrastructure\Provider\Strategy;
+namespace YourNameSpace\Infrastructure\Provider\Strategy;
 
-/**
- */
 class YourAttributeValueConstraintStrategy implements AttributeValueConstraintStrategyInterface
 {
     /**
@@ -283,9 +286,10 @@ Create form class `YouAttributeForm`
 This file should live in `Your-module\Application\Form\Attribute` namespace and extends:
 * `Symfony\Component\Form\AbstractType`
 * `Ergonode\Attribute\Application\Form\Attribute\AttributeFormInterface`
+If autoconfiguration is not used remember to tag your service with `attribute.form.attribute_form_interface`
 
 ```php
-namespace Ergonode\Attribute\Application\Form\Attribute;
+namespace YourNameSpace\Application\Form\Attribute;
 
 class YourAttributeForm extends AbstractType implements AttributeFormInterface
 {
@@ -358,12 +362,36 @@ class YourAttributeForm extends AbstractType implements AttributeFormInterface
 
 If you want be able to use your attribute on a grid you need to create following classes.
 
+
+Create column class `YourAttributeColumn`
+
+This file should live in `Your-module\Grid\Column` namespace and extends `\Ergonode\Grid\Column\AbstractColumn`
+
+```php
+namespace YourNameSpace\Grid\Column;
+
+/**
+ */
+class YourColumn extends AbstractColumn
+{
+    public const TYPE = 'YOUR_ATTRIBUTE';
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getType(): string
+    {
+        return self::TYPE;
+    }
+}
+```
+
 Create strategy class `YourAttributeColumnStrategy` 
 
 This file should live in `Your-module\Infrastructure\Grid\Column\Provider\Strategy` namespace and implements `Ergonode\Product\Infrastructure\Grid\Column\Provider\Strategy\AttributeColumnStrategyInterface`
 
 ```php
-namespace Ergonode\Product\Infrastructure\Grid\Column\Provider\Strategy;
+namespace YourNameSpace\Infrastructure\Grid\Column\Provider\Strategy;
 
 /**
  */
@@ -395,7 +423,7 @@ Create DataSet Builder class `YourAttributeDataSetQueryBuilder`
 This file should live in `Your-module\Infrastructure\Grid\Builder\Query` namespace and extends `Ergonode\Product\Infrastructure\Grid\Builder\Query\AbstractAttributeDataSetBuilder`
 
 ```php
-namespace Ergonode\Product\Infrastructure\Grid\Builder\Query;
+namespace YourNameSpace\Infrastructure\Grid\Builder\Query;
 
 /**
  */
@@ -411,25 +439,30 @@ class YourAttributeDataSetQueryBuilder extends AbstractAttributeDataSetBuilder
 }
 ```
 
-Create column class `YourAttributeColumn`
-
-This file should live in `Your-module\Grid\Column` namespace and extends `\Ergonode\Grid\Column\AbstractColumn`
+Create renderer class `YourAttributeColumnRenderer`
 
 ```php
-namespace Ergonode\Grid\Column;
+namespace YourNameSpace\Infrastructure\Grid\Column\Renderer;
 
 /**
  */
-class YourColumn extends AbstractColumn
+class YourAttributeColumnRenderer extends \Ergonode\Grid\Column\Renderer\ColumnRendererInterface
 {
-    public const TYPE = 'YOUR_ATTRIBUTE';
+    /**
+     * {@inheritDoc}
+     */
+    public function supports(ColumnInterface $column): bool
+    {
+        return $column instanceof YourAttributeColumn;
+    }
 
     /**
      * {@inheritDoc}
      */
-    public function getType(): string
+
+    public function render(ColumnInterface $column, string $id, array $row)
     {
-        return self::TYPE;
+        // TODO return your column value
     }
 }
 ```
