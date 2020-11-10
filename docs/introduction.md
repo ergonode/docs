@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://ergonode.com">
-    <img src="https://img.shields.io/badge/version-0.10.0-4c9aff.svg" alt="Version">
+    <img src="https://img.shields.io/badge/version-1.0.0beta-4c9aff.svg" alt="Version">
   </a>
   <a href="https://join.slack.com/t/ergonode/shared_invite/enQtNjI5NzU3NzM2MzU2LTY0ZGM4MGMyNGZjOGEyNDY5OGI1NzM5ZDNiMTY3YjA2YmRhMzY1OWE1MjJjZWEzM2YwOThkZDBjODZlZjY0ZmI">
     <img src="https://img.shields.io/badge/chat-on%20slack-e51670.svg" alt="Chat">
