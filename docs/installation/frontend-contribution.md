@@ -1,4 +1,4 @@
-# Frontend installation
+# Contribution installation
 
 <div class="Alert Alert--warning">
 
@@ -7,7 +7,7 @@
 
 </div>
 
-## Server requirements
+## Requirements
 ---
 
 1. In case you don't have [node.js][node] installed - install the latest stable version.
@@ -16,7 +16,7 @@
    2. [yarn][yarn]
 3. Install [git][git] if needed.
 
-## Contribution installation
+## Quick Start
 ---
 If you are a developer that needs help with building **Ergonode** - this installation is for you:
 
@@ -81,71 +81,6 @@ npm run start
 ```
 
 
-## Installation for development
----
-If you are an Ergonode Partner implementing **Ergonode** for your clients - this installation is for you:
-
-
-**1) Getting started**
-
-Clone project repository to your local directory:
-
-```bash
-git clone git@github.com:ergonode/skeleton-frontend.git
-cd skeleton-frontend
-```
-
-Install project dependencies:
-
-```bash
-npm install
-```
-
-Set your local `.env` file:
-
-```bash
-npm run env
-```
-> *You may want to override created `.env` file by other settings*
-
-**2) Module configuration**
-
-<div class="Alert Alert--warning">
-
-1. In the skeleton repository all modules ale loaded from [npm.js server][npm-ergo].
-2. If you create your own module you have to add it yourself to the `modules.config.js` file.
-3. Running the commands below overwrite the `modules.config.js` file and starts the module installation.
-
-</div>
-
-Follow **CLI** steps to choose your modules:
-
-```bash
-npm run modules
-```
-
-You might want automatically setup all modules by executing command:
-```bash
-npm run modules:all
-```
-> *You may want to override created `modules.config.js` file by other settings, but then you mast run `npm install` command!*
-
-**3) Build**
-
-Run **development** mode
-
-```bash
-npm run dev
-```
-
-Run **production** mode
-
-```bash
-npm run build
-npm run start
-```
-
-
 ## Configuration
 ---
 
@@ -158,7 +93,7 @@ npm run start
 
 
 
-#### frontend npm commands
+####  Npm commands
 
 | Commends    | Description                            |
 |-------------|----------------------------------------|
@@ -181,16 +116,6 @@ npm run start
 | npm run publish:all | Publish all npm modules  |
 | npm run list:modules | List all modules  |
 
-#### skeleton npm commands
-
-| Commends    | Description                            |
-|-------------|----------------------------------------|
-| npm run dev | Starting local sever listening changes |
-| npm run build | Build code |
-| npm run start | Starting building code |
-| npm run env | CLi with .env configuration |
-| npm run modules | CLI with modules configuration |
-| npm run modules:all | CLI to set all modules |
 
 [be]: installation/backend-contribution
 [node]: https://nodejs.org/en/download/

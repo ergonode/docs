@@ -3,7 +3,8 @@
     * [**Backend - development**](installation/backend-development.md)
     * [**Backend - contribution**](installation/backend-contribution.md)
 <!--  * [**Backend - production**](installation/backend-production.md) -->
-    * [**Frontend**](installation/frontend.md)
+    * [**Frontend - development**](installation/frontend-development.md)
+    * [**Frontend - contribution**](installation/frontend-contribution.md)
     * [**Docker - contribution**](installation/docker.md)
     * [**Documentation**](installation/docs.md)
 * [**Backend**](backend.md)

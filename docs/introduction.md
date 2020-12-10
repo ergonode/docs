@@ -1,26 +1,25 @@
 <p align="center">
   <a href="https://ergonode.com" rel="noopener noreferrer">
-    <img width="300" src="https://ergonode.com/img/logo-dark.svg" alt="Ergonode logo">
+    <img width="300" src="images/logo-dark.svg" alt="Ergonode logo">
   </a>
 </p>
 <p align="center">Desktop PWA Ready Product Information Management Platform</p>
 
 <p align="center">
-  <a href="https://ergonode.com">
-    <img src="https://img.shields.io/badge/version-1.0.0beta-4c9aff.svg" alt="Version">
-  </a>
   <a href="https://join.slack.com/t/ergonode/shared_invite/enQtNjI5NzU3NzM2MzU2LTY0ZGM4MGMyNGZjOGEyNDY5OGI1NzM5ZDNiMTY3YjA2YmRhMzY1OWE1MjJjZWEzM2YwOThkZDBjODZlZjY0ZmI">
     <img src="https://img.shields.io/badge/chat-on%20slack-e51670.svg" alt="Chat">
   </a>
     <img src="https://img.shields.io/github/license/ergonode/frontend.svg" alt="License">
 </p>
 
+<div align="center">
 <ul align="center" style="font-size: 20px; list-style: none; ">
     <li style="padding-top:10px">The first human-centric PIM</li>
     <li style="padding-top:10px">Saves time & costs</li>
     <li style="padding-top:10px">Open source</li>
     <li style="padding-top:10px">For people</li>
 </ul>
+</div>
 
 ## Ergonode is not an ordinary PIM
 Ergonode is an environment for people who work hard with product data – who need to easily receive, manage, enrich and distribute product information in omnichannel reality. For retail and B2B.
