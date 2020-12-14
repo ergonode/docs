@@ -24,7 +24,7 @@ Then the two basic **axios** mechanism methods are replaced:<br>
 
 * `onRequest` - this method contains everything that has to be sent with every API query.<br>
     The query address is prepared here to make it easier to work with the API.<br>
-    Together with the API address the language is also added, which is taken from user data by default.<br>
+    Together with the API address the language, which is taken from user data by default, is also added.<br>
     The language in the query can be changed using the `withLanguage`.<br>
 
     ```javascript
@@ -49,8 +49,8 @@ which can be used with the global method of `clearCancelTokens`.
 ---
 
 All API queries are placed in the `services` directory to maintain order.<br>
-All the necessary parameters are passed on to the method, <br>
-and data or errors are returned.<br>
+All the necessary parameters are passed on to the method. <br>
+Data or errors are returned<br>
 
 
 ```javascript
