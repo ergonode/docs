@@ -13,7 +13,7 @@ you need to overwrite configurations by creating `axios.js` plugin in  **Core** 
 
 All API queries pass the **authorization token**, <br>
 which is created after the user's login. <br>
-By default, it's `authorization` actually.<br>
+It is placed by default in the header of the `authorization`.<br>
 
 All queries are based on the global `axios` method.<br>
 
