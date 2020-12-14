@@ -1,5 +1,12 @@
 # Contribution installation
 
+
+<div class="Alert">
+
+If you want to use a simpler installation method, you can use our [docker][docker].
+
+</div>
+
 <div class="Alert Alert--warning">
 
 1. First visit [backend installation][be] part to make the application work properly<br>
@@ -122,4 +129,5 @@ npm run start
 [npm]: https://www.npmjs.com/get-npm
 [yarn]: https://yarnpkg.com/en/
 [git]: https://git-scm.com/downloads
+[docker]: installation/docker
 [npm-ergo]: https://www.npmjs.com/search?q=keywords:ergonode-module

@@ -1,5 +1,11 @@
 # Installation
 
+<div class="Alert">
+
+If you want to use a simpler installation method, you can use our [docker][docker].
+
+</div>
+
 <div class="Alert Alert--warning">
 
 This document is for everyone who wants to develop Ergonode application. If you want to use it [check here](installation/backend-development.md)
@@ -33,13 +39,13 @@ Application on default starts on **develop** branch
 If you want to run last stable application version execute:
 ```
 git checkout master
-``` 
+```
 In .env file you need to configure database connection
 
 Open your terminal in local project, and execute:
 ```
 composer install
-``` 
+```
 In .env file you need to configure database connection
 ```
 DATABASE_URL=pgsql://db_user:db_password@127.0.0.1:5432/db_name
@@ -49,7 +55,7 @@ Generate keys for Json Web Token
 openssl genrsa -out config/jwt/private.pem -aes256 4096
 openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
 ```
-While executing above commands you will be asked for your password. This password needs to be saved then in .env file 
+While executing above commands you will be asked for your password. This password needs to be saved then in .env file
 in line `JWT_PASSPHRASE=yourpassword`
 
 In terminal execute command which configures application (available phing commands):
@@ -96,11 +102,11 @@ Those command are available only in development mode
 |-----------------------|------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
 | `test`                | Full application  testing (clean database, migrations, fixtures, PHPUnit, Behat)                     | database:migrate, database:fixture, test:unit, test:behat                    |
 | `test:unit`           | Unit test - phpunit                                                                                  |                                                                              |
-| `test:unit:coverage`  | Unit test - phpunit  with coverage                                                                   |                                                                              | 
+| `test:unit:coverage`  | Unit test - phpunit  with coverage                                                                   |                                                                              |
 | `test:behat`          | Behat - api integration tests                                                                        |                                                                              |
 | `database:migrate`    | Run migration to database                                                                            |                                                                              |
 | `database:create`     | Create database                                                                                      |                                                                              |
-| `database:drop`       | Drop database                                                                                        |                                                                              |         
+| `database:drop`       | Drop database                                                                                        |                                                                              |
 | `database:fixture`    | Adding basic fixtures to database                                                                    |                                                                              |
 | `database:fixture:dev`| Adding development fixtures to database                                                              |                                                                              |
 | `check:style`         | Code inspection (CS, MD, CPD)                                                                        | check:php, check:cs, check:cpd, check:md                                     |
@@ -115,3 +121,6 @@ Those command are available only in development mode
 
 See more:
 [.ENV Configuration](backend\configuration.md), [console commands](backend\console.md)
+
+
+[docker]: installation/docker

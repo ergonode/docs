@@ -1,19 +1,19 @@
-# API requests power by axios
+# API requests powered by axios
 
 All API requests are supported by the [nuxt/axios][axios] library,<br>
-which provides us with full support for API queries.
+which makes it easy for us to use API queries.
 
 ### Introduction
 ---
-The main configuration of the library is located in the file `nuxt.config.js`, <br>
-there are the most important things needed to run the library on our system. <br>
+The main configuration for the library is located in the file `nuxt.config.js`, <br>
+there are the most important things you need to run the library on our system. <br>
 
 To configure all necessary settings for API queries, <br>
-overwrite configurations by creating `axios.js` plugin in  **Core** module.<br>
+you need to overwrite configurations by creating `axios.js` plugin in  **Core** module.<br>
 
 All API queries pass the **authorization token**, <br>
 which is created after the user's login. <br>
-It is placed by default in the header of the `JWTAuthorization`.<br>
+By default, it's `authorization` actually.<br>
 
 All queries are based on the global `axios` method.<br>
 
@@ -22,7 +22,7 @@ All queries are based on the global `axios` method.<br>
 Initially, all necessary headers are added to the axios query.<br>
 Then the two basic **axios** mechanism methods are replaced:<br>
 
-* `onRequest` - that is everything that has to be sent with every API query.<br>
+* `onRequest` - this method contains everything that has to be sent with every API query.<br>
     The query address is prepared here to make it easier to work with the API.<br>
     Together with the API address the language is also added, which is taken from user data by default.<br>
     The language in the query can be changed using the `withLanguage`.<br>
@@ -67,12 +67,8 @@ export const getAll = ({
     params,
 });
 ```
-> The [nuxt/axios][axios] library has internal methods adapted to API queries.<br>
-    - `$axios.$get()` === `GET`<br>
-    - `$axios.$post()` === `POST`<br>
-    - `$axios.$put()` === `PUT`<br>
-    - `$axios.$delete()` === `DELETE`<br>
-
+> The [nuxt/axios][axios] library has internal methods adapted to API queries, see [here][axios-api].<br>
 
 
 [axios]: https://axios.nuxtjs.org/
+[axios-api]: https://github.com/axios/axios#axios-api
