@@ -3,7 +3,8 @@
     * [**Backend - development**](installation/backend-development.md)
     * [**Backend - contribution**](installation/backend-contribution.md)
 <!--  * [**Backend - production**](installation/backend-production.md) -->
-    * [**Frontend**](installation/frontend.md)
+    * [**Frontend - development**](installation/frontend-development.md)
+    * [**Frontend - contribution**](installation/frontend-contribution.md)
     * [**Docker - contribution**](installation/docker.md)
     * [**Documentation**](installation/docs.md)
 * [**Backend**](backend.md)
@@ -63,6 +64,8 @@
         * [**Extend Toolbar Menu**](frontend/cookbook/extend_toolbar_menu.md)
     * [**In depth**](frontend/in-depth/in-depth.md)
         * [**Autosave**](frontend/in-depth/autosave.md)
+        * [**i18n**](frontend/in-depth/i18n.md)
+        * [**axios**](frontend/in-depth/axios.md)
 * [**Community**](community.md)
     * [Contribution](community/contribution.md)
     * [Code of Conduct](community/code_of_conduct.md)

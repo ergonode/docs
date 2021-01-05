@@ -58,6 +58,7 @@ export default {
 // use in the whole application
 
 import List from '@Core/components/List/List';
+//or
 import List from '@CoreComponents/List/List';
 ```
 
@@ -162,11 +163,13 @@ and use specific properties in it depending on what you want to achieve. <br>
 In our application there is a dictionary mechanism that defines the data sets **loaded at the start of the application**.<br>
 This property gives you the possibility to add a new dictionary, such dictionary should be a set of **constant data**.<br>
 
-**Dictionary object property:**<br>
-    - `stateProp` - property name used in Vuex store,<br>
-    - `dataFormat` - dictionary format (e.g. `[]`, `{}`),<br>
-    - `requestPath` - API address for the dictionary,<br>
-    - `isGrid` - flag to determine if the query goes to EndPoint with grid,<br>
+**Dictionary object property:**
+* `stateProp` - property name used in Vuex store,
+* `defaultValue` - dictionary format (e.g. `[]`, `{}`),
+* `request` - API request,
+    * `path` - API request path,
+    * `config` - API request config,
+* `dataMapper` - data mapper method,
 
 >The dictionary must be in `Array` or `Object` format.<br>
 **The mechanism operates on data downloaded by API from the backend application**.
@@ -177,9 +180,12 @@ export default {
     dictionaries: [
         {
             stateProp: 'units',
-            dataFormat: [],
-            requestPath: '/units',
-            isGrid: true,
+            defaultValue: [],
+            request: {
+                path: '/units?view=list',
+                config: {},
+            },
+            dataMapper: response => response.collection,
         },
     ],
 };
@@ -187,13 +193,13 @@ export default {
 
 ---
 
-* **`extendTabs`** <br>
+* **`extendRoutesChildren`** <br>
     - Type: `Array`
 
 In Ergonode, many pages are tabbed, if we want to divide information on a page, we move it to a separate tab.<br>
 This functionality allows you to add a new tab to a page that exists and has tabs.<br>
 The mechanism is based on routing and extends existing routing. <br>
-**`extendTabs` object property:**<br>
+**`extendRoutesChildren` object property:**<br>
     - `name` - existing router name what we want extend,<br>
     - `children` - array with router to extend,<br>
 
@@ -202,7 +208,7 @@ The mechanism is based on routing and extends existing routing. <br>
 ```javascript
 // using example in module: @Products/config/extends.js
 export default {
-    extendTabs: [
+    extendRoutesChildren: [
         {
             name: 'product-id',
             children: [
@@ -285,7 +291,7 @@ There are predefined places ready for expansion throughout the application.<br>
     computed: {
         ...
         extendedComponents() {
-            return this.$getExtendedComponents('PLACEHOLDER_NAME');
+            return this.$getExtendSlot('PLACEHOLDER_NAME');
         },
     }
 ```
@@ -322,7 +328,7 @@ There are predefined places ready for expansion throughout the application.<br>
 (e.g `@Products/components/Forms/ProductForm` - extend product form component)<br>
 We recommend this approach because it is very clear.
 
-> There is a global `$getExtendedComponents` method in the application that takes all the components <br>
+> There is a global `$getExtendSlot` method in the application that takes all the components <br>
 passed for expansion and places them in a prepared place.
 
 > In addition, there is the `$extendedForm` method, which takes components according to the type.<br>
@@ -345,7 +351,7 @@ The methods can take any parameters, it depends on the information provided whil
 1. First, we place the functions for capturing the methods in the place we want to extend.
 
 ```javascript
-const methods = await this.$extendMethods('PLACEHOLDER_NAME', {
+const methods = await this.$getExtendMethod('PLACEHOLDER_NAME', {
     $this: this,
     data,
 });
@@ -365,7 +371,7 @@ export default {
 };
 ```
 
-> There is a global `$extendMethods` method in the application that takes all the methods <br>
+> There is a global `$getExtendMethod` method in the application that takes all the methods <br>
 passed for expansion and places them in a prepared place.
 
 > All placeholders placed in the application are described in the [modules section][doc-modules] of the application, with each module.
