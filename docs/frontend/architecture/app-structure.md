@@ -75,9 +75,6 @@ Ergonode in the **developer version** contains in its structure the most importa
     * **router.js** <br>
         [Vue router][vue-router] configuration file.
         > The default file is extended with additional configurations from the [VueMS library][vuems]
-    * **router.local.js** <br>
-        Local routing file if needed.
-        > A better idea would be to use modules and set routing there or extend the existing routing.
     * **.env.dist** <br>
         Example file with environmental variables - need to copy and create your own `.env` file.
     * **babel.config.js** <br>

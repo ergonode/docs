@@ -1,6 +1,6 @@
 # Module structure
 
-### Introduction
+## Introduction
 
 A single module in its construction corresponds to a typical Nuxt-based project structure.<br>
 By using the [VueMS][vuems] library we can build modules like small projects based on [NuxtJS][nuxt].<br>
@@ -21,7 +21,7 @@ We know that the work of **Ergonode** developers is completely different from th
 This solution was created mainly for the latter ones.<br>
 
 
-### Structure
+## Structure
 
 We have assumed that the modules will be created according to the concept of creating an npm package, <br>
 so that after creating the modules locally, it can be easily transferred to the [npm server][npm].<br>
@@ -34,7 +34,7 @@ You can also add a `README.md` and `LICENSE` files.
         alt="Module structure"
         />
 
-#### Required files:
+### Required files:
 
 * **package.json**<br>
     This file should contain all information about module.<br>
@@ -100,7 +100,7 @@ export default {
 };
 ```
 
-#### Directory structure
+### Directory structure
 
 By using the [VueMS][vuems] library we can maintain the same directory structure as in [NuxtJS][nuxt]. <br>
 Looking at the module structure we can see its similarity to a typical Nuxt-based project [structure][nuxt-dirs]. <br>
