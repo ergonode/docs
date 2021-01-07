@@ -2,8 +2,8 @@
 # How to create a new channel
 
 Channel 
-* Entity Claas to management
-* external service connector(if required)
+* Entity Class to management
+* external service connector (if required)
 * specific configuration of a specific target system
 
 In your channel [module].

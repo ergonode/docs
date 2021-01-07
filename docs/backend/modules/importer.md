@@ -5,46 +5,26 @@
 This module is responsible for managing imports to ergonode from external systems or files. 
 
 
-## Reader
+## Custom Import error
 
-**Reader** is a component responsible for reading files in different formats. 
+If an error occurs during the import process, we may want to inform the user by presenting the relevant content in the import error list.
 
-One Reader class is responsible for one file type.
-
-To use it you need to create a class which implements **FileReaderInterface**.
+For that we need to create custom error. We're doing that by creating new exception class extended from ```Ergonode\Importer\Infrastructure\Exception\ImportException```
 
 ```php
-<?php
-namespace Ergonode\Component\Importer\Infrastructure\Reader;
+namespace YourNameSpace\Infrastructure\Exception;
 
-interface FileReaderInterface extends \IteratorAggregate, \Countable
+class ImportBindingAttributeNotFoundException extends ImportException
 {
-    public function open(string $file, array $configuration = [], array $formatters = []): void;
-    public function read(): \Traversable;
-    public function close(): void;
-}
+    private const MESSAGE  = 'Your error message with param {param}';
 
-```
-
-Example of **Reader** you can find here:
-`Ergonode\Component\Importer\Infrastructure\Reader\CsvFileReader.php`
-
-
-## Formatter
-
-**Formatters** are objects responsbile for changing every line from input file. 
-
-One **Formatter** class is responsible for one text editing operation. For example it can be used for removing some unwanted characters or changing text encoding.
-
-You you need to create a class which implements **FormatterInterface**.
-
-```php
-<?php
-namespace Ergonode\Component\Importer\Infrastructure\Formatter;
-
-interface FormatterInterface
-{
-    public function format(string $string): string;
+    public function __construct(string $param, \Throwable $previous = null)
+    {
+        parent::__construct(self::MESSAGE, ['{param}' => $param], $previous);
+    }
 }
 ```
 
+In addition to the importer.yml translation file, we can add a location-based version of our message
+
+Now if you throw this exception in import process, message will be automatically added to import error list
