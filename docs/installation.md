@@ -20,8 +20,8 @@ You will be very interested in installing the application in such a way:
 
 [front]: https://github.com/ergonode/frontend
 [back]: https://github.com/ergonode/backend
-[cf]: installation/frontend?id=contribution-installation
-[pf]: installation/frontend?id=partner-installation
+[cf]: installation/frontend-contribution
+[pf]: installation/frontend-development
 [cb]: installation/backend-contribution
 [pb]: installation/backend-development
 [docker]: installation/docker

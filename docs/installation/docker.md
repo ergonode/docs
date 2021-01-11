@@ -1,7 +1,9 @@
 # Docker installation
 
 <div class="Alert Alert--warning">
+
 This is only a development solution! Do not use it on production environments!
+
 </div>
 
 ## The docker uses the following services
