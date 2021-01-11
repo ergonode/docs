@@ -14,7 +14,7 @@ For that we need to create custom error. We're doing that by creating new except
 ```php
 namespace YourNameSpace\Infrastructure\Exception;
 
-class ImportBindingAttributeNotFoundException extends ImportException
+class YourCustomException extends ImportException
 {
     private const MESSAGE  = 'Your error message with param {param}';
 
