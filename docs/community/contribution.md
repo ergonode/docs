@@ -35,9 +35,7 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
 
 ## Pull Request Guidelines
 
-- The `master` branch is just a snapshot of the latest stable release. All development should be done in dedicated branches. **Do not submit PRs against the `master` branch.**
-
-- Checkout a topic branch from the relevant branch, e.g. `develop`, and merge back against that branch.
+- Checkout a topic branch from the relevant branch, e.g. `master`, and merge back against that branch.
 
 - It's OK to have multiple small commits as you work on the PR - GitHub will automatically squash it before merging.
 
