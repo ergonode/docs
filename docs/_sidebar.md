@@ -22,6 +22,8 @@
         * [New Grid Column Type](backend/cookbook/new_grid_column_type.md)
         * [New Condition](backend/cookbook/new_condition.md)
         * [New Channel](backend/cookbook/new_channel.md)
+        * [New Mass Action](backend/cookbook/new_mass_action.md)
+        * [New Import Source](backend/cookbook/new_source.md)
     * [Modules](backend/modules.md)
          * [Account](backend/modules/account.md)
          * [Core](backend/modules/core.md)
