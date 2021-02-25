@@ -17,6 +17,8 @@ A module that distributes information about attributes and attribute groups.
 #### Extend Components
 **Contained in `attributes/index.vue` page:**
 
+> URL path: `/attributes/grid`
+
 * `@Attributes/pages/attributes/mainAction` - add new button next to `NEW ATTRIBUTE`<br>
     <img src="images/extends/extend-attribute-main-action.png" alt="Extend main action" />
     <br>
@@ -51,6 +53,8 @@ A module that distributes information about attributes and attribute groups.
 
 **Contained in `attribute-groups/index.vue` page:**
 
+> URL path: `/attribute-groups/grid`
+
 * `@Attributes/pages/attribute-groups/mainAction` - add new button next to `NEW ATTRIBUTE GROUP`<br>
     <img src="images/extends/extend-attribute-gr-main-action.png" alt="Extend main action" />
     <br>
@@ -83,16 +87,18 @@ A module that distributes information about attributes and attribute groups.
     ```
     ---
 
-**Contained in `AttributePage` component:**
+**Contained in `attributes/_attribute` page:**
 
-* `@Attributes/components/Pages/AttributePage/mainAction` - add new button next to `REMOVE ATTRIBUTE`<br>
+> URL path: `/attributes/attribute/{UUID}`
+
+* `@Attributes/pages/attributes/_attribute/mainAction` - add new button next to `REMOVE ATTRIBUTE`<br>
     <img src="images/extends/extend-edit-attr-action-header.png" alt="Extend action header" />
     <br>
     Example of use:
 
     ```javascript
         extendComponents: {
-            '@Attributes/components/Pages/AttributePage/mainAction': [
+            '@Attributes/pages/attributes/_attribute/mainAction': [
                 {
                     component: () => import('yourButtonComponent'),
                     props: {}, // your props
@@ -102,16 +108,18 @@ A module that distributes information about attributes and attribute groups.
     ```
     ---
 
-**Contained in `AttributeGroupPage` component:**
+**Contained in `attribute-groups/_group` page:**
 
-* `@Attributes/components/Pages/AttributeGroupPage/mainAction` - add new button next to `REMOVE GROUP`<br>
+> URL path: `/attribute-groups/group/{UUID}`
+
+* `@Attributes/pages/attribute-groups/_group/mainAction` - add new button next to `REMOVE GROUP`<br>
     <img src="images/extends/extend-edit-group-action-header.png" alt="Extend action header" />
     <br>
     Example of use:
 
     ```javascript
         extendComponents: {
-            '@Attributes/components/Pages/AttributeGroupPage/mainAction': [
+            '@Attributes/pages/attribute-groups/_group/mainAction': [
                 {
                     component: () => import('yourButtonComponent'),
                     props: {}, // your props

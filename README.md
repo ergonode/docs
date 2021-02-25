@@ -23,4 +23,4 @@ Ergonode development is sponsored by Strix (Bold Brand Commerce Sp. z o.o.), lea
 [github]: https://github.com/ergonode
 [tw]: https://twitter.com/ergonode
 [fb]: https://www.facebook.com/ergonode
-[slack]: https://ergonode.slack.com/join/shared_invite/enQtOTA2ODY0ODMxNTI0LThlZGE2YWE0YzY4NzU1ODk3NWRmNTJiMGI2NmM5ZTgxYTk0MWRhMjM1Y2M4MjdjZjAxY2FkOWE1M2FhZmJkMDY
+[slack]: https://join.slack.com/t/ergonode-community/shared_invite/zt-ibppxnyc-4Ykac1Gh64Qkk5SWy3sg3w
