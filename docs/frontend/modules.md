@@ -5,6 +5,7 @@ Each module contains some closed business space.<br>
 > Modules arranged in the order of their loading.
 
 
+* [**UI**](frontend/modules/ui.md)
 * [**Core**](frontend/modules/core.md)
 * [**Authentication**](frontend/modules/authentication.md)
 * [**Users**](frontend/modules/users.md)

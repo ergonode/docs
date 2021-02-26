@@ -12,7 +12,7 @@ Please read and follow our [Code of Conduct][coc].
 ---
 
 **Do not open issues for general support questions as we want to keep GitHub issues for bug reports and feature requests.**<br>
-You've got much better chances of getting your question answered on our [slack][slack] channel.
+You've got much better chances of getting your question answered when you [contact][contact] with us
 
 ## Found a Bug?
 ---
@@ -68,4 +68,4 @@ Thank you to all the people who have already contributed to Ergonode!
 [fe-submit-issue]: https://github.com/ergonode/frontend/issues
 [do-submit-issue]: https://github.com/ergonode/docker/issues
 [doc-submit-issue]: https://github.com/ergonode/docs/issues
-[slack]: https://ergonode.slack.com/join/shared_invite/enQtOTA2ODY0ODMxNTI0LThlZGE2YWE0YzY4NzU1ODk3NWRmNTJiMGI2NmM5ZTgxYTk0MWRhMjM1Y2M4MjdjZjAxY2FkOWE1M2FhZmJkMDY
+[contact]: contact
