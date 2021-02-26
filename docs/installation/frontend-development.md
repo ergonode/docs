@@ -67,11 +67,15 @@ npm run modules:all
 
 **3) Build**
 
-Run **development** mode
+> By default, the server starts at address: <code>http://localhost:3000</code>.
+
+Run **development** mode.
 
 ```bash
 npm run dev
 ```
+> To set a different **port**, you need run command: <code>npm run dev -- --port 3001</code><br>
+> To set a different **hostname**, you need run command: <code>npm run dev -- --hostname 'new-hostname'</code>
 
 Run **production** mode
 
@@ -79,6 +83,8 @@ Run **production** mode
 npm run build
 npm run start
 ```
+> To set a different **port**, you need run command: <code>npm run start -- --port 3001</code><br>
+> To set a different **hostname**, you need run command: <code>npm run start -- --hostname 'new-hostname'</code>
 
 
 ## Configuration

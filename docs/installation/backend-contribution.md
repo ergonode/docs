@@ -30,16 +30,6 @@ Clone [backend project repository][repository] to your local directory:
 git clone git@github.com:ergonode/backend.git
 ```
 
-<div class="Alert Alert--info">
-
-Application on default starts on **develop** branch
-
-</div>
-
-If you want to run last stable application version execute:
-```
-git checkout master
-```
 In .env file you need to configure database connection
 
 Open your terminal in local project, and execute:

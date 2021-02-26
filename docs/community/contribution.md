@@ -12,7 +12,7 @@ Please read and follow our [Code of Conduct][coc].
 ---
 
 **Do not open issues for general support questions as we want to keep GitHub issues for bug reports and feature requests.**<br>
-You've got much better chances of getting your question answered on our [slack][slack] channel.
+You've got much better chances of getting your question answered when you [contact][contact] with us
 
 ## Found a Bug?
 ---
@@ -35,9 +35,7 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
 
 ## Pull Request Guidelines
 
-- The `master` branch is just a snapshot of the latest stable release. All development should be done in dedicated branches. **Do not submit PRs against the `master` branch.**
-
-- Checkout a topic branch from the relevant branch, e.g. `develop`, and merge back against that branch.
+- Checkout a topic branch from the relevant branch, e.g. `master`, and merge back against that branch.
 
 - It's OK to have multiple small commits as you work on the PR - GitHub will automatically squash it before merging.
 
@@ -70,4 +68,4 @@ Thank you to all the people who have already contributed to Ergonode!
 [fe-submit-issue]: https://github.com/ergonode/frontend/issues
 [do-submit-issue]: https://github.com/ergonode/docker/issues
 [doc-submit-issue]: https://github.com/ergonode/docs/issues
-[slack]: https://ergonode.slack.com/join/shared_invite/enQtOTA2ODY0ODMxNTI0LThlZGE2YWE0YzY4NzU1ODk3NWRmNTJiMGI2NmM5ZTgxYTk0MWRhMjM1Y2M4MjdjZjAxY2FkOWE1M2FhZmJkMDY
+[contact]: contact
