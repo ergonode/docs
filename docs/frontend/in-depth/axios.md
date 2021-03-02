@@ -57,7 +57,7 @@ The plugin is implementing few interceptors described at [axios helpers][axios-h
 * `onError` - responsible for capturing all errors occurring during an API query.
     All error codes are parsed accordingly, and the user receives appropriate messages.
     * Supporting HTTP codes:
-      * `/5[0-9]{2}/`
+      * `/5[0-9]{2}/` - server error occur
       * `401` - handling `refreshToken` logic
       * `403` - user has no access for given data
       * `404` - either route or media not found 
