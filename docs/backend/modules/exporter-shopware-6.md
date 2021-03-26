@@ -4,14 +4,14 @@
 
 ## Introduction
 
-Module extending Ergonode operation with a new export channel to Shopware6.
+Module which extends Ergonode functionality with a new export channel to Shopware6.
 
-We believe that Ergonode is the source of truth, so add new property, category, cross-selling etc...
+We believe that Ergonode is the source of truth, so first you need to add new property, category, cross-selling etc which would match objects in Shopware6
 
-In products are base on `Product number`, in Custom fields are base on `Technical name`.
+Products are based on `Product number` and Custom fields on `Technical name`.
 
 ## Process
-All the magic will start in the first handler. `ExporterShopware6\Infrastructure\ProcessExportCommandHandler`  Which is responsible for starting the export process to Shopware6.
+All the magic starts in the first handler. `ExporterShopware6\Infrastructure\ProcessExportCommandHandler`  Which is responsible for starting the export process to Shopware6.
 
 1. Start Export
 2. Step-by-step process Export
@@ -19,11 +19,11 @@ All the magic will start in the first handler. `ExporterShopware6\Infrastructure
 
 
 ### Start Process
-Start process, synchronizes the required data for export and set time of end export.
+Start process synchronizes the required data for export and set time of end export.
 
 Synchronizer are based on `Ergonode\ExporterShopware6\Infrastructure\Synchronizer\SynchronizerInterface`
 
-It downloads and update about:
+It downloads and update:
 * Languages
 * Currency
 * Tax
@@ -39,7 +39,7 @@ Ergonode\ExporterShopware6\Infrastructure\Processor\Process\StartShopware6Export
 ### Step-by-step process Export
 Step processes run in the correct order. All are based on `Ergonode\ExporterShopware6\Infrastructure\Processor\ExportStepProcessInterface`
 
-They are easily expandable by changing the `services.yml` in application config.
+They are easily extendable by changing the `services.yml` in application config.
 ```yaml
 Ergonode\ExporterShopware6\Infrastructure\Handler\ProcessExportCommandHandler:
     tags: ['messenger.message_handler']
@@ -55,14 +55,14 @@ Ergonode\ExporterShopware6\Infrastructure\Handler\ProcessExportCommandHandler:
 ```
 
 ### End Process
-Set time of end export.
+Set time of export finish.
 
 ## Step description 
 
 ### PropertyGroupStep
 Adding and updating the Property set on the configuration form.
 
-Both steps are published by the commands `Ergonode\ExporterShopware6\Domain\Command\Export\PropertyGroupExportCommand` who arrive to `Ergonode\ExporterShopware6\Infrastructure\Processor\Process\PropertyGroupExportProcess`.
+Both steps are published by the commands `Ergonode\ExporterShopware6\Domain\Command\Export\PropertyGroupExportCommand` which arrives to `Ergonode\ExporterShopware6\Infrastructure\Processor\Process\PropertyGroupExportProcess`.
 
 * Find and get PropertyGroup info from Shopware6 in Default Language.
 * Mapping value from Ergonode Base
@@ -70,9 +70,9 @@ Both steps are published by the commands `Ergonode\ExporterShopware6\Domain\Comm
 * Replace process for other selected languages
 * Start option process
 
-Mapping is a process, we overwrite data from Shopware6 with the Ergonode data. PropertyGroup mappers implement `Ergonode\ExporterShopware6\Infrastructure\Mapper\PropertyGroupMapperInterface` which allows for the expansion.
+Mapping is a process which overwrites data from Shopware6 with the Ergonode data. PropertyGroup mappers implement `Ergonode\ExporterShopware6\Infrastructure\Mapper\PropertyGroupMapperInterface` which are left open to be extended.
 
-When adding or changing a mapper, we must not forget to configure
+When adding or changing a mapper, we must not forget to add configuration to `services.yml` as fallows:
 ```yaml
 Ergonode\ExporterShopware6\Infrastructure\Builder\Shopware6PropertyGroupBuilder:
     arguments:
@@ -83,16 +83,16 @@ Ergonode\ExporterShopware6\Infrastructure\Builder\Shopware6PropertyGroupBuilder:
 ### CustomFieldStep
 Adding and updating the CustomField set on the configuration form.
 
-Both steps are published by the commands `Ergonode\ExporterShopware6\Domain\Command\Export\CustomFieldExportCommand` who arrive to `Ergonode\ExporterShopware6\Infrastructure\Processor\Process\CustomFiledExportProcess`.
+Both steps are published by the commands `Ergonode\ExporterShopware6\Domain\Command\Export\CustomFieldExportCommand` which arrives to `Ergonode\ExporterShopware6\Infrastructure\Processor\Process\CustomFiledExportProcess`.
 
 * Find and get CustomField info from Shopware6 in Default Language.
 * Mapping value from Ergonode Base
 * Insert or update CustomField
 * Replace process for other selected languages
 
-Mapping is a process, we overwrite data from Shopware6 with the Ergonode data. CustomField mappers implement `Ergonode\ExporterShopware6\Infrastructure\Mapper\CustomFieldMapperInterface` which allows for the expansion.
+Mapping is a process which overwrites data from Shopware6 with the Ergonode data. CustomField mappers implement `Ergonode\ExporterShopware6\Infrastructure\Mapper\CustomFieldMapperInterface` which are left open to be extended.
 
-When adding or changing a mapper, we must not forget to configure
+When adding or changing a mapper, we must not forget to add configuration to `services.yml` as fallows
 ```yaml
 Ergonode\ExporterShopware6\Infrastructure\Builder\Shopware6CustomFieldBuilder:
     arguments:
@@ -103,16 +103,16 @@ Ergonode\ExporterShopware6\Infrastructure\Builder\Shopware6CustomFieldBuilder:
 ### CategoryStep
 Adding and updating the Category Tree set on the configuration form.
 
-Both steps are published by the commands `Ergonode\ExporterShopware6\Domain\Command\Export\CategoryExportCommand` who arrive to `Ergonode\ExporterShopware6\Infrastructure\Processor\Process\CategoryExportProcess`.
+Both steps are published by the commands `Ergonode\ExporterShopware6\Domain\Command\Export\CategoryExportCommand` which arrives to `Ergonode\ExporterShopware6\Infrastructure\Processor\Process\CategoryExportProcess`.
 
 * Find and get Category info from Shopware6 in Default Language.
 * Mapping value from Ergonode Base
 * Insert or update Category
 * Replace process for other selected languages
 
-Mapping is a process, we overwrite data from Shopware6 with the Ergonode data. Category mappers implement `Ergonode\ExporterShopware6\Infrastructure\Mapper\CategoryMapperInterface` which allows for the expansion.
+Mapping is a process which overwrites data from Shopware6 with the Ergonode data. Category mappers implement `Ergonode\ExporterShopware6\Infrastructure\Mapper\CategoryMapperInterface`  which are left open to be extended.
 
-When adding or changing a mapper, we must not forget to configure
+When adding or changing a mapper, we must not forget to add configuration to `services.yml` as fallows:
 ```yaml
 Ergonode\ExporterShopware6\Infrastructure\Builder\Shopware6CategoryBuilder:
     arguments:
@@ -123,16 +123,16 @@ Ergonode\ExporterShopware6\Infrastructure\Builder\Shopware6CategoryBuilder:
 ### VariableProductStep and SimpleProductStep
 Adding and updating the Products in relation to a segment (if set) or the entire catalog. The important to first export products with variants.
 
-Both steps are published by the commands `Ergonode\ExporterShopware6\Domain\Command\Export\ProductExportCommand` who arrive to `Ergonode\ExporterShopware6\Infrastructure\Processor\Process\ProductExportProcess`.
+Both steps are published by the commands `Ergonode\ExporterShopware6\Domain\Command\Export\ProductExportCommand` which arrives to `Ergonode\ExporterShopware6\Infrastructure\Processor\Process\ProductExportProcess`.
 
 * Find and get product info from Shopware6 in Default Language.
 * Mapping value from Ergonode Base 
 * Insert or update product
 * Replace process for other selected languages
 
-Mapping is a process, we overwrite data from Shopware6 with the Ergonode data. Product mappers implement `Ergonode\ExporterShopware6\Infrastructure\Mapper\ProductMapperInterface` which allows for the expansion.
+Mapping is a process which overwrites data from Shopware6 with the Ergonode data.  Product mappers implement `Ergonode\ExporterShopware6\Infrastructure\Mapper\ProductMapperInterface` which are left open to be extended.
 
-When adding or changing a mapper, we must not forget to configure
+When adding or changing a mapper, we must not forget to add configuration to `services.yml` as fallows:
 ```yaml
 Ergonode\ExporterShopware6\Infrastructure\Builder\Shopware6ProductBuilder:
     arguments:
@@ -143,16 +143,16 @@ Ergonode\ExporterShopware6\Infrastructure\Builder\Shopware6ProductBuilder:
 ### ProductCrossSellingStep
 Adding and updating the ProductCrossSelling set on the configuration form.
 
-Both steps are published by the commands `Ergonode\ExporterShopware6\Domain\Command\Export\ProductCrossSellingExportCommand` who arrive to `Ergonode\ExporterShopware6\Infrastructure\Processor\Process\ProductCrossSellingExportProcess`.
+Both steps are published by the commands `Ergonode\ExporterShopware6\Domain\Command\Export\ProductCrossSellingExportCommand` which arrives to  `Ergonode\ExporterShopware6\Infrastructure\Processor\Process\ProductCrossSellingExportProcess`.
 
 * Find and get ProductCrossSelling info from Shopware6 in Default Language.
 * Mapping value from ProductCrossSelling Base
 * Insert or update ProductCrossSelling
 * Replace process for other selected languages
 
-Mapping is a process, we overwrite data from Shopware6 with the Ergonode data. ProductCrossSelling mappers implement `Ergonode\ExporterShopware6\Infrastructure\Mapper\ProductCrossSellingMapperInterface` which allows for the expansion.
+Mapping is a process which overwrites data from Shopware6 with the Ergonode data.  ProductCrossSelling mappers implement `Ergonode\ExporterShopware6\Infrastructure\Mapper\ProductCrossSellingMapperInterface` which are left open to be extended.
 
-When adding or changing a mapper, we must not forget to configure
+When adding or changing a mapper, we must not forget to add configuration to `services.yml` as fallows:
 ```yaml
 Ergonode\ExporterShopware6\Infrastructure\Builder\ProductCrossSellingBuilder:
     arguments:
