@@ -54,7 +54,7 @@ This module comes with several built-in commands dedicated to handling imports.
 
 Each command is associated with a specific [import process](backend/modules/importer/import_manager.md) by `ImportId` and `ImportLineId` identifier. )
 
-Sending any of thous command through the commandBus will automatically send it to a dedicated import transport, from which it will be picked up and handled by the associated consumer
+Sending any of these commands through the commandBus will automatically send them to a dedicated import transport, from which it will be picked up and handled by the associated consumer
 
 ```php
     use Ergonode\SharedKernel\Domain\Bus\CommandBusInterface;
