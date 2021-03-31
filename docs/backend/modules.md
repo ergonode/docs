@@ -8,4 +8,3 @@
   <!--- * [Connector magento](backend/modules/connector-magento.md) --->
  * [Importer](backend/modules/importer.md)
   <!--- * [Segment](backend/modules/segment.md) --->
- * [Transformer](backend/modules/transformer.md)
