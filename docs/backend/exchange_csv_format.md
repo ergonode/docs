@@ -1,6 +1,6 @@
 # Ergonode csv exchange format
 
-Data exchange takes place via a dedicated csv files, and
+Data exchange takes place via dedicated csv files, and
 it allows you to export or import data such as:
 
 |Data|File|
