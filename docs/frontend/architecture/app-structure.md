@@ -91,8 +91,8 @@ Ergonode in the **developer version** contains in its structure the most importa
 * #### Development:
     * **.editorconfig** <br>
         Main [EditorConfig][doc-other] configuration file.
-    * **.huskyrc.dist** <br>
-        Example file with main [Husky][doc-other] configuration - need to copy and create your own `.huskyrc` file.
+    * **.husky.dist** <br>
+        Example folder with main [Husky][doc-other] configuration - need to copy and create your own `.husky` folder.
     * **lerna.json** <br>
         Main [Lerna][doc-other] configuration file.
 
