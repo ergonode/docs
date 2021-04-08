@@ -238,7 +238,9 @@ class YourSourceImportProcess implements SourceImportProcessorInterface
 
     public function start(Import $import): void
     {
-        // here is body of your import process
+        // here is body of your import process 
     }
 }
 ```
+
+As part of the import process, you can use one of the [dedicated commands](backend/modules/importer.md) to import specific types of data
