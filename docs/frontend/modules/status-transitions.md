@@ -1,21 +1,21 @@
 # Status transitions
 
-### Configuration
+A module that distributes information about status transitions.
+
+## Configuration
+
+<br>
 
 | Name          | Value                    |
 |---------------|--------------------------|
 | Name          | `@ergonode/status-transitions`   |
 | Order         | `150`                     |
 | Aliases       | `@Transitions`: `/`       |
-| Relations     | [`@Conditions`][module-conditions] <br> [`@Statuses`][module-statuses] |
+| Relations     | [`@Core`][module-core] <br> [`@Conditions`][module-conditions] <br> [`@Statuses`][module-product-statuses] |
 
-### Description
+## Extending
 
-A module that distributes information about status transitions.
-
-
-### Extending placeholders
-#### Extend Method
+### Methods
 
 **Contained in `Tabs/ConditionDesignerTab` component:**
 
@@ -27,22 +27,23 @@ A module that distributes information about status transitions.
     Example of use:
 
     ```javascript
-        extendMethods: {
-            '@Transitions/components/Tabs/ConditionDesignerTab/verticalTabs': ({
+    extendMethods: {
+        '@Transitions/components/Tabs/ConditionDesignerTab/verticalTabs': ({
+            props,
+        }) => [
+            {
+                title: 'Test tab',
+                component: () => import('yourTabComponent'),,
+                icon: () => import('yourIconComponent'),,
                 props,
-            }) => [
-                {
-                    title: 'Test tab',
-                    component: () => import('yourTabComponent'),,
-                    icon: () => import('yourIconComponent'),,
-                    props,
-                },
-            ],
-        }
+            },
+        ],
+    }
     ```
     ---
 
 
 
+[module-core]: frontend/modules/core
 [module-conditions]: frontend/modules/conditions
-[module-statuses]: frontend/modules/statuses
+[module-product-statuses]: frontend/modules/product-statuses

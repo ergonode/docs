@@ -1,22 +1,23 @@
 # Authentication
 
-### Configuration
+A module that distributes information about user authentication.
+
+## Configuration
+
+<br>
 
 | Name          | Value                    |
 |---------------|--------------------------|
 | Name          | `@ergonode/authentication`   |
 | Order         | `20`                     |
 | Aliases       | `@Authentication`: `/`       |
+| Relations     | [`@Core`][module-core]  |
 | Required       | true     |
 
-### Description
+## Extending
 
-A module that distributes information about user authentication.
+### Pages
 
-
-### Extending placeholders
-
-#### Extend Components
 **Contained in `Layout/Login.vue` component:**
 
 > URL path: `/`
@@ -27,17 +28,18 @@ A module that distributes information about user authentication.
     Example of use:
 
     ```javascript
-        extendComponents: {
-             '@Authentication/components/Layout/Login/footerInfo': [
-                {
-                    component: () => import('yourLinkComponent'),
-                },
-            ],
-        }
+    extendComponents: {
+        '@Authentication/components/Layout/Login/footerInfo': [
+            {
+                component: () => import('yourLinkComponent'),
+            },
+        ],
+    }
     ```
-    ---
 
-#### Extend Method
+---
+
+### Methods
 **Contained in `login/index.vue` page:**
 
 > URL path: `/`
@@ -48,13 +50,16 @@ A module that distributes information about user authentication.
     Example of use:
 
     ```javascript
-        extendMethods: {
-            '@Authentication/pages/login/loginState': () => ({
-                TEST: {
-                    formComponent: Components.LoginCredentialsForm2,
-                    bgUrl: require('@Authentication/assets/images/infographics/calling-man.svg'),
-                },
-            }),
-        }
+    extendMethods: {
+        '@Authentication/pages/login/loginState': () => ({
+            TEST: {
+                formComponent: Components.LoginCredentialsForm2,
+                bgUrl: require('@Authentication/assets/images/infographics/calling-man.svg'),
+            },
+        }),
+    }
     ```
-    ---
+  
+---
+
+[module-core]: frontend/modules/core

@@ -1,22 +1,22 @@
 # Core
 
-### Configuration
+A module that distributes information about core mechanisms.
+
+## Configuration
+
+<br>
 
 | Name          | Value                    |
 |---------------|--------------------------|
 | Name          | `@ergonode/core`   |
 | Order         | `10`                     |
 | Aliases       | `@Core`: `/`       |
-| Relations     | [`@UI`][module-ui] <br> [`@Attributes`][module-attributes] <br> [`@Media`][module-media] |
+| Relations     | [`@UI`][module-ui] <br> [`@Authentication`][module-authentication] |
 | Required       | true     |
 
-### Description
+## Extending
 
-A module that distributes information about core mechanisms.
-
-
-### Extending placeholders
-#### Extend Method
+### Methods
 
 **Contained in `Tabs/LanguagesSettingsTab` component:**
 
@@ -28,23 +28,22 @@ A module that distributes information about core mechanisms.
     Example of use:
 
     ```javascript
-        extendMethods: {
-            '@Core/components/Tabs/LanguagesSettingsTab/verticalTabs': ({
+    extendMethods: {
+        '@Core/components/Tabs/LanguagesSettingsTab/verticalTabs': ({
+            props,
+        }) => [
+            {
+                title: 'Test tab',
+                component: () => import('yourTabComponent'),,
+                icon: () => import('yourIconComponent'),,
                 props,
-            }) => [
-                {
-                    title: 'Test tab',
-                    component: () => import('yourTabComponent'),,
-                    icon: () => import('yourIconComponent'),,
-                    props,
-                },
-            ],
-        }
+            },
+        ],
+    }
     ```
-    ---
-
+    
+---
 
 
 [module-ui]: frontend/modules/ui
-[module-attributes]: frontend/modules/attributes
-[module-media]: frontend/modules/media
+[module-authentication]: frontend/modules/authentication

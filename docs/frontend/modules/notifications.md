@@ -1,18 +1,22 @@
 # Notifications
 
-### Configuration
+A module that distributes information about notifications.
+
+## Configuration
+
+<br>
 
 | Name          | Value                    |
 |---------------|--------------------------|
 | Name          | `@ergonode/notifications`   |
 | Order         | `40`                     |
 | Aliases       | `@Notifications`: `/`       |
+| Relations     | [`@Core`][module-core]  |
+| Required       | false     |
 
-### Description
+## Extending
 
-A module that distributes information about notifications.
-
-### Extending Action center
+### Action center
 
 * To extend progress section in **Action center** extended method for key `@Notifications/store/notification/action/getProcessingNotifications` has to be defined. 
     * Navigate to `config` folder in your module
@@ -61,4 +65,4 @@ A module that distributes information about notifications.
     
     <img src="images/extends/extend-notification-components-structure.png" alt="Extend notification components structure" width="500" />
 
-
+[module-core]: frontend/modules/core

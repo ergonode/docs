@@ -27,30 +27,30 @@ If we create a new `title`, a new section will be added.
 Example:
 ```javascript
 // extends.js
- extendMethods: {
-    '@Core/components/ToolBar/ToolBarMenu': () => [
-        {
-            title: 'My account',
-            menu: [
-                {
-                    title: 'My test',
-                    routing: '/test',
-                    icon: 'User',
-                },
-            ],
-        },
-        {
-            title: 'My test',
-            menu: [
-                {
-                    title: 'My test 2',
-                    routing: '/test2',
-                    icon: 'User',
-                },
-            ],
-        },
-    ],
- }
+extendMethods: {
+'@Core/components/ToolBar/ToolBarMenu': () => [
+    {
+        title: 'My account',
+        menu: [
+            {
+                title: 'My test',
+                routing: '/test',
+                icon: 'User',
+            },
+        ],
+    },
+    {
+        title: 'My test',
+        menu: [
+            {
+                title: 'My test 2',
+                routing: '/test2',
+                icon: 'User',
+            },
+        ],
+    },
+],
+}
 ```
 > `routing` property should be set to existing page. <br>
 `icon` property is icon name existing in `@Core/components/Icons/Menu/` directory.

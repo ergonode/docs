@@ -288,12 +288,12 @@ There are predefined places ready for expansion throughout the application.<br>
 1. First, we place the functions for capturing the component in the place we want to extend.
 
 ```javascript
-    computed: {
-        ...
-        extendedComponents() {
-            return this.$getExtendSlot('PLACEHOLDER_NAME');
-        },
-    }
+computed: {
+    ...
+    extendedComponents() {
+        return this.$getExtendSlot('PLACEHOLDER_NAME');
+    },
+}
 ```
 
 2. Then place the captured components in the template.
@@ -310,18 +310,18 @@ There are predefined places ready for expansion throughout the application.<br>
 3. Add the components you want to inject into a specific location.
 
 ```javascript
-    export default {
-        extendComponents: {
-            PLACEHOLDER_NAME: [
-                {
-                    component: () => import('@Core/components/exampleComponent').then(m => m.default || m),
-                    props: {
-                        propsToSend: true,
-                    },
+export default {
+    extendComponents: {
+        PLACEHOLDER_NAME: [
+            {
+                component: () => import('@Core/components/exampleComponent').then(m => m.default || m),
+                props: {
+                    propsToSend: true,
                 },
-            ],
-        },
-    };
+            },
+        ],
+    },
+};
 ```
 
 > Placeholder names are defined by the access path to the component <br>
@@ -442,7 +442,7 @@ Support files are files that are not imposed by [VueMS][vuems-conf], they are to
 #### Files:
 
 * **`privileges.js`** <br>
-    A file storing all all permissions imposed by the module. Used mainly in routing - `routes.js`.
+    A file storing all permissions imposed by the module. Used mainly in routing - `routes.js`.
 
 ```javascript
 export default {

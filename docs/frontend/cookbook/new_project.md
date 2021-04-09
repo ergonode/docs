@@ -16,7 +16,7 @@ To keep up to date with the project you need to **upgrade modules to the latest 
 
 <div class="Alert Alert--warning">
 
-The **Ergonode npm modules** cannot be modified!<br>
+The <b>Ergonode</b> npm modules** cannot be modified!<br>
 
 </div>
 

@@ -21,6 +21,6 @@
    * [Reader](backend/api/actions/reader.md)
    * [Segment](backend/api/actions/segment.md)
    * [Transformer](backend/api/actions/transformer.md)
-   * [Tree](backend/api/actions/tree.md)
+   * [Tree](backend/api/actions/category-trees.md)
    * [Workflow](backend/api/actions/workflow.md)
    
