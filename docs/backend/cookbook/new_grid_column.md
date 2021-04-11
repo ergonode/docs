@@ -34,7 +34,7 @@ To get all data which you want to display in your grid you need to create in que
 
 ## getDataSet
 
-You need to add method to your query class living in `Ergonode\Your-module\Persistence\Dbal\Query\` namespace which would be retrieving data from Database.
+You need to add method to your query class living in `Ergonode\Your-module\Infrastructure\Persistence\Query\` namespace which would be retrieving data from Database.
 
 
 **Example**
