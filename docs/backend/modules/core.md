@@ -9,9 +9,8 @@ This is an abstract class which is used for all Id classes. It manages uuid valu
  **Abstract Id can be founded:<br> `Ergonode\Component\Core\Domain\Entity\AbstractId.php`**
 
 
-## Abstract aggregat root 
+## Abstract aggregate root 
 
-This is an abstract class which is used for all agregats such `product`,`category`,`segment` etc. It manages events placing.
+This is an abstract class which is used for all aggregates such `product`,`category`,`segment` etc. It manages events placing.
 
-
-**Abstract aggregat root can be founded:<br> `Ergonode\Component\Core\Domain\Entity\AbstractAggregateRoot.php`**
+**Abstract aggregate root can be founded:<br> `Ergonode\Component\Core\Domain\Entity\AbstractAggregateRoot.php`**

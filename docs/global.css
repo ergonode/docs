@@ -11,7 +11,7 @@
 .Alert {
     display: inline-block;
     width: 100%;
-    padding: 1px 15px;
+    padding: 8px 12px;
     margin: 2px;
     line-height: 20px;
     background-color: #35495e;
@@ -20,39 +20,87 @@
     font-weight: 400;
     letter-spacing: 0.6px;
     text-align: justify;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 .Alert b {
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 800;
 }
 
 .Alert code {
     padding: 2px 7px;
-    line-height: inherit;
-    background-color: hsla(0, 0%, 78.4%, 0.2);
-    color: #fff;
+    line-height: 20px;
+    background-color: rgba(255, 255, 255, 0.486);
+    color: #33373E;
     font-size: 14px;
     font-weight: 400;
 }
 
 .Alert--success {
-    background-color: #3b8070;
+    background-color: #00BC87;
+    color:#33373E;
+}
+
+.Alert--success a, .Alert--success code{
+    color: #33373E;
 }
 
 .Alert--warning {
-    background-color: #f58231;
+    background-color: #FFC108;
+    color:#33373E;
+
 }
 
-.Alert--warning a {
-    color: #0e5e3a;
+.Alert--warning a, .Alert--warning code {
+    color: #33373E;
 }
 
 .Alert--info {
-    background-color: #3498db;
+    background-color: #2096F3;
+}
+
+.Alert--info a, .Alert--info code  {
+    color: #33373E;
 }
 
 .Alert--alert {
-    background-color: #f44336;
+    background-color: #F44336;
+}
+
+.Alert--alert a, .Alert--alert code  {
+    color: #33373E;
+}
+
+.sidebar {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+}
+.sidebar .app-name {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    box-ordinal-group: 1;
+    margin-bottom:0;
+    padding: 0;
+}
+.sidebar .app-name a {
+    margin:0;
+    padding: 0;
+    display: block;
+}
+.sidebar .search {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    box-ordinal-group: 2;
+    border-top: 1px solid #eee;
+}
+.sidebar .sidebar-nav {
+    -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    box-ordinal-group: 3;
 }
