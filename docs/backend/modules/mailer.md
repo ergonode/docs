@@ -57,18 +57,6 @@ With specific language (by default is `en_US`)
 bin/console ergonode:mailer:test receiver@email.com -l en_GB
 ```
 
-## Extending
-
-(How to add new features)
-
-### Templates
-
-(Adding new layout)
-
-### Translations
-
-(Adding new translations)
-
 ## Usage
 
 ### Step by step
@@ -97,6 +85,8 @@ $recipient->addCc(new Email('pepe@looney-toons.com'));
 
 Simply create new `Twig` template with e-mail message content.
 
+LooneyToonsModule/message/hello-message.html.twig
+
 ```twig
 <p>{{'Hello'|trans}},</p>
 <p>{{'Welcome in Looney Toons'|trans}} {{name}}</p>
@@ -105,6 +95,9 @@ Simply create new `Twig` template with e-mail message content.
 Next, we need to setup `Ergonode\Mailer\Domain\Template`.
 
 ```php
+use Ergonode\Core\Domain\ValueObject\Language;
+use Ergonode\Mailer\Domain\Template;
+
 $template = new Template(
     '@LooneyToonsModule/message/hello-message.html.twig',
     new Language('en_US'),
@@ -116,32 +109,54 @@ $template = new Template(
 
 #### 3. Sender
 
-(TODO)
+You can overwrite default sender settings like `from` and `reply-to` with 
+`Ergonode\Mailer\Domain\Sender`.
+
+```php
+use Ergonode\Mailer\Domain\Sender;
+use Ergonode\SharedKernel\Domain\ValueObject\Email;
+
+$sender = new Sender();
+$sender->addFrom(new Email('boss@looney-toons.com'));
+$sender->addReplyTo(new Email('manager@looney-toons.com'));
+```
 
 #### 4. Create e-mail
 
 Each message must be build using `Ergonode\Mailer\Domain\Mail`.
 
 ```php
+use Ergonode\Mailer\Domain\Mail;
+use Symfony\Contracts\Translation\TranslatorInterface;
+
 $subject = $this->translator->trans('Looney Toons welcome');
 $mail = new Mail($recipients, $template, $sender, $subject);
 ```
 
 #### 5. Send it
 
+You can easly send e-mail message using command bus by `Ergonode\Mailer\Domain\Command\SendMailCommand` command.
+
 ```php
+use Ergonode\Mailer\Domain\Command\SendMailCommand;
+use Ergonode\EventSourcing\Infrastructure\Bus\CommandBusInterface;
+
 $command = new SendMailCommand($mail);
 $this->commandBus->dispatch($command);
 ```
 
-### All in one
+### All in one example
 
 ```php
 <?php
 declare(strict_types=1);
 
+use Ergonode\Core\Domain\ValueObject\Language;
 use Ergonode\EventSourcing\Infrastructure\Bus\CommandBusInterface;
+use Ergonode\Mailer\Domain\Command\SendMailCommand;
 use Ergonode\Mailer\Domain\Recipient;
+use Ergonode\Mailer\Domain\Template;
+use Ergonode\Mailer\Domain\Mail;
 use Ergonode\SharedKernel\Domain\Collection\EmailCollection;
 use Ergonode\SharedKernel\Domain\ValueObject\Email;
 use Symfony\Contracts\Translation\TranslatorInterface;
@@ -162,6 +177,7 @@ final class LooneyToonsHelloMailService
 
     public function send(): void
     {
+        // setup recipients
         $to = new EmailCollection([
             new Email('elmer@looney-toons.com'),
             new Email('duffy@looney-toons.com'),
@@ -170,6 +186,7 @@ final class LooneyToonsHelloMailService
         $recipients->addBcc(new Email('bugs@looney-toons.com'));
         $recipients->addCc(new Email('pepe@looney-toons.com'));
         
+        // setup template
         $template = new Template(
             '@LooneyToonsModule/message/hello-message.html.twig',
             new Language('en_US'),
@@ -178,11 +195,16 @@ final class LooneyToonsHelloMailService
             ]
         );
         
+        // setup sender
         $sender = new Sender();
+        $sender->addFrom(new Email('boss@looney-toons.com'));
+        $sender->addReplyTo(new Email('manager@looney-toons.com'));
         
+        // create mail message
         $subject = $this->translator->trans('Welcome in Looney Toons');
         $mail = new Mail($recipients, $template, $sender, $subject);
         
+        // send command with our e-mail message
         $command = new SendMailCommand($mail);
         $this->commandBus->dispatch($command);
     }
