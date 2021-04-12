@@ -1,18 +1,23 @@
 # Dashboard
 
-### Configuration
+A module that distributes information about dashboard.
+
+## Configuration
+
+<br>
 
 | Name          | Value                    |
 |---------------|--------------------------|
 | Name          | `@ergonode/dashboard`   |
 | Order         | `200`                     |
 | Aliases       | `@Dashboard`: `/`       |
-| Relations     | [`@Products`][module-products] <br> [`@Categories`][module-categories] <br> [`@Templates`][module-templates]  |
+| Relations     | [`@Categories`][module-categories] <br> [`@Attributes`][module-attributes] <br> [`@Products`][module-products] <br> [`@Statuses`][module-product-statuses] <br> [`@Templates`][module-product-templates]  |
+| Required       | false     |
 
-### Description
+## Extending
 
-A module that distributes information about dashboard.
-
-[module-products]: frontend/modules/products
 [module-categories]: frontend/modules/categories
-[module-templates]: frontend/modules/templates
+[module-attributes]: frontend/modules/attributes
+[module-products]: frontend/modules/products
+[module-product-statuses]: frontend/modules/product-statuses
+[module-product-templates]: frontend/modules/product-templates

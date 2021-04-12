@@ -1,16 +1,19 @@
 # Segments
 
-### Configuration
+A module that distributes information about segments.
+
+## Configuration
+
+<br>
 
 | Name          | Value                    |
 |---------------|--------------------------|
 | Name          | `@ergonode/segments`   |
 | Order         | `140`                     |
 | Aliases       | `@Segments`: `/`       |
-| Relations     | [`@Conditions`][module-conditions] |
+| Relations     | [`@Core`][module-core] <br> [`@Conditions`][module-conditions] |
 
-### Description
+## Extending
 
-A module that distributes information about segments.
-
+[module-core]: frontend/modules/core
 [module-conditions]: frontend/modules/conditions

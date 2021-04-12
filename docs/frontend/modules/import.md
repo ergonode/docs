@@ -1,13 +1,20 @@
 # Import
 
-### Configuration
+A module that distributes information about import.
+
+## Configuration
+
+<br>
 
 | Name          | Value                    |
 |---------------|--------------------------|
 | Name          | `@ergonode/import`   |
 | Order         | `180`                     |
 | Aliases       | `@Import`: `/`       |
+| Relations     | [`@Core`][module-core] <br> [`@Notifications`][module-notifications] |
+| Required       | false     |
 
-### Description
+## Extending
 
-A module that distributes information about import.
+[module-core]: frontend/modules/core
+[module-notifications]: frontend/modules/notifications

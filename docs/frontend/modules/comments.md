@@ -1,16 +1,19 @@
 # Comments
 
-### Configuration
+A module that distributes information about comments.
+
+## Configuration
+
+<br>
 
 | Name          | Value                    |
 |---------------|--------------------------|
 | Name          | `@ergonode/comments`   |
 | Order         | `170`                     |
 | Aliases       | `@Comments`: `/`       |
-| Relations     | [`@Products`][module-products]  |
+| Relations     | [`@Core`][module-core]  |
+| Required       | false     |
 
-### Description
+## Extending
 
-A module that distributes information about comments.
-
-[module-products]: frontend/modules/products
+[module-core]: frontend/modules/core

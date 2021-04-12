@@ -47,13 +47,13 @@ export default async function () {}
     - we specify the `alias` after which we will refer to this module,
 ```javascript
 // config/index.js
-    export default {
-        name: '@cookbook/example',
-        order: 210,
-        aliases: {
-            '@Example': '/',
-        },
-    };
+export default {
+    name: '@cookbook/example',
+    order: 210,
+    aliases: {
+        '@Example': '/',
+    },
+};
 ```
 8. To add a page you need to create a directory of `pages` and in it add the appropriate structure of `example/index.vue`.
 
@@ -93,20 +93,20 @@ export default async function () {}
     - `component` - period for a component with page content,
     - `meta` - additional information related to the menu,
 ```javascript
-    export default [
-        {
-            name: 'example-page',
-            path: '/example-page',
-            component: () => import('@Example/pages/example/index').then(m => m.default || m),
-            meta: {
-                access: true,
-                title: 'Example page',
-                icon: () => import('@Core/components/Icons/Menu/IconSettings'),
-                isMenu: true,
-                menuPosition: -500,
-            },
+export default [
+    {
+        name: 'example-page',
+        path: '/example-page',
+        component: () => import('@Example/pages/example/index').then(m => m.default || m),
+        meta: {
+            access: true,
+            title: 'Example page',
+            icon: () => import('@Core/components/Icons/Menu/IconSettings'),
+            isMenu: true,
+            menuPosition: -500,
         },
-    ];
+    },
+];
 ```
 > When creating your modules, you can use all the elements belonging to the Main Ergonode modules. <br>
 This can be done because **aliases** are global and work the same way throughout the application, <br>
@@ -124,10 +124,10 @@ Our module is local so we add it in the `local` section.
 ```javascript
 // modules.config.js
 export default {
-		...
-		local: [
-			'@cookbook/example',
-        ],
+    ...
+    local: [
+        '@cookbook/example',
+    ],
 };
 ```
 12. Now all you have to do is run the node server (`npm run dev`) and we will see our new page and new position on the side menu.

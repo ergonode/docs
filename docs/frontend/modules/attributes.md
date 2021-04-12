@@ -1,20 +1,22 @@
 # Attributes
 
-### Configuration
+A module that distributes information about attributes.
+
+## Configuration
+
+<br>
 
 | Name          | Value                    |
 |---------------|--------------------------|
 | Name          | `@ergonode/attributes`   |
 | Order         | `50`                     |
 | Aliases       | `@Attributes`: `/`       |
+| Relations     | [`@Core`][module-core] <br> [`@AttributeGroups`][module-attribute-groups]  |
+| Required       | false     |
 
-### Description
+## Extending
 
-A module that distributes information about attributes and attribute groups.
-
-### Extending placeholders
-
-#### Extend Components
+### Pages
 **Contained in `attributes/index.vue` page:**
 
 > URL path: `/attributes/grid`
@@ -25,67 +27,17 @@ A module that distributes information about attributes and attribute groups.
     Example of use:
 
     ```javascript
-        extendComponents: {
-            '@Attributes/pages/attributes/mainAction': [
-                {
-                    component: () => import('yourButtonComponent'),
-                    props: {}, // your props
-                },
-            ],
-        }
+    extendComponents: {
+        '@Attributes/pages/attributes/mainAction': [
+            {
+                component: () => import('yourButtonComponent'),
+                props: {}, // your props
+            },
+        ],
+    }
     ```
-    ---
 
-* `@Attributes/pages/attributes/injectModal` - inject new modal on attribute grid page.<br>
-    Example of use:
-
-    ```javascript
-        extendComponents: {
-            '@Attributes/pages/attributes/injectModal': [
-                {
-                    component: () => import('yourModalComponent'),
-                    props: {}, // your props
-                },
-            ],
-        }
-    ```
-    ---
-
-**Contained in `attribute-groups/index.vue` page:**
-
-> URL path: `/attribute-groups/grid`
-
-* `@Attributes/pages/attribute-groups/mainAction` - add new button next to `NEW ATTRIBUTE GROUP`<br>
-    <img src="images/extends/extend-attribute-gr-main-action.png" alt="Extend main action" />
-    <br>
-    Example of use:
-
-    ```javascript
-        extendComponents: {
-            '@Attributes/pages/attribute-groups/mainAction': [
-                {
-                    component: () => import('yourButtonComponent'),
-                    props: {}, // your props
-                },
-            ],
-        }
-    ```
-    ---
-
-* `@Attributes/pages/attribute-groups/injectModal` - inject new modal on attribute group grid page.<br>
-    Example of use:
-
-    ```javascript
-        extendComponents: {
-            '@Attributes/pages/attribute-groups/injectModal': [
-                {
-                    component: () => import('yourModalComponent'),
-                    props: {}, // your props
-                },
-            ],
-        }
-    ```
-    ---
+---
 
 **Contained in `attributes/_attribute` page:**
 
@@ -97,34 +49,17 @@ A module that distributes information about attributes and attribute groups.
     Example of use:
 
     ```javascript
-        extendComponents: {
-            '@Attributes/pages/attributes/_attribute/mainAction': [
-                {
-                    component: () => import('yourButtonComponent'),
-                    props: {}, // your props
-                },
-            ],
-        }
+    extendComponents: {
+        '@Attributes/pages/attributes/_attribute/mainAction': [
+            {
+                component: () => import('yourButtonComponent'),
+                props: {}, // your props
+            },
+        ],
+    }
     ```
-    ---
 
-**Contained in `attribute-groups/_group` page:**
+---
 
-> URL path: `/attribute-groups/group/{UUID}`
-
-* `@Attributes/pages/attribute-groups/_group/mainAction` - add new button next to `REMOVE GROUP`<br>
-    <img src="images/extends/extend-edit-group-action-header.png" alt="Extend action header" />
-    <br>
-    Example of use:
-
-    ```javascript
-        extendComponents: {
-            '@Attributes/pages/attribute-groups/_group/mainAction': [
-                {
-                    component: () => import('yourButtonComponent'),
-                    props: {}, // your props
-                },
-            ],
-        }
-    ```
-    ---
+[module-attribute-groups]: frontend/modules/attribute-groups
+[module-core]: frontend/modules/core

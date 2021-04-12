@@ -3,7 +3,6 @@
 All API requests are supported by the [nuxt/axios][axios] library, which makes it easy for us to use API queries.
 
 ## Introduction
----
 The main configuration for the library is located in the file `nuxt.config.js`, <br>
 there are the most important things you need to run the library on our system. <br>
 
@@ -43,8 +42,7 @@ For our purpose we've implemented `axios.js` plugin which extends native `axios`
 
 * by default It's JSON base API
 
-### Global handling - interceptors
----
+## Global handling - interceptors
 The plugin is implementing few interceptors described at [axios helpers][axios-helpers]
 
 * `onRequest` - extending request config by: 
@@ -64,8 +62,7 @@ The plugin is implementing few interceptors described at [axios helpers][axios-h
     * Not supported codes are marked as unsupported and rejected - might be handled individually
   
 
-### Additional methods
-___
+## Additional methods
 The plugin is providing methods for handling [`cancelToken`][axios-cancel-token]. The structure is represented by map of keyed arrays:
 
     ```javascript
@@ -82,8 +79,7 @@ The plugin is providing methods for handling [`cancelToken`][axios-cancel-token]
 * `addCancelTokens` adding custom [`cancelToken`][axios-cancel-token] for given keys e.g. `AXIOS_CANCEL_TOKEN_DEFAULT_KEY`. It might be useful for custom requests which are not depending on user navigation.
 * `removeCancelToken` removing custom [`cancelToken`][axios-cancel-token] from map.
 
-### Accessibility
----
+## Accessibility
 The plugin is extending `this` scope with:
 
 * `axios` instance accessible through the components via `this.$axios` or through the context `this.app.$axios`  
@@ -91,9 +87,7 @@ The plugin is extending `this` scope with:
 * `addCancelTokens` accessible through the components via `this.$addCancelTokens` or through the context `this.app.$addCancelTokens` 
 * `removeCancelToken` accessible through the components via `this.$removeCancelToken` or through the context `this.app.$removeCancelToken` 
 
-### Example request
----
-
+## Example request
 All API queries are placed in the `services` directory for each module. Passing `$axios` is required to make the call. Rest parameters are customised and determined by request needs. 
 
 
