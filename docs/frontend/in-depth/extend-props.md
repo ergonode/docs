@@ -1,7 +1,5 @@
 # Extend component property
 
-
-
 Sometimes it may happen that in main modules, prepared to use components do not meet some guidelines and we want to modify only some properties.<br>
 To modify existing components you need to use built-in extension mechanism provided by **VueMS** library.
 
@@ -12,7 +10,7 @@ This method is to read the transferred properties with other modules and return 
 
 <div class="Alert Alert--alert">
 
-If a property is already passed in a component then according to the <b>Vue 2.x </b> documentation it will not be replaced by <code>v-bind</code>.
+If a property is already passed in a component then according to the **Vue 2.x** documentation it will not be replaced by <code>v-bind</code>.
 
 More here: https://v3.vuejs.org/guide/migration/v-bind.html
 

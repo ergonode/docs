@@ -22,14 +22,14 @@ A module that distributes information about attribute groups.
 
 > URL path: `/attribute-groups/grid`
 
-* `@Attributes/pages/attribute-groups/mainAction` - add new button next to `NEW ATTRIBUTE GROUP`<br>
+* `@AttributeGroups/pages/attribute-groups/mainAction` - add new button next to `NEW ATTRIBUTE GROUP`<br>
     <img src="images/extends/extend-attribute-gr-main-action.png" alt="Extend main action" />
     <br>
     Example of use:
 
     ```javascript
     extendComponents: {
-        '@Attributes/pages/attribute-groups/mainAction': [
+        '@AttributeGroups/pages/attribute-groups/mainAction': [
             {
                 component: () => import('yourButtonComponent'),
                 props: {}, // your props
@@ -44,14 +44,14 @@ A module that distributes information about attribute groups.
 
 > URL path: `/attribute-groups/group/{UUID}`
 
-* `@Attributes/pages/attribute-groups/_group/mainAction` - add new button next to `REMOVE GROUP`<br>
+* `@AttributeGroups/pages/attribute-groups/_group/mainAction` - add new button next to `REMOVE GROUP`<br>
     <img src="images/extends/extend-edit-group-action-header.png" alt="Extend action header" />
     <br>
     Example of use:
 
     ```javascript
     extendComponents: {
-        '@Attributes/pages/attribute-groups/_group/mainAction': [
+        '@AttributeGroups/pages/attribute-groups/_group/mainAction': [
             {
                 component: () => import('yourButtonComponent'),
                 props: {}, // your props

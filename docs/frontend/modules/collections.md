@@ -11,7 +11,7 @@ A module that distributes information about collections.
 | Name          | `@ergonode/collections`   |
 | Order         | `130`                     |
 | Aliases       | `@Collections`: `/`       |
-| Relations     | [`@Segments`][module-products] <br> [`@Segments`][module-segments] <br> [`@Core`][module-core] <br> |
+| Relations     | [`@Products`][module-products] <br> [`@Segments`][module-segments] <br> [`@Core`][module-core] <br> |
 | Required       | false     |
 
 ## Extending

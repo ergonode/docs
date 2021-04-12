@@ -30,4 +30,4 @@ Each module contains some closed business space.<br>
 * [**Dashboard**](frontend/modules/dashboard.md)
 * [**Batch Actions**](frontend/modules/batch-actions.md)
 * [**Product Batch Actions**](frontend/modules/product-batch-actions.md)
-* [**Product comments**](frontend/modules/product-comments.md)
+* [**Product Comments**](frontend/modules/product-comments.md)

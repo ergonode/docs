@@ -11,7 +11,7 @@ A module that distributes information about attributes.
 | Name          | `@ergonode/attributes`   |
 | Order         | `50`                     |
 | Aliases       | `@Attributes`: `/`       |
-| Relations     | [`@AttributeGroups`][module-attribute-groups] <br> [`@Core`][module-core]  |
+| Relations     | [`@Core`][module-core] <br> [`@AttributeGroups`][module-attribute-groups]  |
 | Required       | false     |
 
 ## Extending
