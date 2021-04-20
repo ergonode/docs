@@ -24,6 +24,7 @@
         * [New Channel](backend/cookbook/new_channel.md)
         * [New Mass Action](backend/cookbook/new_mass_action.md)
         * [New Import Source](backend/cookbook/new_source.md)
+        * [New Notification](backend/cookbook/new_notification.md)
     * [Modules](backend/modules.md)
          * [Account](backend/modules/account.md)
          * [Core](backend/modules/core.md)
