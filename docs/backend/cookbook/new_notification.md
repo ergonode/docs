@@ -70,11 +70,11 @@ class BatchActionEndedNotification implements NotificationInterface
 
 `MESSAGE` - this is text of message for user, it can contain parameters, and then it can be translated
 
-`$userId` - this contains author of notification
+`$userId` - this contains author of a notification
 
 `$parameters` - this contains parameters used to vary notification message
 
-`objectId` - this is id of object which given notification concerns
+`objectId` - this is the id of the object of the given notification
 
 ## Translation
 
