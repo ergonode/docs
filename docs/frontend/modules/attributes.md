@@ -218,8 +218,8 @@ Extending store may be possible by providing extend methods.
 - The `METHOD` is defining name of vuex action
 
 - The `__HOOK` might be:
-    - `__before` 
-    - `__after`
+    - `__before` - before request is called
+    - `__after` - after request is finished
 
 Example of use:
 
@@ -251,7 +251,7 @@ We do provide support for following method extending:
         - `data` - attribute data to post
 
 - after `POST` request has succeed
-    - **key**: `@Attributes/store/attribute/action/createAttribute/__before`
+    - **key**: `@Attributes/store/attribute/action/createAttribute/__after`
     - **arguments:**
         - `$this` - app context
         - `type` - attribute type
@@ -273,7 +273,7 @@ We do provide support for following method extending:
         ```
 
 - after `GET` request has succeed
-    - **key**: `@Attributes/store/attribute/action/getAttribute/__before`
+    - **key**: `@Attributes/store/attribute/action/getAttribute/__after`
     - **arguments:**
         - `$this` - app context
         - `type` - attribute type
@@ -291,7 +291,7 @@ We do provide support for following method extending:
         - `data` - attribute data to put
 
 - after `PUT` request has succeed
-    - **key**: `@Attributes/store/attribute/action/updateAttribute/__before`
+    - **key**: `@Attributes/store/attribute/action/updateAttribute/__after`
     - **arguments:**
         - `$this` - app context
         - `type` - attribute type
@@ -308,7 +308,7 @@ We do provide support for following method extending:
         - `type` - attribute type
 
 - after `DELETE` request has succeed
-    - **key**: `@Attributes/store/attribute/action/removeAttribute/__before`
+    - **key**: `@Attributes/store/attribute/action/removeAttribute/__after`
     - **arguments:**
         - `$this` - app context
         - `type` - attribute type
