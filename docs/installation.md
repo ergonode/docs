@@ -1,10 +1,10 @@
 # Installation
 
-**Ergonode** is headless system use two different application [**frontend**][frontend] and [**backend**][backend]. 
+**Ergonode** is a headless system which uses two different application [**frontend**][frontend] and [**backend**][backend]. 
 
 ![Service Architecture](./images/service_architecture.png "Architecture")
 
-In user site Backend is PHP application which the frontend communicates with using the REST API. 
+From the user site Backend is PHP application to which frontend communicates using the REST API.
 
 ## Before installation
 * PostgreSQL
@@ -29,7 +29,7 @@ If you want to install Ergonode on your local machine, you can use following com
 composer create-project ergonode/skeleton my_backend_project_name
 ```
 It will create a `my_backend_project_name` directory with a brand new backend Ergonode application inside.
-Go to `my_backend_project_name` directory and create ```.env.local``` file and add lines with database access configuration
+Go to `my_backend_project_name` directory, create ```.env.local``` file and add lines with database access configuration
 ```
 DATABASE_URL=pgsql://db_user:db_password@127.0.0.1:5432/db_name
 ```
@@ -47,7 +47,7 @@ bin/console doctrine:database:create
 bin/console ergonode:migrations:migrate
 ```
 
-Fill database with initial data execute command:
+Fill database with initial data executing command:
 ```
 bin/console ergonode:fixture:load
 ```
@@ -115,7 +115,7 @@ You will be very interested in installing the application this way:
 * [Frontend contribution installation][frontend-contribution]
 * [Backend contribution installation][backend-contribution]
 
-We also have for you a docker repository with our project, which will certainly make the work easier for many people:
+We also have a docker repository in our project, which will certainly make the work easier for many people:
 * [Docker installation][docker]
 
 [backend]: backend
