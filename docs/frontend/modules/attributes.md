@@ -250,7 +250,7 @@ We do provide support for following method extending:
         - `type` - attribute type
         - `data` - attribute data to post
 
-- after `POST` request has succeed
+- after `POST` request has succeeded
     - **key**: `@Attributes/store/attribute/action/createAttribute/__after`
     - **arguments:**
         - `$this` - app context
@@ -272,7 +272,7 @@ We do provide support for following method extending:
         }
         ```
 
-- after `GET` request has succeed
+- after `GET` request has succeeded
     - **key**: `@Attributes/store/attribute/action/getAttribute/__after`
     - **arguments:**
         - `$this` - app context
@@ -290,7 +290,7 @@ We do provide support for following method extending:
         - `type` - attribute type
         - `data` - attribute data to put
 
-- after `PUT` request has succeed
+- after `PUT` request has succeeded
     - **key**: `@Attributes/store/attribute/action/updateAttribute/__after`
     - **arguments:**
         - `$this` - app context
@@ -307,7 +307,7 @@ We do provide support for following method extending:
         - `$this` - app context
         - `type` - attribute type
 
-- after `DELETE` request has succeed
+- after `DELETE` request has succeeded
     - **key**: `@Attributes/store/attribute/action/removeAttribute/__after`
     - **arguments:**
         - `$this` - app context
