@@ -22,7 +22,7 @@ A module that distributes information about user authentication.
 
 > URL path: `/`
 
-It might be extended in following pleases:
+It might be extended in following places:
 - **Footer**
     - **key:** `@Authentication/components/Layout/Login/footerInfo`
 
