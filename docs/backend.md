@@ -8,4 +8,4 @@
 * [Modules](backend/modules.md)
 * [Data exchange format](backend/exchange_csv_format.md)  
 * [Tests](backend/tests.md)
-* [Changelog](backend/changelog.md)
+* [Changelog](https://github.com/ergonode/backend/blob/master/CHANGELOG.md)
