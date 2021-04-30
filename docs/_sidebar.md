@@ -34,7 +34,7 @@
     * [Configuration](backend/configuration.md)
     * [Data exchange format](backend/exchange_csv_format.md)
     * [Tests](backend/tests.md)
-    * [Changelog](backend/changelog.md)
+    * [Changelog](https://github.com/ergonode/backend/blob/master/CHANGELOG.md)
 * [**Frontend**](frontend.md)
     * [**Technologies**](frontend/technologies.md)
     * [**Architecture**](frontend/architecture.md)
