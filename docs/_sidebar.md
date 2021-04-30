@@ -2,7 +2,7 @@
 * [**Installation**](installation.md)
     * [**Backend - development**](installation/backend-development.md)
     * [**Backend - contribution**](installation/backend-contribution.md)
-<!--  * [**Backend - production**](installation/backend-production.md) -->
+    <!--  * [**Backend - production**](installation/backend-production.md) -->
     * [**Frontend - development**](installation/frontend-development.md)
     * [**Frontend - contribution**](installation/frontend-contribution.md)
     * [**Docker - contribution**](installation/docker.md)
@@ -30,7 +30,7 @@
          * [Core](backend/modules/core.md)
          * [Attribute](backend/modules/attribute.md)
          * [Importer](backend/modules/importer.md)
-         * [Transformer](backend/modules/transformer.md)
+         * [Mailer](backend/modules/mailer.md)
     * [Configuration](backend/configuration.md)
     * [Data exchange format](backend/exchange_csv_format.md)
     * [Tests](backend/tests.md)
