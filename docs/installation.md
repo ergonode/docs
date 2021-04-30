@@ -1,6 +1,6 @@
 # Installation
 
-**Ergonode** is a headless system which uses two different application [**frontend**][frontend] and [**backend**][backend].  
+**Ergonode** is a headless system which uses two different applications [**frontend**][frontend] and [**backend**][backend].  
 This is the sample installation that allows you to run the application quickly to familiarize yourself with it.
 
 ![Service Architecture](./images/service_architecture.png "Architecture")
