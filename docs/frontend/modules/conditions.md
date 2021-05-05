@@ -1,13 +1,18 @@
 # Conditions
 
-### Configuration
+A module that distributes information about conditions.
+
+## Configuration
+
+<br>
 
 | Name          | Value                    |
 |---------------|--------------------------|
 | Name          | `@ergonode/conditions`   |
 | Order         | `120`                     |
 | Aliases       | `@Conditions`: `/`       |
+| Relations     | [`@Core`][module-core]  |
 
-### Description
+## Extending
 
-A module that distributes information about conditions.
+[module-core]: frontend/modules/core

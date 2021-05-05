@@ -1,19 +1,21 @@
 # Products
 
-### Configuration
+A module that distributes information about products.
+
+## Configuration
+
+<br>
 
 | Name          | Value                    |
 |---------------|--------------------------|
 | Name          | `@ergonode/products`   |
 | Order         | `70`                     |
 | Aliases       | `@Products`: `/`       |
-| Relations     | [`@Attributes`][module-attributes]<br> [`@Templates`][module-templates] <br> [`@Segments`][module-segments]  |
+| Relations     | [`@Core`][module-core] <br> [`@Attributes`][module-attributes] <br> [`@Templates`][module-product-templates] <br> [`@Segments`][module-segments]  |
+| Required       | false     |
 
-### Description
 
-A module that distributes information about products.
-
-### Extending placeholders
+## Extending
 
 #### Extend Components
 **Contained in `catalog/index.vue` page:**
@@ -24,29 +26,14 @@ A module that distributes information about products.
     Example of use:
 
     ```javascript
-        extendComponents: {
-            '@Products/pages/catalog/mainAction': [
-                {
-                    component: () => import('yourButtonComponent'),
-                    props: {}, // your props
-                },
-            ],
-        }
-    ```
-    ---
-
-* `@Products/pages/catalog/injectModal` - inject new modal on product grid page.<br>
-    Example of use:
-
-    ```javascript
-        extendComponents: {
-            '@Products/pages/catalog/injectModal': [
-                {
-                    component: () => import('yourModalComponent'),
-                    props: {}, // your props
-                },
-            ],
-        }
+    extendComponents: {
+        '@Products/pages/catalog/mainAction': [
+            {
+                component: () => import('yourButtonComponent'),
+                props: {}, // your props
+            },
+        ],
+    }
     ```
     ---
 
@@ -58,14 +45,14 @@ A module that distributes information about products.
     Example of use:
 
     ```javascript
-        extendComponents: {
-            '@Products/components/Tabs/ProductCatalogTab/actionHeader': [
-                {
-                    component: () => import('yourButtonComponent'),
-                    props: {}, // your props
-                },
-            ],
-        }
+    extendComponents: {
+        '@Products/components/Tabs/ProductCatalogTab/actionHeader': [
+            {
+                component: () => import('yourButtonComponent'),
+                props: {}, // your props
+            },
+        ],
+    }
     ```
     ---
 * `@Products/components/Tabs/ProductCatalogTab/footer` - add new button next to `SAVE CHANGES`<br>
@@ -75,14 +62,14 @@ A module that distributes information about products.
     Example of use:
 
     ```javascript
-        extendComponents: {
-            '@Products/components/Tabs/ProductCatalogTab/footer': [
-                {
-                    component: () => import('yourButtonComponent'),
-                    props: {}, // your props
-                },
-            ],
-        }
+    extendComponents: {
+        '@Products/components/Tabs/ProductCatalogTab/footer': [
+            {
+                component: () => import('yourButtonComponent'),
+                props: {}, // your props
+            },
+        ],
+    }
     ```
     ---
 
@@ -94,18 +81,18 @@ A module that distributes information about products.
     Example of use:
 
     ```javascript
-        extendComponents: {
-            '@Products/components/Pages/ProductPage/mainAction': [
-                {
-                    component: () => import('yourButtonComponent'),
-                    props: {}, // your props
-                },
-            ],
-        }
+    extendComponents: {
+        '@Products/components/Pages/ProductPage/mainAction': [
+            {
+                component: () => import('yourButtonComponent'),
+                props: {}, // your props
+            },
+        ],
+    }
     ```
     ---
 
-#### Extend Methods
+### Methods
 **Contained in `ProductCatalogTab` component:**
 
 * `@Products/components/Tabs/ProductCatalogTab/verticalTabs` - add new vertical tab<br>
@@ -115,20 +102,21 @@ A module that distributes information about products.
     Example of use:
 
     ```javascript
-        extendMethods: {
-                '@Products/components/Tabs/ProductCatalogTab/verticalTabs': () => [
-                {
-                    title: 'Test',
-                    component: () => import('yourVerticalTabComponent'),
-                    iconComponent: () => import('yourTabIcon'),
-                    props: {}, // your props
-                },
-            ],
-        }
+    extendMethods: {
+        '@Products/components/Tabs/ProductCatalogTab/verticalTabs': () => [
+            {
+                title: 'Test',
+                component: () => import('yourVerticalTabComponent'),
+                iconComponent: () => import('yourTabIcon'),
+                props: {}, // your props
+            },
+        ],
+    }
     ```
     ---
 
 
+[module-core]: frontend/modules/core
 [module-attributes]: frontend/modules/attributes
-[module-templates]: frontend/modules/templates
+[module-product-templates]: frontend/modules/product-templates
 [module-segments]: frontend/modules/segments
