@@ -53,6 +53,7 @@
         * [**Categories**](frontend/modules/categories.md)
         * [**Products**](frontend/modules/products.md)
         * [**Templates**](frontend/modules/product-templates.md)
+        * [**Workflow**](frontend/modules/workflow.md)
         * [**Product Statuses**](frontend/modules/product-statuses.md)
         * [**Category Trees**](frontend/modules/category-trees.md)
         * [**Activity Logs**](frontend/modules/activity_logs.md)
