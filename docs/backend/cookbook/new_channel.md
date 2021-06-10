@@ -1,4 +1,3 @@
-
 # How to create a new channel
 
 Channel 
@@ -194,6 +193,52 @@ class ProcessExportCommandHandler
     }
 }
 ```
+
+## Export
+
+It is entity that reflects one export process. One channel can have many exports.
+
+Export lives under `Ergonode\Channel\Domain\Entity` namespace.
+
+It stores following data:
+
+* when process was started and finished,
+* what is the status of that process,
+* to which Channel it belongs,
+
+It has methods for:
+* starting export process
+* stopping export process
+* ending export process
+
+### Export Lines
+
+Export lines are identified by ExportLineId (`Ergonode\Channel\Domain\ValueObject\ExportLineId`)
+
+Data for Export Lines are store in ExportLineData data structure (`Ergonode\ExporterFile\Infrastructure\DataStructure\ExportLineData`)
+
+Object which aggregates all lines for given Export is ExportData (`Ergonode\ExporterFile\Infrastructure\DataStructure\ExportData`)
+
+### Export Repository
+
+This is class implements `Ergonode\Channel\Domain\Repository\ExportRepositoryInterface`
+
+It can be used for 
+* loading export - `load(ExportId $id)`
+* saving export - `save(Export $export)`
+* checking if export exists - `exists(ExportId $id)`
+* deleting export - `delete(Export $export)`
+* marking line as processed - `processLine(ExportLineId $exportLineId)`
+* adding Error to the line - `addError(ExportId $exportId, string $message, array $parameters = [])`
+* adding line to export - `addLine(ExportLineId $lineId, ExportId $exportId, AggregateId $objectId)`
+
+### Export Exceptions
+
+If any error occurs during the export process, we may want to inform the use by preseting the relevant content in the export error list.
+
+For that special exception type is created - `\Ergonode\Channel\Infrastructure\Exception\ExportException`
+
+It is recommended to extend it while creating your own custom exceptions in export.
 
 
 [module]: <backend/cookbook/new_module.md>

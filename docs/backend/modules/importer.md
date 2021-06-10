@@ -52,7 +52,7 @@ This module comes with several built-in commands dedicated to handling imports.
 |Ergonode\Importer\Domain\Command\Import\ImportTextAttributeCommand|
 |Ergonode\Importer\Domain\Command\Import\ImportUnitAttributeCommand|
 
-Each command is associated with a specific [import process](backend/modules/importer/import_manager.md) by `ImportId` and `ImportLineId` identifier. )
+Each command is associated with a specific [import process](backend/modules/importer/import_manager.md) by `ImportId` and `ImportLineId` identifier.
 
 Sending any of these commands through the commandBus will automatically send them to a dedicated import transport, from which it will be picked up and handled by the associated consumer
 

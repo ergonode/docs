@@ -28,6 +28,7 @@
     * [Modules](backend/modules.md)
          * [Account](backend/modules/account.md)
          * [Core](backend/modules/core.md)
+         * [Channel](backend/modules/channel.md)
          * [Attribute](backend/modules/attribute.md)
          * [Importer](backend/modules/importer.md)
          * [Mailer](backend/modules/mailer.md)
