@@ -18,9 +18,9 @@ class YourCustomException extends ExportException
 {
     private const MESSAGE  = 'Your error message with param {param}';
 
-    public function __construct(string $param, \Throwable $previous = null)
+    public function __construct(\Throwable $previous = null)
     {
-        parent::__construct(self::MESSAGE, ['{param}' => $param], $previous);
+        parent::__construct(self::MESSAGE, $previous);
     }
 }
 ```
