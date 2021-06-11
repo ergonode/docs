@@ -215,10 +215,6 @@ It has methods for:
 
 Export lines are identified by ExportLineId (`Ergonode\Channel\Domain\ValueObject\ExportLineId`)
 
-Data for Export Lines are store in ExportLineData data structure (`Ergonode\ExporterFile\Infrastructure\DataStructure\ExportLineData`)
-
-Object which aggregates all lines for given Export is ExportData (`Ergonode\ExporterFile\Infrastructure\DataStructure\ExportData`)
-
 ### Export Repository
 
 This is class implements `Ergonode\Channel\Domain\Repository\ExportRepositoryInterface`
