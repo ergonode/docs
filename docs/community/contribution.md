@@ -15,8 +15,8 @@ Get the Ergonode Source Code:
   * [backend][github-backend]
   * [frontend][github-frontend]
   * [docker][github-docker]
-  * [docs][github-docs]
-* After the “forking action” has completed, clone your fork locally (for example use [docs][github-docs])
+  * [documentation][github-docs]
+* After the “forking action” has completed, clone your fork locally (for example use [documentation][github-docs])
 ```bash
 git clone git@github.com:YOUR_USERNAME/docs.git
 ```
@@ -25,6 +25,31 @@ git clone git@github.com:YOUR_USERNAME/docs.git
 cd docs
 git remote add upstream git@github.com:ergonode/docs.git
 ```
+* Pull the latest changes from upstream
+```bash
+git pull upstream master
+```
+<div class="Alert Alert--warning">
+    For documentation, the main branch is <strong>develop</strong>.
+</div>
+
+* Create a new branch
+```bash
+git checkout -b YOUR_BRANCH_NAME 
+```
+* Make changes
+* Commit your changes use [commit message convention][cc] and push
+```bash
+git commit -m "feature: Add github fork start info" -a
+git push origin YOUR_BRANCH_NAME
+```
+* Create the pull request from Your fork to Ergonode repository at [GitHub][github]
+* Before you start next feature sync your fork
+```bash
+git checkout master
+git pull upstream master
+git push origin master
+``` 
 
 ## Got a Question or Problem?
 ---
