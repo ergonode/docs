@@ -196,15 +196,15 @@ class ProcessExportCommandHandler
 
 ## Export
 
-It is entity that reflects one export process. One channel can have many exports.
+It is an entity that reflects one export process. One channel can have many exports.
 
 Export lives under `Ergonode\Channel\Domain\Entity` namespace.
 
-It stores following data:
+It stores the following data:
 
 * when process was started and finished,
 * what is the status of that process,
-* to which Channel it belongs,
+* which Channel it belongs to,
 
 It has methods for:
 * starting export process
@@ -230,7 +230,7 @@ It can be used for
 
 ### Export Exceptions
 
-If any error occurs during the export process, we may want to inform the use by preseting the relevant content in the export error list.
+If any error occurs during the export process, we may want to inform a user by presenting the relevant content in the export error list.
 
 For that special exception type is created - `\Ergonode\Channel\Infrastructure\Exception\ExportException`
 

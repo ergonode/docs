@@ -7,7 +7,7 @@ This module is responsible for managing exports from ergonode to external system
 
 ## Custom Export error
 
-If an error occurs during the export process, we may want to inform the user by presenting the relevant content in the export error list.
+If an error occurs during the export process, we may want to inform a user by presenting the relevant content in the export error list.
 
 For that we need to create custom error. We're doing that by creating new exception class extended from ```Ergonode\Channel\Infrastructure\Exception\ExportException```
 
@@ -16,7 +16,7 @@ namespace YourNameSpace\Infrastructure\Exception;
 
 class YourCustomException extends ExportException
 {
-    private const MESSAGE  = 'Your error message with param {param}';
+    private const MESSAGE  = 'Your error message';
 
     public function __construct(\Throwable $previous = null)
     {
