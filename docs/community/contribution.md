@@ -7,6 +7,49 @@ As a contributor, here are the guidelines we would like you to follow.
 ---
 Please read and follow our [Code of Conduct][coc].
 
+## Getting started
+---
+Get the Ergonode Source Code:
+* Create a [GitHub][github-join] account and sign in
+* Click on the "Fork button" in one of [Ergonode][github] repositories:
+  * [backend][github-backend]
+  * [frontend][github-frontend]
+  * [docker][github-docker]
+  * [documentation][github-docs]
+* After the “forking action” has completed, clone your fork locally (for example use [documentation][github-docs])
+```bash
+git clone git@github.com:YOUR_USERNAME/docs.git
+```
+* Add the upstream repository as a remote
+```bash
+cd docs
+git remote add upstream git@github.com:ergonode/docs.git
+```
+* Pull the latest changes from upstream
+```bash
+git pull upstream master
+```
+<div class="Alert Alert--warning">
+    For documentation, the main branch is <strong>develop</strong>.
+</div>
+
+* Create a new branch
+```bash
+git checkout -b YOUR_BRANCH_NAME 
+```
+* Make changes
+* Commit your changes use [commit message convention][cc] and push
+```bash
+git commit -m "feature: Add github fork start info" -a
+git push origin YOUR_BRANCH_NAME
+```
+* Create the pull request from Your fork to Ergonode repository at [GitHub][github]
+* Before you start next feature sync your fork
+```bash
+git checkout master
+git pull upstream master
+git push origin master
+``` 
 
 ## Got a Question or Problem?
 ---
@@ -19,14 +62,14 @@ You've got much better chances of getting your question answered when you [conta
 
 If you find a bug in the source code, you can help us by submitting an issue to our [GitHub Repository][github].
 
-- backend repository [issues][be-submit-issue]
-- frontend repository [issues][fe-submit-issue]
-- docker repository [issues][do-submit-issue]
+- backend repository [issues][github-backend-issue]
+- frontend repository [issues][github-frontend-issue]
+- docker repository [issues][github-docker-issue]
 
-Or if you see errors in the documentation you can report them [here][doc-submit-issue]
+Or if you see errors in the documentation you can report them [here][github-docs-issue]
 
 ## Coding Rules
-
+---
 To ensure consistency throughout the source code, keep these rules in mind as you are working:
 
 * All features or bug fixes **should be tested** by one or more specs (unit-tests).
@@ -34,6 +77,7 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
 * All features should have **documentation**.
 
 ## Pull Request Guidelines
+---
 
 - Checkout a topic branch from the relevant branch, e.g. `master`, and merge back against that branch.
 
@@ -54,7 +98,7 @@ To ensure consistency throughout the source code, keep these rules in mind as yo
   - Add appropriate test coverage if applicable.
 
 ## Committing Changes
-
+---
 Commit messages should follow the [commit message convention][cc].
 
 ## Credits
@@ -64,8 +108,13 @@ Thank you to all the people who have already contributed to Ergonode!
 [coc]: community/code_of_conduct.md
 [cc]: community/commit_convention.md
 [github]: https://github.com/ergonode
-[be-submit-issue]: https://github.com/ergonode/backend/issues
-[fe-submit-issue]: https://github.com/ergonode/frontend/issues
-[do-submit-issue]: https://github.com/ergonode/docker/issues
-[doc-submit-issue]: https://github.com/ergonode/docs/issues
+[github-join]: https://github.com/join
+[github-backend]: https://github.com/ergonode/backend/issues
+[github-frontend]: https://github.com/ergonode/frontend/issues
+[github-docker]: https://github.com/ergonode/docker/issues
+[github-docs]: https://github.com/ergonode/docs/
+[github-backend-issue]: https://github.com/ergonode/backend/issues
+[github-frontend-issue]: https://github.com/ergonode/frontend/issues
+[github-docker-issue]: https://github.com/ergonode/docker/issues
+[github-docs-issue]: https://github.com/ergonode/docs/issues
 [contact]: contact
