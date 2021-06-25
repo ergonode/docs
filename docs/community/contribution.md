@@ -66,7 +66,33 @@ If you find a bug in the source code, you can help us by submitting an issue to 
 - frontend repository [issues][github-frontend-issue]
 - docker repository [issues][github-docker-issue]
 
-Or if you see errors in the documentation you can report them [here][github-docs-issue]
+Or if you see errors in the documentation you can report them [here][github-docs-issue] 
+
+Only delegated people (with access) can label issue. We have to verify if the issue is not a feature, nor the thing that we haven't though of yet.
+
+#### How to make a pull request with a Bugfix?
+
+- Follow the [guidelines][pull-request-guidelines]
+
+**Example**
+
+- Pull request is resolving an issue for version **1.1**.
+- Master branch is working at **1.3**.
+- Each bug should be fixed in a branch outgoing from related version (you may fix the bug in one branch and then cherry-pick specified commits):
+  - Create branch from:
+    - `release/1.1`
+    - `release/1.2`
+    - `master`
+  - Add note to `CHANGELOG.md` following pattern
+    - **bugfix \[#issue]\(link to issue) short description (nickname)**
+  - Make pull request to each `release/x.x` branch
+
+
+  
+**Conclusions**
+
+- Pull request with bug resolving should be created for only supported versions. 
+- We shall be removing unsupported branches.
 
 ## Coding Rules
 ---
@@ -118,3 +144,4 @@ Thank you to all the people who have already contributed to Ergonode!
 [github-docker-issue]: https://github.com/ergonode/docker/issues
 [github-docs-issue]: https://github.com/ergonode/docs/issues
 [contact]: contact
+[pull-request-guidelines]: community/contribution?id=pull-request-guidelines

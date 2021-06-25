@@ -44,7 +44,7 @@ Ergonode source code is released under the [OSL 3.0 License][license].
 
 [discord]: https://discord.gg/NntXFa4
 [contact]: contact
-[contribute]: http://docs.ergonode.com/#/contribution
+[contribute]: community/contribution
 [license]: https://github.com/ergonode/frontend/blob/develop/LICENSE.txt
 [roadmap]: https://ergonode.com/features/#roadmap
 [docs]: https://docs.ergonode.com
