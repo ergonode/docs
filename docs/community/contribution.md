@@ -66,24 +66,29 @@ If you find a bug in the source code, you can help us by submitting an issue to 
 - frontend repository [issues][github-frontend-issue]
 - docker repository [issues][github-docker-issue]
 
-Or if you see errors in the documentation you can report them [here][github-docs-issue]
+Or if you see errors in the documentation you can report them [here][github-docs-issue] 
 
-Please do not label issue as a bug - we have to verify if the issue is not a feature, nor the thing that we haven't though of yet.
+Only delegated people (with access) can label issue. We have to verify if the issue is not a feature, nor the thing that we haven't though of yet.
 
-#### How to make a pull request with a Bug?
+#### How to make a pull request with a Bugfix?
 
 - Follow the [guidelines][pull-request-guidelines]
 
 **Example**
 
-- Pull request is resolving an issue for version **1.1.X**.
+- Pull request is resolving an issue for version **1.1**.
 - Master branch is working at **1.3**.
-- Pull request should be created for `1.1.X`, `1.2.X` and the `master` branch.
+- Each bug should be fixed in a branch outgoing from related version (you may fix the bug in one branch and then cherry-pick specified commits):
+  - Create branch from:
+    - `release/1.1`
+    - `release/1.2`
+    - `master`
+  - Make pull request to each `release/x.x` branch
   
 **Conclusions**
 
-- Pull request with bug resolving should be created for only supported versions.
-- In case that the release has no longer official support, we advise you to check the newest releases.
+- Pull request with bug resolving should be created for only supported versions. 
+- We shall be removing unsupported branches.
 
 ## Coding Rules
 ---
