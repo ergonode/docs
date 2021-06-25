@@ -83,7 +83,11 @@ Only delegated people (with access) can label issue. We have to verify if the is
     - `release/1.1`
     - `release/1.2`
     - `master`
+  - Add note to `CHANGELOG.md` following pattern
+    - **bugfix \[#issue]\(link to issue) short description (nickname)**
   - Make pull request to each `release/x.x` branch
+
+
   
 **Conclusions**
 
