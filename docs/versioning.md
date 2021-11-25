@@ -1,6 +1,6 @@
 # Versioning
 
-Versioning in the Ergonode is followed by [semver] principles. In short both [backend](backend.md) and [frontend](frontend.md) applications are synchronized at the **MAJOR.MINOR** level, meaning: 
+Versioning in the Ergonode is followed by [semver] principles. In short both [backend](backend.md) _(BE)_ and [frontend](frontend.md) _(FE)_ applications are synchronized at the **MAJOR.MINOR** level, meaning: 
 
 :heavy_check_mark: **Will work**
 - 1.1.5 BE + 1.1.2 FE
