@@ -36,6 +36,11 @@ Execute **npm run modules:all** command, it will upgrade to the latest packages 
 
 ```bash
 npm run build
+```
+
+- start server
+
+```bash
 npm run start
 ```
 
@@ -66,4 +71,10 @@ bin/console cache:clear
 
 ```bash
 bin/console ergonode:migrations:migrate
+```
+
+- start server
+
+```bash
+symfony server:start
 ```
