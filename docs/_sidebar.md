@@ -7,6 +7,7 @@
     * [**Frontend - contribution**](installation/frontend-contribution.md)
     * [**Docker - contribution**](installation/docker.md)
     * [**Documentation**](installation/docs.md)
+    * [**Upgrade guide**](installation/upgrade-guide.md)
 * [**Backend**](backend.md)
     * [Architecture](backend/architecture.md)
     * [Coding standards](backend/coding_standards.md)
