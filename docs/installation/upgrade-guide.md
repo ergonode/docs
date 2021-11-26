@@ -32,6 +32,13 @@ Execute **npm run modules:all** command, it will upgrade to the latest packages 
 - Look at the latest / specific **UPGRADE-X.md** guide from the [frontend repository](https://github.com/ergonode/frontend) if exists
 
 **3) Build**
+
+- install dependencies
+
+```bash
+npm install
+```
+
 - rebuild server
 
 ```bash
@@ -62,6 +69,12 @@ composer require ergonode/PACKAGE_NAME:VERSION
 
 **3) Build**
 
+- install dependencies
+
+```bash
+composer install
+```
+
 - clear cache
 ```bash
 bin/console cache:clear
@@ -71,10 +84,4 @@ bin/console cache:clear
 
 ```bash
 bin/console ergonode:migrations:migrate
-```
-
-- start server
-
-```bash
-symfony server:start
 ```
