@@ -10,7 +10,8 @@ it allows you to export or import data such as:
 |Templates|templates.csv|
 |Template elements|templates_elements.csv|
 |Categories|categories.csv|
-|Products (no media data)|products.scv|
+|Multimedia|multimedia.scv|
+|Products|products.scv|
 
 ## Attributes
 
@@ -82,6 +83,17 @@ it allows you to export or import data such as:
 |require|Attribute required| Yes if _type is attribute|true or false|
 |label|Label| Yes if _type is ui|max 255 characters|
 
+## Multimedia
+
+|column|Description|Required|Limitation|
+|-|-|-|-|
+|_name|multimedia name, identifier, used for linking in the product.csv file|Yes|Max length 128 characters|
+|_url|Downloadable multimedia url|Yes|Valid supported multimedia resource url, taken from the first occurrence |
+|_language|Language code|Yes|Pair of language and country code eg. en_GB|
+|_alt|Multimedia alt for given language|No|Max length 128 characters|
+
+Existing multimedia are not re-imported
+
 ## Products
 
 |column|Description|Required|Limitation|
@@ -108,3 +120,6 @@ In this case the column name must be the same as the code of the selected attrib
 |DATE|value in supported date format|
 |SELECT|Option code for given attribute|
 |MULTI_SELECT|Option codes for given attribute, separated by commas|
+|IMAGE|Multimedia name, allows only image type multimedia|
+|GALLERY|Multimedia names separated by commas, allows only image type multimedia|
+|FILE|Multimedia names separated by commas|
