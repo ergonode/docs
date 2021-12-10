@@ -88,9 +88,11 @@ it allows you to export or import data such as:
 |column|Description|Required|Limitation|
 |-|-|-|-|
 |_name|multimedia name, identifier, used for linking in the product.csv file|Yes|Max length 128 characters|
-|_url|Downloadable multimedia url|Yes|Valid supported multimedia resource url|
+|_url|Downloadable multimedia url|Yes|Valid supported multimedia resource url, taken from the first occurrence |
 |_language|Language code|Yes|Pair of language and country code eg. en_GB|
 |_alt|Multimedia alt for given language|No|Max length 128 characters|
+
+Existing multimedia are not re-imported
 
 ## Products
 
