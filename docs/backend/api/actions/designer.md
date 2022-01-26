@@ -23,11 +23,11 @@ Action adds template based on parameters.
 
 **Request body parameters**
 
-| Parameter | Type                             | Required | Additional information                            | Example |
-|-----------|----------------------------------|----------|---------------------------------------------------|---------|
-| name      | string                           | yes      | template name                                     | strix   |
-| image      | uuid                           | no      | template image                                     | 683d8fc8-0d2e-5626-b973-6935c02044eb   |
-| elements  | [Template_element](backend/api/objects/template_element.md)| yes      |     elements which needs to be added to your template | [Template_element](backend/api/objects/template_element.md)|
+| Parameter | Type                             | Required | Additional information                            | Example                                                     |
+|-----------|----------------------------------|----------|---------------------------------------------------|-------------------------------------------------------------|
+| name      | string                           | yes      | template name                                     | ergonode                                                    |
+| image      | uuid                           | no      | template image                                     | 683d8fc8-0d2e-5626-b973-6935c02044eb                        |
+| elements  | [Template_element](backend/api/objects/template_element.md)| yes      |     elements which needs to be added to your template | [Template_element](backend/api/objects/template_element.md) |
 
 **Response**
 
@@ -108,11 +108,11 @@ Action updates template object based on template Id and parameters given.
 
 **Request body parameters**
 
-| Parameter | Type                             | Required | Additional information                            | Example |
-|-----------|----------------------------------|----------|---------------------------------------------------|---------|
-| name      | string                           | yes      | template name                                     | strix   |
-| image      | uuid                           | no      | template image                                     | 683d8fc8-0d2e-5626-b973-6935c02044eb   |
-| elements  | [Template_element](backend/api/objects/template_element.md)| yes      |            |        | elements which needs to be added to your template | [Template_element](backend/api/objects/template_element.md)|
+| Parameter | Type                             | Required | Additional information                            | Example                              |
+|-----------|----------------------------------|----------|---------------------------------------------------|--------------------------------------|
+| name      | string                           | yes      | template name                                     | ergonode                             |
+| image      | uuid                           | no      | template image                                     | 683d8fc8-0d2e-5626-b973-6935c02044eb |
+| elements  | [Template_element](backend/api/objects/template_element.md)| yes      |            |                                      | elements which needs to be added to your template | [Template_element](backend/api/objects/template_element.md)|
 
 **Response**
 

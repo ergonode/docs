@@ -5,6 +5,6 @@
 </p>
 
 # Welcome to Ergonode Documentation
-by [**Strix**](https:strix.net)
+by [**Ergonode**](https:ergonode.com)
 
 <br>[OPEN](introduction.md)
