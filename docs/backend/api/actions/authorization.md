@@ -9,10 +9,10 @@ Login action, return JWT token.
 
 **Request body parameters**
 
-|   Parameter  |     Type     | Required |    Additional information   |           Example           |
-|:------------:|:------------:|:--------:|:---------------------------:|:---------------------------:|
-|  username    |    string    |    yes   |        username             |            test@bold.net.pl            |
-|  password    |    string    |    yes   |        password             |   123            |
+|   Parameter  |     Type     | Required |    Additional information   |      Example      |
+|:------------:|:------------:|:--------:|:---------------------------:|:-----------------:|
+|  username    |    string    |    yes   |        username             | test@ergonode.com |
+|  password    |    string    |    yes   |        password             |        123        |
 
 **Response**
 

@@ -15,7 +15,7 @@
 
 ## About Us
 
-Ergonode development is sponsored by Strix (Bold Brand Commerce Sp. z o.o.), lead by **Ergonode Core Team** and supported by Ergonode contributors.
+Ergonode development is maintained by Ergonode Sp. z o.o., lead by **Ergonode Core Team** and supported by Ergonode contributors.
 
 [npm]: https://www.npmjs.com/get-npm
 [node]: https://nodejs.org/en/download/

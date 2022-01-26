@@ -8,7 +8,7 @@ Every single import process has its representation in the form of information ab
 
 This method allows you to add an error message to the selected import process
 
-* `ImportRepositoryInterface::addError(ImportLineId $id, ImportId $importId, string $type)` 
+* `ImportRepositoryInterface::addLine(ImportLineId $id, ImportId $importId, string $type)` 
 
 This method allows you to add information about the processor line(imported object)
 

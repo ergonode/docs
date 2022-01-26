@@ -2,56 +2,61 @@
 
 -----
 
-This module is responsible for managing channels.
-In Ergonode channels are entities used for configuration of exports. 
-It binds [`Segments`](backend/modules/segment.md) and [`Connectors`](backend/modules/connector.md). 
-
-**Channel** extends class: [`AbstractAggregateRoot`](backend/modules/core.md#abstract-aggregate-root).
-
-**Channel class can be founded:<br> `Ergonode\Component\Channel\Domain\Entity\Channel.php`**
+This module is responsible for managing exports from ergonode to external systems or files.
 
 
-Following parameters are need in order to create **Channel**:
- * [`ChannelId`](#channel-id)
- * **`Name`**
- * [`ConnectorId`](backend/modules/connector.md#connector-id)
- * [`SegmentId`](backend/modules/segment.md#segment-id)
- * [`ChannelConfiguration`](#channel-configuration)
- 
- 
+## Custom Export error
 
-## Channel id
+If an error occurs during the export process, we may want to inform a user by presenting the relevant content in the export error list.
 
+For that we need to create custom error. We're doing that by creating new exception class extended from ```Ergonode\Channel\Infrastructure\Exception\ExportException```
 
-Channel Id is an entity which extends [`AbstractId`](backend/modules/core.md#abstractid)
+```php
+namespace YourNameSpace\Infrastructure\Exception;
 
-Channel id object represents Channel identifier.
+class YourCustomException extends ExportException
+{
+    private const MESSAGE  = 'Your error message';
 
-## Creating Channels
- 
-?> **Frontend** - [Click here](frontend/modules/channel.md) <br><br> **Backend** - [Click here](backend/generators.md#channel-generator) 
+    public function __construct(\Throwable $previous = null)
+    {
+        parent::__construct(self::MESSAGE, $previous);
+    }
+}
+```
 
-## Channel configuration
+In addition to the exporter.yml translation file, we can add a location-based version of our message
 
-It is a class which stores **Channel** configuration.
+Now if you throw this exception in export process, message will be automatically added to export error list
 
-**Channel configuration class can be founded:<br> `Ergonode\Component\Channel\Infrastructure\Configuration\ChannelConfiguration.php`**
+## System commands
 
+This module comes with several built-in commands dedicated to handling exports and interfaces which can be used while writing custom export module 
 
-## Channel product
- 
-ChannelProduct class is responsible for storing information about products after processing in channel, For example with export statuses and dates.
-
-**Channel product class can be founded:<br> `Ergonode\Component\Channel\Domain\Entity\ChannelProduct.php`**
-
-Following parameters are need in order to create **Channel product**:
-* [`ProductId`](backend/modules/product.md#product-id) 
-* [`ChannelId`](backend/modules/channel.md#channel-id) 
-
-It has 4 statuses:
-* `CREATED`
-* `EXPORTED`
-* `REJECTED`
-* `ERROR`
+|Command|
+|-|
+|Ergonode\Channel\Domain\Command\DeleteChannelCommand|
+|Ergonode\Channel\Domain\Command\ExportChannelCommand|
+|Ergonode\Channel\Domain\Command\Export\DeleteExportCommand|
+|Ergonode\Channel\Domain\Command\Export\ProcessExportCommand|
 
 
+
+|Interface|
+|-|
+|Ergonode\Channel\Domain\Command\ChannelCommandInterface|
+|Ergonode\Channel\Domain\Command\CreateChannelCommandInterface|
+|Ergonode\Channel\Domain\Command\ExporterCommandInterface|
+
+
+Commands are associated with a specific [export process](backend/modules/channel/channel_manager.md) by `ExportId` and `ExportLineId` identifier.
+
+Sending any of these commands through the commandBus will automatically send them to a dedicated export transport, from which it will be picked up and handled by the associated consumer
+
+```php
+    use Ergonode\SharedKernel\Domain\Bus\CommandBusInterface;
+    ...
+    $command = new YourCustomCommand($exportLineId, $exportId, $code, $name);
+    $this->commandBus->dispatch($command, true);
+    ...
+```
